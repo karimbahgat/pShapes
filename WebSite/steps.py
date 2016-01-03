@@ -23,7 +23,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "%s.settings" %APPNAME)
 
 # new application
 os.chdir(APPNAME)
-sys.argv = ["manage.py","startapp", "world", "--settings=%s.settings" %APPNAME]
+sys.argv = ["manage.py","startapp", "pshapes", "--settings=%s.settings" %APPNAME]
 print sys.argv
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "geodjango.settings")
 #management.execute_from_command_line(sys.argv)
@@ -67,7 +67,7 @@ settingsnew = settingsnew.replace("""INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'world'
+    'pshapes'
 )""")
 
 with open("%s/settings.py" %APPNAME, "w") as settingsfile:
@@ -77,39 +77,55 @@ with open("%s/settings.py" %APPNAME, "w") as settingsfile:
 print "define data models"
 modelraw = """from django.contrib.gis.db import models
 
-class WorldBorder(models.Model):
-    # Regular Django fields corresponding to the attributes in the
-    # world borders shapefile.
-    name = models.CharField(max_length=50)
-    area = models.IntegerField()
-    pop2005 = models.IntegerField('Population 2005')
-    fips = models.CharField('FIPS Code', max_length=2)
-    iso2 = models.CharField('2 Digit ISO', max_length=2)
-    iso3 = models.CharField('3 Digit ISO', max_length=3)
-    un = models.IntegerField('United Nations Code')
-    region = models.IntegerField('Region Code')
-    subregion = models.IntegerField('Sub-Region Code')
-    lon = models.FloatField()
-    lat = models.FloatField()
+import pycountries as pc
 
-    # GeoDjango-specific: a geometry field (MultiPolygonField)
-    mpoly = models.MultiPolygonField()
+class pShapes(models.Model):
 
-    # Returns the string representation of the model.
-    def __str__(self):              # __unicode__ on Python 2
-        return self.name
+    country = models.CharField(choices=[(c.iso3,c.name) for c in pc.all_countries()],
+                                max_length=40)
+    date = models.DateField()
+    changetype = models.CharField(choices=[("InfoChange","InfoChange"),
+                                           ("PartTransfer","PartTransfer"),
+                                           ("FullTransfer","FullTransfer"), 
+                                            ],
+                                    max_length=40)
+
+    # should only show if changetype requires border delimitation...
+    sourceurl = models.CharField(max_length=40)
+    changepart = models.MultiPolygonField()
+    
+    fromname = models.CharField(max_length=40)
+    fromiso = models.CharField(max_length=40)
+    fromfips = models.CharField(max_length=40)
+    fromhasc = models.CharField(max_length=40)
+    fromcapital = models.CharField(max_length=40)
+
+    toname = models.CharField(max_length=40)
+    toiso = models.CharField(max_length=40)
+    tofips = models.CharField(max_length=40)
+    tohasc = models.CharField(max_length=40)
+    tocapital = models.CharField(max_length=40)
+    
         """
 
-with open("world/models.py", "w") as modelsfile:
+with open("pshapes/models.py", "w") as modelsfile:
     modelsfile.write(modelraw)
 
 
 # create data tables in db (makemigration) or manually
+sys.argv = ["manage.py", "flush", "--settings=%s.settings" %APPNAME]
+print sys.argv
+os.system(" ".join(sys.argv)+" &pause")
+
+sys.argv = ["manage.py", "syncdb", "--settings=%s.settings" %APPNAME]
+print sys.argv
+os.system(" ".join(sys.argv)+" &pause")
+
 sys.argv = ["manage.py", "makemigrations", "--settings=%s.settings" %APPNAME]
 print sys.argv
 os.system(" ".join(sys.argv)+" &pause")
 
-sys.argv = ["manage.py", "sqlmigrate", "world", "0001", "--settings=%s.settings" %APPNAME]
+sys.argv = ["manage.py", "sqlmigrate", "pshapes", "0001", "--settings=%s.settings" %APPNAME]
 print sys.argv
 os.system(" ".join(sys.argv)+" &pause")
 
@@ -126,14 +142,66 @@ os.system(" ".join(sys.argv)+" &pause")
 #    wms_url = "http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png"
 # see more details at: http://blog.adamfast.com/
 
+
+
+# NEXT UP IS HERE
+
+# create addwms form
+##print "config form.py"
+##adminraw = """from django.contrib.gis import admin
+##"""
+##
+##with open("pshapes/form.py", "w") as adminfile:
+##    adminfile.write(adminraw)
+##
+### create addwms view rendering the button,
+### sending it as get request
+### processing it by taking the url and changing the mapwidget's wms url
+##print "config view.py"
+##adminraw = """from django.contrib.gis import admin
+##"""
+##
+##with open("pshapes/view.py", "w") as adminfile:
+##    adminfile.write(adminraw)
+
+    
+
 # create basic admin.py for admin stuff
 print "config admin.py"
 adminraw = """from django.contrib.gis import admin
-from models import WorldBorder
 
-admin.site.register(WorldBorder, admin.GeoModelAdmin)"""
+from .models import pShapes
 
-with open("world/admin.py", "w") as adminfile:
+class pShapesAdmin(admin.GeoModelAdmin):
+    fieldsets = (
+                    (None, {
+                        'fields': ('country', 'date', 'changetype')
+                    }),
+                    ("From Province", {
+                        'fields': tuple('fromname fromiso fromfips fromhasc fromcapital'.split())
+                    }),
+                    ('Map', {
+                        ##'classes': ('collapse',),
+                        'fields': ('sourceurl', 'changepart'),
+                    }),
+                    ("To Province", {
+                        'fields': tuple('toname toiso tofips tohasc tocapital'.split())
+                    }),
+                )
+
+    @property
+    def wms_url(self):
+        ## "http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png"
+        ## print pShapes.cleaned_data['sourceurl']
+        print "calling wms_url"
+        return "http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png"
+
+        # PROB HAVE TO USE DYNAMIC VIEW.PY INSTEAD WHICH ADDS A WMS SUBMIT BUTTON
+        # AND UPDATES MAP UPON RECEIVING IT.
+
+admin.site.register(pShapes, pShapesAdmin)"""
+
+with open("pshapes/admin.py", "w") as adminfile:
     adminfile.write(adminraw)
 
 # edit urls.py
