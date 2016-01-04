@@ -1,3 +1,4 @@
+
 from django.contrib.gis.db import models
 
 import pycountries as pc
@@ -14,19 +15,19 @@ class pShapes(models.Model):
                                     max_length=40)
 
     # should only show if changetype requires border delimitation...
-    sourceurl = models.CharField(max_length=40)
-    changepart = models.MultiPolygonField()
+    sourceurl = models.CharField(max_length=200)
+    
+    changepart = models.MultiPolygonField(blank=True)
     
     fromname = models.CharField(max_length=40)
     fromiso = models.CharField(max_length=40)
     fromfips = models.CharField(max_length=40)
     fromhasc = models.CharField(max_length=40)
-    fromcapital = models.CharField(max_length=40)
+    fromcapital = models.CharField(max_length=40, blank=True)
 
     toname = models.CharField(max_length=40)
     toiso = models.CharField(max_length=40)
     tofips = models.CharField(max_length=40)
     tohasc = models.CharField(max_length=40)
-    tocapital = models.CharField(max_length=40)
+    tocapital = models.CharField(max_length=40, blank=True)
     
-        

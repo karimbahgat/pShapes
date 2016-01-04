@@ -79,8 +79,8 @@ def build():
                                       
     # define data models
     print "define data models"
-    modelraw = """from django.contrib.gis.db import models
-from django import forms
+    modelraw = """
+from django.contrib.gis.db import models
 
 import pycountries as pc
 
@@ -96,23 +96,22 @@ class pShapes(models.Model):
                                     max_length=40)
 
     # should only show if changetype requires border delimitation...
-    sourceurl = models.CharField(max_length=40,       ####widget=forms.Select(attrs={"onclick":"alert('foo ! ')"})    ###"document.getElementById('sourceurl')"})
-                                )
-    changepart = models.MultiPolygonField()
+    sourceurl = models.CharField(max_length=200)
+    
+    changepart = models.MultiPolygonField(blank=True)
     
     fromname = models.CharField(max_length=40)
     fromiso = models.CharField(max_length=40)
     fromfips = models.CharField(max_length=40)
     fromhasc = models.CharField(max_length=40)
-    fromcapital = models.CharField(max_length=40)
+    fromcapital = models.CharField(max_length=40, blank=True)
 
     toname = models.CharField(max_length=40)
     toiso = models.CharField(max_length=40)
     tofips = models.CharField(max_length=40)
     tohasc = models.CharField(max_length=40)
-    tocapital = models.CharField(max_length=40)
-    
-        """
+    tocapital = models.CharField(max_length=40, blank=True)
+    """
 
     with open("pshapes/models.py", "w") as modelsfile:
         modelsfile.write(modelraw)
@@ -174,38 +173,109 @@ class pShapes(models.Model):
 
     # create basic admin.py for admin stuff
     print "config admin.py"
-    adminraw = """from django.contrib.gis import admin
+    adminraw = '''
+from django.contrib.gis import admin
+from django import forms
 
 from .models import pShapes
 
+import pycountries as pc
+def getbox(c):
+    try:
+        geoj = c.__geo_interface__
+        if geoj["type"] == "Polygon":
+            xs,ys = zip(*(xy for xy in geoj["coordinates"][0]))
+            return min(xs),min(ys),max(xs),max(ys)
+        elif geoj["type"] == "MultiPolygon":
+            xs,ys = zip(*(xy for poly in geoj["coordinates"] for xy in poly[0]))
+            return min(xs),min(ys),max(xs),max(ys)
+    except:
+        return False
+
+class pShapesForm(forms.ModelForm):
+
+    class Meta:
+        model = pShapes
+        exclude = []
+        
+    def __init__(self, *args, **kwargs):
+        super(pShapesForm, self).__init__(*args, **kwargs)
+
+        # autozoom map to country depending on country
+        self.fields['country'].widget.attrs.update({
+            'onchange': "".join(["var cntr = document.getElementById('id_country').value;",
+                                 #"alert(cntr);",
+                                 "var bbox = [0,0,180,90];", #%s[cntr];" % dict([(c.iso3,getbox(c)) for c in pc.all_countries() if getbox(c)]),
+                                 #"alert(bbox);",
+                                 "geodjango_changepart.map.zoomToExtent(bbox);",
+                                ])
+            })
+
+        # TODO: Also alter required status dynamically
+
+##        # hide map widgets on startup
+##        self.fields['sourceurl'].widget.attrs.update({"style":"display:none"})
+##        self.fields['changepart'].widget.attrs.update({"style":"display:none"}) # grabbing wrong widget so not yet working
+##
+##        # show/hide map widget depending on changetype
+##        self.fields['changetype'].widget.attrs.update({
+##            'onchange': "".join(["var changetype = document.getElementById('id_changetype').value;",
+##                                "if (changetype == 'PartTransfer') ",
+##                                "{",
+##                                "document.getElementById('id_changepart_admin_map').style.display = 'block';",
+##                                "document.getElementById('id_sourceurl').style.display = 'block';",
+##                                "} ",
+##                                "else {",
+##                                "document.getElementById('id_changepart_admin_map').style.display = 'none';",
+##                                "document.getElementById('id_sourceurl').style.display = 'none';",
+##                                "};",
+##                                ])
+##            })
+
+        # make wms auto add/update on sourceurl input
+        self.fields['sourceurl'].widget.attrs.update({
+            'oninput': "".join(["var wmsurl = document.getElementById('id_sourceurl').value;",
+                                "var layerlist = geodjango_changepart.map.getLayersByName('Custom WMS');",
+                                "if (layerlist.length >= 1) ",
+                                "{",
+                                "layerlist[0].url = wmsurl;",
+                                "} ",
+                                "else {",
+                                """customwms = new OpenLayers.Layer.WMS("Custom WMS", wmsurl, {layers: 'basic'} );""",
+                                """customwms.isBaseLayer = false;""",
+                                """geodjango_changepart.map.addLayer(customwms);""",
+                                "};",
+                                ])
+
+            # http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png
+            #'onclick': """geodjango_changepart.map.layers.sourceurl = new OpenLayers.Layer.WMS("Custom WMS","http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png", {layers: 'basic'} ); geodjango_changepart.map.addLayer(geodjango_changepart.map.layers.sourceurl);"""
+            #'onclick': """window.open ("http://www.javascript-coder.com","mywindow","menubar=1,resizable=1,width=350,height=250");"""
+            #'onclick': """alert(geodjango_changepart.map)"""
+            #'onclick': """alert(Object.getOwnPropertyNames(geodjango_changepart.map))"""
+            
+        })
+
 class pShapesAdmin(admin.GeoModelAdmin):
+    default_zoom = 1
     fieldsets = (
                     (None, {
                         'fields': ('country', 'date', 'changetype')
                     }),
+                    ('Map', {
+                        'classes': ('collapse',),
+                        'fields': ('sourceurl', 'changepart'),
+                    }),
                     ("From Province", {
                         'fields': tuple('fromname fromiso fromfips fromhasc fromcapital'.split())
-                    }),
-                    ('Map', {
-                        ##'classes': ('collapse',),
-                        'fields': ('sourceurl', 'changepart'),
                     }),
                     ("To Province", {
                         'fields': tuple('toname toiso tofips tohasc tocapital'.split())
                     }),
                 )
+    form = pShapesForm
 
-    @property
-    def wms_url(self):
-        ## "http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png"
-        ## print pShapes.cleaned_data['sourceurl']
-        print "calling wms_url"
-        return "http://mapwarper.net/maps/wms/11512?request=GetMap&version=1.1.1&format=image/png"
-
-        # PROB HAVE TO USE DYNAMIC VIEW.PY INSTEAD WHICH ADDS A WMS SUBMIT BUTTON
-        # AND UPDATES MAP UPON RECEIVING IT.
-
-admin.site.register(pShapes, pShapesAdmin)"""
+admin.site.register(pShapes, pShapesAdmin)
+'''
 
     with open("pshapes/admin.py", "w") as adminfile:
         adminfile.write(adminraw)
