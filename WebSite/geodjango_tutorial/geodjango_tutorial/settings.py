@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h=zh8&-yr@w60+-z@hn@m!0foc_0$dqbp9&98vz(m41dtg&#2q'
+SECRET_KEY = 'apnnb9)eg^$uiq9yr4jrcsegirt5!ceo$%d87+8x$vt_$c=1xk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +83,7 @@ DATABASES = {
          'USER': 'postgres',
      }
 }
-
+    
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

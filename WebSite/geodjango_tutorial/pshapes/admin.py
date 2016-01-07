@@ -4,18 +4,17 @@ from django import forms
 
 from .models import pShapes
 
-import pycountries as pc
-def getbox(c):
-    try:
-        geoj = c.__geo_interface__
-        if geoj["type"] == "Polygon":
-            xs,ys = zip(*(xy for xy in geoj["coordinates"][0]))
-            return min(xs),min(ys),max(xs),max(ys)
-        elif geoj["type"] == "MultiPolygon":
-            xs,ys = zip(*(xy for poly in geoj["coordinates"] for xy in poly[0]))
-            return min(xs),min(ys),max(xs),max(ys)
-    except:
-        return False
+##def getbox(c):
+##    try:
+##        geoj = c.__geo_interface__
+##        if geoj["type"] == "Polygon":
+##            xs,ys = zip(*(xy for xy in geoj["coordinates"][0]))
+##            return min(xs),min(ys),max(xs),max(ys)
+##        elif geoj["type"] == "MultiPolygon":
+##            xs,ys = zip(*(xy for poly in geoj["coordinates"] for xy in poly[0]))
+##            return min(xs),min(ys),max(xs),max(ys)
+##    except:
+##        return False
 
 class pShapesForm(forms.ModelForm):
 
@@ -27,14 +26,15 @@ class pShapesForm(forms.ModelForm):
         super(pShapesForm, self).__init__(*args, **kwargs)
 
         # autozoom map to country depending on country
-        self.fields['country'].widget.attrs.update({
-            'onchange': "".join(["var cntr = document.getElementById('id_country').value;",
-                                 #"alert(cntr);",
-                                 "var bbox = [0,0,180,90];", #%s[cntr];" % dict([(c.iso3,getbox(c)) for c in pc.all_countries() if getbox(c)]),
-                                 #"alert(bbox);",
-                                 "geodjango_changepart.map.zoomToExtent(bbox);",
-                                ])
-            })
+##        import pycountries as pc
+##        self.fields['country'].widget.attrs.update({
+##            'onchange': "".join(["var cntr = document.getElementById('id_country').value;",
+##                                 #"alert(cntr);",
+##                                 "var bbox = [0,0,180,90];", #%s[cntr];" % dict([(c.iso3,getbox(c)) for c in pc.all_countries() if getbox(c)]),
+##                                 #"alert(bbox);",
+##                                 "geodjango_changepart.map.zoomToExtent(bbox);",
+##                                ])
+##            })
 
         # TODO: Also alter required status dynamically
 
@@ -84,17 +84,17 @@ class pShapesAdmin(admin.GeoModelAdmin):
     default_zoom = 1
     fieldsets = (
                     (None, {
-                        'fields': ('country', 'date', 'changetype')
+                        'fields': ('changetype', 'changedate', 'country')
                     }),
                     ('Map', {
                         'classes': ('collapse',),
                         'fields': ('sourceurl', 'changepart'),
                     }),
                     ("From Province", {
-                        'fields': tuple('fromname fromiso fromfips fromhasc fromcapital'.split())
+                        'fields': tuple('fromname fromiso fromfips fromhasc fromcapital fromtype'.split())
                     }),
                     ("To Province", {
-                        'fields': tuple('toname toiso tofips tohasc tocapital'.split())
+                        'fields': tuple('toname toiso tofips tohasc tocapital totype'.split())
                     }),
                 )
     form = pShapesForm

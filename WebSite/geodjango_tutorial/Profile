@@ -1,0 +1,1 @@
+web: gunicorn geodjango_tutorial.wsgi
