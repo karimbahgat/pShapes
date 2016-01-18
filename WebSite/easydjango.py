@@ -173,7 +173,7 @@ whitenoise==2.0.6
         writer.write("python-%s"%sys.version.split()[0])
 
     # script for testing site on local server
-    with open("%s/runserver.py"%SITENAME, "w") as writer:
+    with open("%s/testserver.py"%SITENAME, "w") as writer:
         writer.write("""
 import sys,os
 
@@ -273,16 +273,16 @@ def new_app(name):
     os.makedirs("%s/templates/%s"%(name,name))
     with open("%s/templates/%s/%s.html"%(name,name,name), "a") as writer:
         writer.write("""
-{% extends 'base.html' %}
+{{% extends '{SITENAME}/base.html' %}}
 
-{% block content %}
+{{% block content %}}
 
 	<div>
         Insert html or template content here...
         </div>
         
-{% endblock %}
-""")
+{{% endblock %}}
+""".format(SITENAME=SITENAME))
 
     # add app specific static folder
     os.mkdir("%s/static"%name)
