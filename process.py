@@ -107,11 +107,15 @@ class Province:
         self.geometry = geometry
 
 class ResultsTable:
-    def __init__(self):
+    def __init__(self, mindate, maxdate):
         self.provs = []
         self.events = []
+        self.mindate = mindate
+        self.maxdate = maxdate
 
     def add_province(self, start, end, ids, other, geometry):
+        if start is None: start = self.mindate
+        if end is None: end = self.maxdate
         prov = Province(start, end, ids, other, geometry)
         self.provs.append(prov)
    
@@ -241,15 +245,16 @@ class ResultsTable:
 
 # Initiate results table
 
-results = ResultsTable()
+results = ResultsTable(mindate=datetime.date(year=1946, month=1, day=1),
+                       maxdate=datetime.date(year=2014, month=12, day=31))
 
 
 # Load contemporary table
 
 for feat in pygeoj.load("BaseData/natearthprovs_codeupdates.geojson", encoding="latin1"):   
     if feat.properties["geonunit"] != "Vietnam": continue
-    results.add_province(start=None, #datetime.date(year=1946, month=1, day=1),
-                         end=datetime.date(year=2014, month=12, day=31),
+    results.add_province(start=None,
+                         end=None,
                          ids={"Name": feat.properties["name"],
                               "HASC": feat.properties["code_hasc"],
                               "ISO": feat.properties["iso_3166_2"],
@@ -265,7 +270,7 @@ import sys
 sys.path.append(r"C:\Users\kimo\Documents\GitHub\Tably")
 import tably
 
-eventstable = tably.load("pshapes_test.xlsx")
+eventstable = tably.load("vietnam.xlsx") # REPLACE WITH CSV EXPORT FROM WEBSITE DATABASE
 for changetable in eventstable.split(["EventDate"]):
     event = Event()
 
@@ -277,8 +282,8 @@ for changetable in eventstable.split(["EventDate"]):
 
         # remove junk tably.<None> obj
         def parseval(val):
-            if val: return val
-            else: return None
+            if not val or val == "X": return None
+            else: return val
         for i,val in enumerate(row):
             row[i] = parseval(val)
 
