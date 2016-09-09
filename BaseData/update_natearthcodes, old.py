@@ -65,7 +65,7 @@ for iso2,items in itertools.groupby(sorted(shaperecords, key=lambda x: x[0]["iso
     if not strows: continue
     for nerow,neshp in items:
         nenames = [nerow["name"].strip()] + nerow["name_alt"].strip().split("|")
-        #print nenames
+        print nenames
 
         necodes = [nerow["code_hasc"],nerow["iso_3166_2"],nerow["fips"]]
 
@@ -84,10 +84,9 @@ for iso2,items in itertools.groupby(sorted(shaperecords, key=lambda x: x[0]["iso
 
             # match found, so override codes and stop looking
             nerow["code_hasc"] = match.get("HASC", nerow["code_hasc"])
-            nerow["iso_3166_2"] = iso2 + "-" + match.get("ISO") if match.get("ISO") else nerow["iso_3166_2"]
+            nerow["iso_3166_2"] = iso2 + "-" + match.get("ISO", nerow["iso_3166_2"])
             nerow["fips"] = match.get("FIPS", nerow["fips"])
-            if [nerow["code_hasc"],nerow["iso_3166_2"],nerow["fips"]] != necodes:
-                print "changed",repr(nenames[0]),necodes,"-->",repr(match["Name"]),[nerow["code_hasc"],nerow["iso_3166_2"],nerow["fips"]]
+            print "updated",repr(match),repr((nerow["code_hasc"],nerow["iso_3166_2"],nerow["fips"]))
         
         output.add_feature(properties=nerow, geometry=neshp)
 
