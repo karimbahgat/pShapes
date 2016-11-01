@@ -152,9 +152,10 @@ class ResultsTable:
 
                 # Lookup the toprov geometry
                 newprov = self.find_prov(toprovids)
-                if not newprov:
+                if not newprov or (newprov.geometry["type"] == "GeometryCollection" and not newprov.geometry["geometries"]):
                     # couldnt find provcode, need better lookup, maybe using multiple ids
                     continue
+
                 newprovgeom = shapely.geometry.shape(newprov.geometry)
 
                 print "NEWGEOM", toprovids, newprovgeom.area
@@ -170,11 +171,13 @@ class ResultsTable:
                     if change.type == "FullTransfer":
                         # Get the geom that was transferred as the intersection with the change cutpoly
                         change.geom = newprovgeom.intersection(change.cutpoly)
+                        newprovgeom = newprovgeom.difference(change.cutpoly) # trim the geom for each time so no overlap
                         subparts.append(change)
 
                     elif change.type == "PartTransfer":
                         # Get the geom that was transferred as the intersection with the change cutpoly
                         change.geom = newprovgeom.intersection(change.cutpoly)
+                        newprovgeom = newprovgeom.difference(change.cutpoly) # trim the geom for each time so no overlap
                         subparts.append(change)
 
                     elif change.type == "Breakaway":
@@ -232,6 +235,8 @@ class ResultsTable:
                                 
                 # 3) Add to final data
                 #print fullgeom, subparts[0].type
+                if not fullgeom.is_valid or fullgeom.is_empty:
+                    continue # hack
                 self.add_province(start=None,
                                  end=event.date,
                                  ids=fromprovids,
@@ -243,103 +248,129 @@ class ResultsTable:
 
 
 
-# Initiate results table
+if __name__ == "__main__":
 
-results = ResultsTable(mindate=datetime.date(year=1946, month=1, day=1),
-                       maxdate=datetime.date(year=2014, month=12, day=31))
+    import pythongis as pg
 
+    CURRENTFILE = r"C:\Users\kimo\Downloads\ne_10m_admin_1_states_provinces\ne_10m_admin_1_states_provinces.shp"
+    CHANGESFILE = r"C:\Users\kimo\Downloads\pshapes_raw (7).csv"
+    OUTFILE = r"C:\Users\kimo\Downloads\processed.geojson"
+    BUILD = 1
 
-# Load contemporary table
+    if BUILD:
 
-for feat in pygeoj.load("BaseData/natearthprovs_codeupdates.geojson", encoding="latin1"):   
-    if feat.properties["geonunit"] != "Vietnam": continue
-    results.add_province(start=None,
-                         end=None,
-                         ids={"Name": feat.properties["name"],
-                              "HASC": feat.properties["code_hasc"],
-                              "ISO": feat.properties["iso_3166_2"],
-                              "FIPS": feat.properties["fips"]
-                              },
-                         other={},
-                         geometry=feat.geometry)
+        # Initiate results table
+
+        results = ResultsTable(mindate=datetime.date(year=1946, month=1, day=1),
+                               maxdate=datetime.date(year=2014, month=12, day=31))
 
 
-# Load events table
-
-import sys
-sys.path.append(r"C:\Users\kimo\Documents\GitHub\Tably")
-import tably
-
-eventstable = tably.load("vietnam.xlsx") # REPLACE WITH CSV EXPORT FROM WEBSITE DATABASE
-for changetable in eventstable.split(["EventDate"]):
-    event = Event()
-
-    # parse date correctly
-    date = dateutil.parser.parse(changetable[0].dict["EventDate"])
-    event.date = datetime.date(year=date.year, month=date.month, day=date.day)
-    
-    for row in changetable:
-
-        # remove junk tably.<None> obj
-        def parseval(val):
-            if not val or val == "X": return None
-            else: return val
-        for i,val in enumerate(row):
-            row[i] = parseval(val)
-
-        # create id dicts
-        fromprovids = {"Name":row["FromName"],
-                       "HASC":row["FromHASC"],
-                       "ISO":row["FromISO"],
-                       "FIPS":row["FromFIPS"]}
-        toprovids = {"Name":row["ToName"],
-                     "HASC":row["ToHASC"],
-                     "ISO":row["ToISO"],
-                     "FIPS":row["ToFIPS"]}
+        # Load contemporary table
         
-        if row["Type"] == "FullTransfer":
-            if not row["CutPoly"]: #or not row["FromHASC"]:
-                continue
-            change = FullTransferChange(fromprovids,
-                                        toprovids,
-                                        row["CutPoly"])
-        elif row["Type"] == "PartTransfer":
-            if not row["CutPoly"]: #or not row["FromHASC"]:
-                continue
-            change = PartTransferChange(fromprovids,
-                                        toprovids,
-                                        row["CutPoly"])
-        elif row["Type"] == "Breakaway":
-            change = BreakawayChange(fromprovids,
-                                     toprovids)
-        elif row["Type"] == "NewInfo":
-            change = NewInfoChange(fromprovids,
-                                 toprovids)
-        else:
-            continue
-        print row["Type"]
-        event.changes.append(change)
-    results.add_event(event)
+        for feat in pg.VectorData(CURRENTFILE, encoding="latin1"):   
+            if feat["geonunit"] not in ("Cameroon","Nigeria"): continue
+            results.add_province(start=None,
+                                 end=None,
+                                 ids={"Name": feat["name"],
+                                      "HASC": feat["code_hasc"],
+                                      "ISO": feat["iso_3166_2"],
+                                      "FIPS": feat["fips"]
+                                      },
+                                 other={},
+                                 geometry=feat.geometry)
 
 
-# Process and create final provs
-results.begin_backtracking()
+        # Load events table
+
+        import sys
+        sys.path.append(r"C:\Users\kimo\Documents\GitHub\Tably")
+        import tably
+
+        eventstable = tably.load(CHANGESFILE) # CSV EXPORT FROM WEBSITE DATABASE
+        eventstable = eventstable.exclude('status == "NonActive"')
+        for changetable in eventstable.split(["date"]):
+            event = Event()
+
+            # parse date correctly
+            date = dateutil.parser.parse(changetable[0].dict["date"])
+            event.date = datetime.date(year=date.year, month=date.month, day=date.day)
+            
+            for row in changetable:
+
+                # remove junk tably.<None> obj
+                def parseval(val):
+                    if not val or val == "X": return None
+                    else: return val
+                for i,val in enumerate(row):
+                    row[i] = parseval(val)
+
+                # create id dicts
+                fromprovids = {"Name":row["FromName".lower()],
+                               "HASC":row["FromHASC".lower()],
+                               "ISO":row["FromISO".lower()],
+                               "FIPS":row["FromFIPS".lower()]}
+                toprovids = {"Name":row["ToName".lower()],
+                             "HASC":row["ToHASC".lower()],
+                             "ISO":row["ToISO".lower()],
+                             "FIPS":row["ToFIPS".lower()]}
+                
+                if row["Type".lower()] == "FullTransfer":
+                    if not row["transfer_geom"]: #or not row["FromHASC"]:
+                        continue
+                    change = FullTransferChange(fromprovids,
+                                                toprovids,
+                                                row["transfer_geom"])
+                elif row["Type".lower()] == "PartTransfer":
+                    if not row["transfer_geom"]: #or not row["FromHASC"]:
+                        continue
+                    change = PartTransferChange(fromprovids,
+                                                toprovids,
+                                                row["transfer_geom"])
+                elif row["Type".lower()] == "Breakaway":
+                    change = BreakawayChange(fromprovids,
+                                             toprovids)
+                elif row["Type".lower()] == "NewInfo":
+                    change = NewInfoChange(fromprovids,
+                                         toprovids)
+                else:
+                    continue
+                print row["Type".lower()]
+                event.changes.append(change)
+            results.add_event(event)
 
 
-# Save final geojson table
-import pygeoj
-finaldata = pygeoj.GeojsonFile()
-for prov in results.provs:
-    properties = {}
-    properties.update(prov.ids)
-    properties.update(prov.other)
-    properties["start"] = str(prov.start)
-    properties["end"] = str(prov.end)
-    geometry = prov.geometry
-    finaldata.add_feature(properties=properties, geometry=geometry)
-finaldata.save("processed.geojson")
+        # Process and create final provs
+        results.begin_backtracking()
 
 
+        # Save final geojson table
+        import pygeoj
+        finaldata = pygeoj.GeojsonFile()
+        for prov in results.provs:
+            properties = {}
+            properties.update(prov.ids)
+            properties.update(prov.other)
+            properties["start"] = str(prov.start)
+            properties["end"] = str(prov.end)
+            geometry = prov.geometry
+            finaldata.add_feature(properties=properties, geometry=geometry)
+        finaldata.save(OUTFILE)
+
+    # Test time animation
+    final = pg.VectorData(OUTFILE, encoding="latin")
+    print final.inspect()
+    layout = pg.renderer.Layout(width=500, height=500, background=(111,111,111))
+    for start in sorted(set(( f["start"] for f in final))):
+        print start
+        mapp = pg.renderer.Map(width=500, title=str(start), background=(111,111,111))
+        mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
+                        #text=lambda f:f["Name"],
+                        fillcolor=pg.renderer.Color("random", opacity=155)
+                        )
+        mapp.zoom_auto()
+        #mapp.view()
+        layout.add_map(mapp)
+    layout.view()
 
 
         
