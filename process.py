@@ -21,6 +21,7 @@ doing all the geometric changes and creating the final shapefile.
 
 import itertools
 import datetime
+import warnings
 import dateutil, dateutil.parser
 import pygeoj
 import shapely, shapely.ops, shapely.geometry
@@ -93,13 +94,20 @@ def ids_equal(find, comparison):
         if val:
             if isinstance(val, str): return len(val) > 3
             else: return True
-    match = any((validid(otherid) and otherid in find.values()
-                 for otherid in comparison.ids.values() ))
-    #match = find["Name"] == comparison.ids["Name"] or (len(find["HASC"]) > 3 and comparison.ids["HASC"] == find["HASC"])
+    match = False
+    
+    if find.country == comparison.country:
+        match = any((validid(otherid) and otherid in find.ids.values()
+                     for otherid in comparison.ids.values() ))
+        #match = find["Name"] == comparison.ids["Name"] or (len(find["HASC"]) > 3 and comparison.ids["HASC"] == find["HASC"])
+    else:
+        # country not matched
+        pass
     return match
 
 class Province:
-    def __init__(self, start, end, ids, other, geometry):
+    def __init__(self, country, start, end, ids, other, geometry):
+        self.country = country
         self.start = start
         self.end = end
         self.ids = ids
@@ -113,17 +121,17 @@ class ResultsTable:
         self.mindate = mindate
         self.maxdate = maxdate
 
-    def add_province(self, start, end, ids, other, geometry):
+    def add_province(self, country, start, end, ids, other, geometry):
         if start is None: start = self.mindate
         if end is None: end = self.maxdate
-        prov = Province(start, end, ids, other, geometry)
+        prov = Province(country, start, end, ids, other, geometry)
         self.provs.append(prov)
    
     def find_prov(self, findprov, matchfunc=ids_equal):
         "Lookup id and return matching feature GeoJSON among existing registered provs"
         newprovs = sorted((prov for prov in self.provs if matchfunc(findprov, prov)), key=lambda f: f.end)
         if len(newprovs) > 1:
-            print("!!!! Warning, more than one mathcing ids...", [p.ids for p in newprovs])
+            warnings.warn("!!!! Warning, more than one mathcing ids... %s" % [p.ids for p in newprovs])
         if newprovs:
             return newprovs[0]
 
@@ -147,18 +155,20 @@ class ResultsTable:
             # 1) Group all entries by toprov
             print "by toprov"
             subparts = []
-            for toprovids,changes in itertools.groupby(event.changes, key=lambda ch: ch.toprov):
+            for toprovname,changes in itertools.groupby(sorted(event.changes, key=lambda ch: ch.toprov.ids["Name"]), key=lambda ch: ch.toprov.ids["Name"]):
                 changes = list(changes)
+                toprov = changes[0].toprov
 
                 # Lookup the toprov geometry
-                newprov = self.find_prov(toprovids)
+                newprov = self.find_prov(toprov)
                 if not newprov or (newprov.geometry["type"] == "GeometryCollection" and not newprov.geometry["geometries"]):
                     # couldnt find provcode, need better lookup, maybe using multiple ids
+                    warnings.warn("Couldnt find province, or invalid geometry")
                     continue
 
                 newprovgeom = shapely.geometry.shape(newprov.geometry)
 
-                print "NEWGEOM", toprovids, newprovgeom.area
+                print "NEWGEOM", toprov, newprovgeom.area
 
                 # Also change the startdate of the newer prov
                 newprov.start = event.date
@@ -203,7 +213,7 @@ class ResultsTable:
                         if newinfo:
                             prereceiving = Remainder(newinfo.fromprov, trimmedgeom)
                         else:
-                            prereceiving = Remainder(toprovids, trimmedgeom)
+                            prereceiving = Remainder(toprov, trimmedgeom)
                         subparts.append(prereceiving)
 
                 # If newinfo is the only change
@@ -217,17 +227,18 @@ class ResultsTable:
 
             # 2) Group and union all geom parts by fromprov
             print "by fromprov"
-            for fromprovids,subparts in itertools.groupby(subparts, key=lambda sb: sb.fromprov):
+            for fromprovname,subparts in itertools.groupby(sorted(subparts, key=lambda ch: ch.fromprov.ids["Name"]), key=lambda sb: sb.fromprov.ids["Name"]):
                 subparts = list(subparts)
+                fromprov = subparts[0].fromprov
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
-                print fromprovids, subparts
+                print fromprov, subparts
                 if len(subparts) > 1:
-                    print fromprovids, "union", subparts
+                    print fromprov, "union", subparts
                     fullgeom = shapely.ops.cascaded_union([part.geom for part in subparts])
                 else:
                     # Only one item, so prob means there was nothing left of the giving prov, ie fulltransfers or maybe also just newinfo
-                    print fromprovids, "single"
+                    print fromprov, "single"
                     fullgeom = subparts[0].geom
                     
 
@@ -236,10 +247,12 @@ class ResultsTable:
                 # 3) Add to final data
                 #print fullgeom, subparts[0].type
                 if not fullgeom.is_valid or fullgeom.is_empty:
+                    warnings.warn("Invalid or empty geometry")
                     continue # hack
-                self.add_province(start=None,
+                self.add_province(country=fromprov.country,
+                                  start=None,
                                  end=event.date,
-                                 ids=fromprovids,
+                                 ids=fromprov.ids,
                                  other={},
                                  geometry=fullgeom.__geo_interface__)
 
@@ -253,23 +266,24 @@ if __name__ == "__main__":
     import pythongis as pg
 
     CURRENTFILE = r"C:\Users\kimo\Downloads\ne_10m_admin_1_states_provinces\ne_10m_admin_1_states_provinces.shp"
-    CHANGESFILE = r"C:\Users\kimo\Downloads\pshapes_raw (7).csv"
+    CHANGESFILE = r"C:\Users\kimo\Downloads\pshapes_raw (10).csv"
     OUTFILE = r"C:\Users\kimo\Downloads\processed.geojson"
-    BUILD = 1
+    BUILD = 0
 
     if BUILD:
 
         # Initiate results table
 
-        results = ResultsTable(mindate=datetime.date(year=1946, month=1, day=1),
-                               maxdate=datetime.date(year=2014, month=12, day=31))
+        results = ResultsTable(mindate=datetime.date(year=1900, month=1, day=1),
+                               maxdate=datetime.date(year=2015, month=12, day=31))
 
 
         # Load contemporary table
         
         for feat in pg.VectorData(CURRENTFILE, encoding="latin1"):   
-            if feat["geonunit"] not in ("Cameroon","Nigeria"): continue
-            results.add_province(start=None,
+            if feat["geonunit"] not in ("Cameroon","Southern Cameroons","Nigeria","Norway"): continue
+            results.add_province(country=feat["geonunit"],
+                                 start=None,
                                  end=None,
                                  ids={"Name": feat["name"],
                                       "HASC": feat["code_hasc"],
@@ -305,33 +319,44 @@ if __name__ == "__main__":
                     row[i] = parseval(val)
 
                 # create id dicts
-                fromprovids = {"Name":row["FromName".lower()],
-                               "HASC":row["FromHASC".lower()],
-                               "ISO":row["FromISO".lower()],
-                               "FIPS":row["FromFIPS".lower()]}
-                toprovids = {"Name":row["ToName".lower()],
-                             "HASC":row["ToHASC".lower()],
-                             "ISO":row["ToISO".lower()],
-                             "FIPS":row["ToFIPS".lower()]}
+                fromprov = Province(country=row["fromcountry"],
+                                    start=None,
+                                    end=None,
+                                    ids={"Name":row["FromName".lower()],
+                                        "HASC":row["FromHASC".lower()],
+                                        "ISO":row["FromISO".lower()],
+                                        "FIPS":row["FromFIPS".lower()]},
+                                    other={},
+                                    geometry=None)
+                                    
+                toprov = Province(country=row["tocountry"],
+                                    start=None,
+                                    end=None,
+                                    ids={"Name":row["ToName".lower()],
+                                         "HASC":row["ToHASC".lower()],
+                                         "ISO":row["ToISO".lower()],
+                                         "FIPS":row["ToFIPS".lower()]},
+                                    other={},
+                                    geometry=None)
                 
                 if row["Type".lower()] == "FullTransfer":
                     if not row["transfer_geom"]: #or not row["FromHASC"]:
                         continue
-                    change = FullTransferChange(fromprovids,
-                                                toprovids,
+                    change = FullTransferChange(fromprov,
+                                                toprov,
                                                 row["transfer_geom"])
                 elif row["Type".lower()] == "PartTransfer":
                     if not row["transfer_geom"]: #or not row["FromHASC"]:
                         continue
-                    change = PartTransferChange(fromprovids,
-                                                toprovids,
+                    change = PartTransferChange(fromprov,
+                                                toprov,
                                                 row["transfer_geom"])
                 elif row["Type".lower()] == "Breakaway":
-                    change = BreakawayChange(fromprovids,
-                                             toprovids)
+                    change = BreakawayChange(fromprov,
+                                             toprov)
                 elif row["Type".lower()] == "NewInfo":
-                    change = NewInfoChange(fromprovids,
-                                         toprovids)
+                    change = NewInfoChange(fromprov,
+                                         toprov)
                 else:
                     continue
                 print row["Type".lower()]
@@ -348,6 +373,7 @@ if __name__ == "__main__":
         finaldata = pygeoj.GeojsonFile()
         for prov in results.provs:
             properties = {}
+            properties["country"] = prov.country
             properties.update(prov.ids)
             properties.update(prov.other)
             properties["start"] = str(prov.start)
@@ -362,13 +388,14 @@ if __name__ == "__main__":
     layout = pg.renderer.Layout(width=500, height=500, background=(111,111,111))
     for start in sorted(set(( f["start"] for f in final))):
         print start
-        mapp = pg.renderer.Map(width=500, title=str(start), background=(111,111,111))
+        mapp = pg.renderer.Map(width=700, title=str(start), background=(111,111,111))
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
                         #text=lambda f:f["Name"],
-                        fillcolor=pg.renderer.Color("random", opacity=155)
+                        fillcolor=dict(breaks="unique", #pg.renderer.Color("random", opacity=155)
+                                       key=lambda f:f["country"])
                         )
-        mapp.zoom_auto()
-        #mapp.view()
+        mapp.zoom_bbox(-180,90,180,-90) #.zoom_auto()
+        mapp.view()
         layout.add_map(mapp)
     layout.view()
 
