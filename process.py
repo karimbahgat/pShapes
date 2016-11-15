@@ -234,7 +234,7 @@ class ResultsTable:
                     # Error checking
                     if change.type != "NewInfo":
                         
-                        if change.geom.is_empty:                            
+                        if change.geom.is_empty:
                             import pythongis as pg
                             mapp = pg.renderer.Map(500, 500, title="Error: No intersection found (%s)" % newprov.end)
                             
@@ -279,6 +279,7 @@ class ResultsTable:
                             prereceiving = Remainder(newinfo.fromprov, trimmedgeom)
                         else:
                             prereceiving = Remainder(toprov, trimmedgeom)
+                        prereceiving = Remainder(toprov, trimmedgeom)
                         allsubparts.append(prereceiving)
 
                 # If newinfo is the only change
@@ -296,26 +297,20 @@ class ResultsTable:
             for (fromprovname,fromprovcountry),subparts in itertools.groupby(sorted(allsubparts, key=key), key=key):
                 subparts = list(subparts)
                 fromprov = subparts[0].fromprov
+
+                # Add orig
+                if "PartTransfer" in (p.type for p in subparts) and "NewInfo" not in (p.type for p in subparts):
+                    # hmmm... 
+                    oldprov = self.find_prov(fromprov)
+                    oldprovgeom = shapely.geometry.shape(oldprov.geometry)
+                    pregiving = Remainder(fromprov, oldprovgeom)
+                    subparts.append(pregiving)
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
                 if len(subparts) > 1:
                     print fromprov, "union", [(p,p.geom.geom_type,"Empty" if p.geom.is_empty else "OK") for p in subparts]
                     fullgeom = shapely.ops.cascaded_union([part.geom for part in subparts])
-                    
-##                    if fromprov.ids["Name"] == "Ilorin":
-##                        import pythongis as pg
-##                        dat = pg.VectorData(type="Polygon")
-##                        for part in subparts:
-##                            print "part", part, part.geom.is_valid, part.geom.is_empty, part.geom.geom_type
-##                            if part.geom.geom_type == "GeometryCollection":
-##                                print "not showing geomcollection", [g for g in part.geom.geoms]
-##                            else:
-##                                pg.vector.data.Feature(dat, [], part.geom.__geo_interface__).view(500,500)
-##                        
-##                        dat = pg.VectorData(type="Polygon")
-##                        print "fullgeom", fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
-##                        pg.vector.data.Feature(dat, [], fullgeom.__geo_interface__).view(500,500)
-                    
+                   
                 else:
                     # Only one item, so prob means there was nothing left of the giving prov, ie fulltransfers or maybe also just newinfo
                     print fromprov, "single", subparts
@@ -332,7 +327,23 @@ class ResultsTable:
                     raise Exception("Something went wrong, output province has empty geometry")
                 elif not fullgeom.is_valid or fullgeom.geom_type == "GeometryCollection":
                     raise Exception("Something went wrong, output province has invalid geometry")
+
+                # temporary error check visualizing
+                if fromprov.ids["Name"] in ("Kwara","Benue"):
+                    import pythongis as pg
+                    dat = pg.VectorData(type="Polygon")
                     
+##                    for part in subparts:
+##                        print "part", part, part.geom.is_valid, part.geom.is_empty, part.geom.geom_type
+##                        if part.geom.geom_type == "GeometryCollection":
+##                            print "not showing geomcollection", [g for g in part.geom.geoms]
+##                        else:
+##                            pg.vector.data.Feature(dat, [], part.geom.__geo_interface__).view(500,500)
+                    
+                    dat = pg.VectorData(type="Polygon")
+                    print "ADDING:", fromprov, event.date, fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
+                    pg.vector.data.Feature(dat, [], fullgeom.__geo_interface__).view(500,500)
+                
                 self.add_province(country=fromprov.country,
                                   start=None,
                                  end=event.date,
@@ -349,8 +360,8 @@ if __name__ == "__main__":
 
     import pythongis as pg
 
-    CURRENTFILE = r"C:\Users\kimo\Downloads\ne_10m_admin_1_states_provinces\ne_10m_admin_1_states_provinces.shp"
-    CHANGESFILE = r"C:\Users\kimo\Downloads\pshapes_raw (13).csv"
+    CURRENTFILE = r"ne_10m_admin_1_states_provinces.shp"
+    CHANGESFILE = r"pshapes_raw.csv"
     OUTFILE = r"C:\Users\kimo\Downloads\processed.geojson"
     BUILD = 1
 
@@ -392,6 +403,10 @@ if __name__ == "__main__":
         eventstable = tably.load(CHANGESFILE) # CSV EXPORT FROM WEBSITE DATABASE
         eventstable = eventstable.exclude('status == "NonActive"')
         eventstable = eventstable.exclude('fromcountry in "Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
+        
+        # temp hack
+        #eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
+
         for changetable in eventstable.split(["date"]):
             event = Event()
 
