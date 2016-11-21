@@ -214,6 +214,7 @@ class ResultsTable:
 
                 # Also change the startdate of the newer prov
                 newprov.start = event.date
+                print "changed date", newprov, newprov.start, newprov.end
                 
                 # For each change
                 for change in changes:
@@ -299,7 +300,11 @@ class ResultsTable:
                     changes[0].geom = newprovgeom
                     allsubparts.append(changes[0])
 
+                elif "Breakaway" in (ch.type for ch in changes):
+                    pass
+
                 else:
+                    # part or full transfer
                     # Trim the breakoffs off the receiving toprov
                     # If anything left, means it already existed, so add own prov how it looked before
                     # Otherwise, this was its first creation
@@ -323,14 +328,14 @@ class ResultsTable:
                 subparts = list(subparts)
                 fromprov = subparts[0].fromprov
 
-                # Add what remains of giving province (if anything left/didn't dissolve)
-                if "NewInfo" not in (p.type for p in subparts):
-                    oldprov = self.find_prov(fromprov)
-                    if oldprov:
-                        oldprov.start = event.date
-                        oldprovgeom = shapely.geometry.shape(oldprov.geometry)
-                        pregiving = Remainder(fromprov, oldprovgeom)
-                        subparts.append(pregiving)
+##                # Add what remains of giving province (if anything left/didn't dissolve)
+##                if "NewInfo" not in (p.type for p in subparts):
+##                    oldprov = self.find_prov(fromprov)
+##                    if oldprov:
+##                        oldprov.start = event.date
+##                        oldprovgeom = shapely.geometry.shape(oldprov.geometry)
+##                        pregiving = Remainder(fromprov, oldprovgeom)
+##                        subparts.append(pregiving)
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
                 if len(subparts) > 1:
@@ -369,6 +374,8 @@ class ResultsTable:
 ##                    dat = pg.VectorData(type="Polygon")
 ##                    print "ADDING:", fromprov, event.date, fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
 ##                    pg.vector.data.Feature(dat, [], fullgeom.__geo_interface__).view(500,500)
+
+                print "added", fromprov, fromprov.start, fromprov.end
                 
                 self.add_province(country=fromprov.country,
                                   start=None,
@@ -440,7 +447,7 @@ if __name__ == "__main__":
         eventstable = eventstable.exclude('fromcountry in "Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
         
         # temp hack
-        #eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
+        eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
 
         for changetable in eventstable.split(["date"]):
             event = Event()
@@ -532,7 +539,7 @@ if __name__ == "__main__":
         print start
         mapp = pg.renderer.Map(width=700, title=str(start), background=(111,111,111))
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
-                        text=lambda f: "{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"],end=f["end"]),
+                        text=lambda f: "{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
                         textoptions=dict(textsize=4),
                         fillcolor=pg.renderer.Color("random", opacity=155),
                         #fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
