@@ -352,14 +352,14 @@ class ResultsTable:
                 subparts = list(subparts)
                 fromprov = subparts[0].fromprov
 
-##                # Add what remains of giving province (if anything left/didn't dissolve)
-##                if "NewInfo" not in (p.type for p in subparts):
-##                    oldprov = self.find_prov(fromprov)
-##                    if oldprov:
-##                        oldprov.start = event.date
-##                        oldprovgeom = shapely.geometry.shape(oldprov.geometry)
-##                        pregiving = Remainder(fromprov, oldprovgeom)
-##                        subparts.append(pregiving)
+                # Add what remains of giving province (if anything left/didn't dissolve)
+                if "Breakaway" in (p.type for p in subparts) and "NewInfo" not in (p.type for p in subparts):
+                    oldprov = self.find_prov(fromprov)
+                    if oldprov:
+                        oldprov.start = event.date
+                        oldprovgeom = shapely.geometry.shape(oldprov.geometry)
+                        pregiving = Remainder(fromprov, oldprovgeom)
+                        subparts.append(pregiving)
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
                 if len(subparts) > 1:
@@ -421,7 +421,7 @@ if __name__ == "__main__":
     CURRENTFILE = r"ne_10m_admin_1_states_provinces.shp"
     CHANGESFILE = None #r"pshapes_raw_manual.csv"
     OUTFILE = r"processed.geojson"
-    BUILD = 1
+    BUILD = 0
 
     if BUILD:
 
@@ -564,8 +564,8 @@ if __name__ == "__main__":
         print start
         mapp = pg.renderer.Map(width=700, title=str(start)) #, background=(111,111,111))
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
-                        text=lambda f: f["Name"].encode("latin").decode("utf8"), #"{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
-                        textoptions=dict(textsize=4),
+                        text=lambda f: f["Name"], #.encode("latin").decode("utf8"), #"{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
+                        textoptions=dict(textsize=4), #, bbox=lambda f:f.bbox),
                         #fillcolor=pg.renderer.Color("random", opacity=155),
                         fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
                         )
