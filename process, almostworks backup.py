@@ -182,11 +182,7 @@ class ResultsTable:
             print "----------"
             print event.date
 
-            # FIRST BREAKAWAYS
 
-
-
-            # THEN OTHERS
 
             # 1) Group all entries by toprov
             print "by toprov"
@@ -199,25 +195,6 @@ class ResultsTable:
 
                 # Lookup the toprov geometry
                 newprov = self.find_prov(toprov)
-##                if not newprov:
-##                    # maybe special case where split prov also receives a transfer
-##                    # in which case transfers are coded with the old pre-split prov as the toprov, then split
-##                    # but since pre-split has not yet been added (via union of breakaway geoms)
-##                    # create that union now.
-##                    # 1. find all toprovinfo for changes that split away from the presplit prov
-##                    breakawaychanges = [p for p in event.changes if p.type == "Breakaway" and ids_equal(toprov,p.fromprov)]
-##                    # 2. find their added provinces
-##                    breakawayprovs = [self.find_prov(p.toprov) for p in breakawaychanges]
-##                    # 3. union their geoms to recreate the presplit geom (only the geom matters)
-##                    unioned = shapely.ops.cascaded_union([shapely.geometry.shape(b.geometry) for b in breakawayprovs])
-##                    # 4. diff the transfers away
-##                    transfers = shapely.ops.cascaded_union([shapely.geometry.shape(c.cutpoly) for c in changes if "Transfer" in c.type])
-##                    diff = unioned.difference(transfers)
-##                    newprov = Province("Pointless", 99, 99, {"Name":"Pointless"}, {}, diff.__geo_interface__)
-##                    newprov.presplit = True
-##                    print 333,newprov
-##                    continue
-                
                 if not newprov:
                     # couldnt find provcode, need better lookup, maybe using multiple ids
                     raise Exception("Couldnt find province %s" % toprov)
@@ -230,16 +207,15 @@ class ResultsTable:
 
                 print "NEWGEOM", toprov, " = ", newprov, newprovgeom.area
 
-                # Also change the startdate of the newer prov
-                newprov.start = event.date
-                print "changed date", newprov, newprov.start, newprov.end
-
-                # testing                
-##                if newprov.ids["Name"] == "Adamaoua":
+##                if toprov.ids["Name"] == "Nord":
 ##                    import pythongis as pg
 ##                    dat = pg.VectorData(type="Polygon")
 ##                    pg.vector.data.Feature(dat, [], newprovgeom.__geo_interface__).view(500,500)
 
+                # Also change the startdate of the newer prov
+                newprov.start = event.date
+                print "changed date", newprov, newprov.start, newprov.end
+                
                 # For each change
                 for change in changes:
                     print change.type, change.fromprov, change.toprov
@@ -383,22 +359,21 @@ class ResultsTable:
                 elif not fullgeom.is_valid or "Polygon" not in fullgeom.geom_type:
                     raise Exception("Something went wrong, output province %s has invalid geometry" % fromprov)
 
-##                # temporary error check visualizing
-##                if fromprov.ids["Name"] == "Benue-Plateau": #in ("Nord","Adamaoua"): #("Kwara","Benue"):
+                # temporary error check visualizing
+##                if fromprov.ids["Name"] in ("Kwara","Benue"):
 ##                    import pythongis as pg
 ##                    dat = pg.VectorData(type="Polygon")
 ##                    
-##                    for part in subparts:
-##                        print "part", part, part.geom.is_valid, part.geom.is_empty, part.geom.geom_type
-##                        if part.geom.geom_type == "GeometryCollection":
-##                            print "not showing geomcollection", [g for g in part.geom.geoms]
-##                        else:
-##                            pg.vector.data.Feature(dat, [], part.geom.__geo_interface__).view(500,500)
+####                    for part in subparts:
+####                        print "part", part, part.geom.is_valid, part.geom.is_empty, part.geom.geom_type
+####                        if part.geom.geom_type == "GeometryCollection":
+####                            print "not showing geomcollection", [g for g in part.geom.geoms]
+####                        else:
+####                            pg.vector.data.Feature(dat, [], part.geom.__geo_interface__).view(500,500)
 ##                    
 ##                    dat = pg.VectorData(type="Polygon")
-##                    print "ADDING:", fromprov, "end=", event.date, fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
+##                    print "ADDING:", fromprov, event.date, fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
 ##                    pg.vector.data.Feature(dat, [], fullgeom.__geo_interface__).view(500,500)
-##                    ###
 
                 print "added", fromprov, fromprov.start, fromprov.end
                 
@@ -562,32 +537,17 @@ if __name__ == "__main__":
     layout = pg.renderer.Layout(width=500, height=500, background=(111,111,111))
     for start in sorted(set(( f["start"] for f in final)), reverse=True):
         print start
-        mapp = pg.renderer.Map(width=700, title=str(start)) #, background=(111,111,111))
+        mapp = pg.renderer.Map(width=700, title=str(start), background=(111,111,111))
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
-                        text=lambda f: f["Name"].encode("latin").decode("utf8"), #"{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
+                        text=lambda f: "{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
                         textoptions=dict(textsize=4),
-                        #fillcolor=pg.renderer.Color("random", opacity=155),
-                        fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
+                        fillcolor=pg.renderer.Color("random", opacity=155),
+                        #fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
                         )
         mapp.zoom_auto() #zoom_bbox(-180,90,180,-90) 
         mapp.view()
         layout.add_map(mapp)
     layout.view()
-
-    # THINGS TO CHECK IF BUILD ERROR
-
-    # Make sure province name spelling is consistent with its next iteration,
-    # since in some cases the name can change back again at a much later date,
-    # and that way an old province can find a match with a much later version
-    # of the same province just due to back-and-forth spelling variation. 
-
-    # A province cant be involved in a transfer and split event at same time.
-    # Some sources might use confusing language on this, saying first split, then transfers... 
-    # Split is only if no other changes occured to the new province.
-    # If another change occured, then the split becomes a full or parttransfer,
-    # followed by one or more full or parttransfers for the other changes.
-    # I.e. if a breakaway province also received a small area from another province
-    # then it is registered with two transfers instead of a breakaway and a transfer. 
 
 
         
