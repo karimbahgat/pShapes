@@ -54,9 +54,6 @@ class FullTransferChange:
         self.toprov = toprov
         self.cutpoly = shapely.geometry.shape(eval(cutpoly))
 
-    def __repr__(self):
-        return "FullTransfer {fromm} --> {to}".format(fromm=self.fromprov, to=self.toprov)
-
 class PartTransferChange:
     def __init__(self, fromprov, toprov, cutpoly):
         self.type = "PartTransfer"
@@ -64,17 +61,11 @@ class PartTransferChange:
         self.toprov = toprov
         self.cutpoly = shapely.geometry.shape(eval(cutpoly))
 
-    def __repr__(self):
-        return "PartTransfer {fromm} --> {to}".format(fromm=self.fromprov, to=self.toprov)
-
 class BreakawayChange:
     def __init__(self, fromprov, toprov):
         self.type = "Breakaway"
         self.fromprov = fromprov
         self.toprov = toprov
-
-    def __repr__(self):
-        return "Breakaway {fromm} --> {to}".format(fromm=self.fromprov, to=self.toprov)
 
 class NewInfoChange:
     def __init__(self, fromprov, toprov):
@@ -82,17 +73,11 @@ class NewInfoChange:
         self.fromprov = fromprov
         self.toprov = toprov
 
-    def __repr__(self):
-        return "NewInfo {fromm} --> {to}".format(fromm=self.fromprov, to=self.toprov)
-
 class Remainder:
     def __init__(self, fromprov, geom):
         self.type = "Remainder"
         self.fromprov = fromprov
         self.geom = geom
-
-    def __repr__(self):
-        return "Remainder %s" % self.fromprov
         
 
 
@@ -112,9 +97,9 @@ def ids_equal(find, comparison):
     match = False
     
     if find.country == comparison.country:
-        #match = any((validid(otherid) and otherid in find.ids.values()
-        #             for otherid in comparison.ids.values() ))
-        match = find.ids["Name"] == comparison.ids["Name"] or find.ids["Name"] in comparison.ids["Alterns"] or (find.ids["HASC"] and len(find.ids["HASC"]) > 3 and comparison.ids["HASC"] == find.ids["HASC"])
+        match = any((validid(otherid) and otherid in find.ids.values()
+                     for otherid in comparison.ids.values() ))
+        #match = find["Name"] == comparison.ids["Name"] or (len(find["HASC"]) > 3 and comparison.ids["HASC"] == find["HASC"])
     else:
         # country not matched
         pass
@@ -129,14 +114,6 @@ class Province:
         self.other = other
         self.geometry = geometry
 
-    def __repr__(self):
-        name = self.ids["Name"].encode("utf8")
-        country = self.country.encode("utf8")
-        if self.end:
-            return "Province: {name}, {country} (until {end})".format(name=name, country=country, end=self.end)
-        else:
-            return "Province: {name}, {country}".format(name=name, country=country)
-
 class ResultsTable:
     def __init__(self, mindate, maxdate):
         self.provs = []
@@ -145,13 +122,6 @@ class ResultsTable:
         self.maxdate = maxdate
 
     def add_province(self, country, start, end, ids, other, geometry):
-        if not geometry:
-            raise Exception("ResultsTable province must have geometry")
-        elif not shapely.geometry.shape(geometry).is_valid:
-            raise Exception("Invalid geometry: must be valid, and Polygon or MultiPolygon")
-        elif "Polygon" not in shapely.geometry.shape(geometry).geom_type:
-            raise Exception("Invalid geometry: must be Polygon or MultiPolygon")
-        
         if start is None: start = self.mindate
         if end is None: end = self.maxdate
         prov = Province(country, start, end, ids, other, geometry)
@@ -161,9 +131,7 @@ class ResultsTable:
         "Lookup id and return matching feature GeoJSON among existing registered provs"
         newprovs = sorted((prov for prov in self.provs if matchfunc(findprov, prov)), key=lambda f: f.end)
         if len(newprovs) > 1:
-            end = newprovs[0].end
-            if len([p.end for p in newprovs if p.end == end]) > 1:
-                raise Exception("!!!! Found duplicate provinces with same ids existing simultaneously... %s" % [(p.country,p.ids) for p in newprovs])
+            warnings.warn("!!!! Warning, more than one mathcing ids... %s" % [p.ids for p in newprovs])
         if newprovs:
             return newprovs[0]
 
@@ -186,35 +154,24 @@ class ResultsTable:
 
             # 1) Group all entries by toprov
             print "by toprov"
-            allsubparts = []
-            key = lambda ch: (ch.toprov.ids["Name"],ch.toprov.country)
-            for (toprovname,toprovcountry),changes in itertools.groupby(sorted(event.changes, key=key), key=key):
+            subparts = []
+            for toprovname,changes in itertools.groupby(sorted(event.changes, key=lambda ch: ch.toprov.ids["Name"]), key=lambda ch: ch.toprov.ids["Name"]):
                 changes = list(changes)
                 toprov = changes[0].toprov
-                print changes
 
                 # Lookup the toprov geometry
                 newprov = self.find_prov(toprov)
-                if not newprov:
+                if not newprov or (newprov.geometry["type"] == "GeometryCollection" and not newprov.geometry["geometries"]):
                     # couldnt find provcode, need better lookup, maybe using multiple ids
-                    raise Exception("Couldnt find province %s" % toprov)
-                
-                if not newprov.geometry or newprov.geometry["type"] == "GeometryCollection":
-                    # lookup prov has invalid geom
-                    raise Exception("Lookup province %s has invalid geometry" % newprov)
+                    warnings.warn("Couldnt find province, or invalid geometry")
+                    continue
 
                 newprovgeom = shapely.geometry.shape(newprov.geometry)
 
-                print "NEWGEOM", toprov, " = ", newprov, newprovgeom.area
-
-##                if toprov.ids["Name"] == "Nord":
-##                    import pythongis as pg
-##                    dat = pg.VectorData(type="Polygon")
-##                    pg.vector.data.Feature(dat, [], newprovgeom.__geo_interface__).view(500,500)
+                print "NEWGEOM", toprov, newprovgeom.area
 
                 # Also change the startdate of the newer prov
                 newprov.start = event.date
-                print "changed date", newprov, newprov.start, newprov.end
                 
                 # For each change
                 for change in changes:
@@ -225,126 +182,63 @@ class ResultsTable:
                         # Get the geom that was transferred as the intersection with the change cutpoly
                         change.geom = newprovgeom.intersection(change.cutpoly)
                         newprovgeom = newprovgeom.difference(change.cutpoly) # trim the geom for each time so no overlap
-                        allsubparts.append(change)
+                        subparts.append(change)
 
                     elif change.type == "PartTransfer":
                         # Get the geom that was transferred as the intersection with the change cutpoly
                         change.geom = newprovgeom.intersection(change.cutpoly)
                         newprovgeom = newprovgeom.difference(change.cutpoly) # trim the geom for each time so no overlap
-                        allsubparts.append(change)
+                        subparts.append(change)
 
                     elif change.type == "Breakaway":
                         # The newprov is a breakaway, so the whole thing used to be part of an older prov
                         # ...and so should just be unioned as it is
                         change.geom = newprovgeom
-                        allsubparts.append(change)
+                        subparts.append(change)
 
-                    # Error checking
-                    if change.type != "NewInfo":
-                        
-                        if change.geom.is_empty:
-                            import pythongis as pg
-                            mapp = pg.renderer.Map(500, 500, title="Error: No intersection found (%s)" % newprov.end)
-                            
-                            dat = pg.VectorData(type="Polygon")
-                            dat.fields = ["Text"]
-                            dat.add_feature(["orig geom"], shapely.geometry.shape(newprov.geometry).__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
-
-                            dat = pg.VectorData(type="Polygon")
-                            dat.fields = ["Text"]
-                            dat.add_feature(["cutpoly"], change.cutpoly.__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
-                            
-                            mapp.add_legend(xy=("99%w","99%h"), anchor="se")
-
-                            mapp.zoom_bbox(*mapp.layers.bbox)
-                            #mapp.zoom_auto()
-                            mapp.zoom_out(2)
-                            print mapp.zooms
-                            mapp.view()
-                        
-                            raise Exception("No intersection found, cutpoly must have at least some overlap with the province")
-                        
-                        elif not change.geom.is_valid or "Polygon" not in change.geom.geom_type:
-                            print change.geom.geom_type
-                            if change.geom.geom_type == "GeometryCollection":
-                                print [str(g)[:100] for g in change.geom.geoms]
-                            
-                            import pythongis as pg
-                            mapp = pg.renderer.Map(500, 500, title="Error: Invalid intersection (%s)" % newprov.end)
-                            
-                            dat = pg.VectorData(type="Polygon")
-                            dat.fields = ["Text"]
-                            dat.add_feature(["orig geom"], shapely.geometry.shape(newprov.geometry).__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
-
-                            dat = pg.VectorData(type="Polygon")
-                            dat.fields = ["Text"]
-                            dat.add_feature(["cutpoly"], change.cutpoly.__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
-                            
-                            mapp.add_legend(xy=("99%w","99%h"), anchor="se")
-
-                            mapp.zoom_bbox(*mapp.layers.bbox)
-                            #mapp.zoom_auto()
-                            mapp.zoom_out(2)
-                            print mapp.zooms
-                            mapp.view()
-
-                            raise Exception("Invalid intersection between %s and %s" % (newprov,change) )
-
-                # If newinfo is the only change
-                if len(changes) == 1 and changes[0].type == "NewInfo":
-                    # The oldprov only changed info, so should have the same geom as the newprov
-                    changes[0].geom = newprovgeom
-                    allsubparts.append(changes[0])
-
-                elif "Breakaway" in (ch.type for ch in changes):
-                    pass
-
-                else:
-                    # part or full transfer
-                    # Trim the breakoffs off the receiving toprov
-                    # If anything left, means it already existed, so add own prov how it looked before
-                    # Otherwise, this was its first creation
-                    trimmedgeom = newprovgeom
-                    if not trimmedgeom.is_empty:
-                        print "trimmedgeom", trimmedgeom.area
+                # Trim the breakoffs off the receiving toprov so it can later be added as its own prov, by taking the difference from the unioned breakoffs
+                # FIGURE THIS OUT BETTER, WHEN IS NEEDED AND WHEN NOT??
+                breakoffs = [ch for ch in changes if ch.type != "NewInfo"]
+                print "breakoffs", breakoffs
+                if breakoffs:
+                    if len(breakoffs) > 1:
+                        allbreakoffs = shapely.ops.cascaded_union([part.geom for part in breakoffs])
+                    elif len(breakoffs) == 1:
+                        allbreakoffs = breakoffs[0].geom
+                    trimmedgeom = newprovgeom.difference(allbreakoffs)
+                    print newprovgeom.area, allbreakoffs.area, newprov.ids
+                    if trimmedgeom:
+                        print "trimmedgeom", newprovgeom.area, allbreakoffs.area, subparts
                         newinfo = next((change for change in changes if change.type == "NewInfo"), None)
                         if newinfo:
                             prereceiving = Remainder(newinfo.fromprov, trimmedgeom)
                         else:
                             prereceiving = Remainder(toprov, trimmedgeom)
-                        allsubparts.append(prereceiving)
+                        subparts.append(prereceiving)
+
+                # If newinfo is the only change
+                if len(changes) == 1 and changes[0].type == "NewInfo":
+                    # The oldprov only changed info, so should have the same geom as the newprov
+                    changes[0].geom = newprovgeom
+                    subparts.append(changes[0])
 
 
 
 
             # 2) Group and union all geom parts by fromprov
             print "by fromprov"
-            key = lambda ch: (ch.fromprov.ids["Name"],ch.fromprov.country)
-            for (fromprovname,fromprovcountry),subparts in itertools.groupby(sorted(allsubparts, key=key), key=key):
+            for fromprovname,subparts in itertools.groupby(sorted(subparts, key=lambda ch: ch.fromprov.ids["Name"]), key=lambda sb: sb.fromprov.ids["Name"]):
                 subparts = list(subparts)
                 fromprov = subparts[0].fromprov
-
-##                # Add what remains of giving province (if anything left/didn't dissolve)
-##                if "NewInfo" not in (p.type for p in subparts):
-##                    oldprov = self.find_prov(fromprov)
-##                    if oldprov:
-##                        oldprov.start = event.date
-##                        oldprovgeom = shapely.geometry.shape(oldprov.geometry)
-##                        pregiving = Remainder(fromprov, oldprovgeom)
-##                        subparts.append(pregiving)
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
+                print fromprov, subparts
                 if len(subparts) > 1:
-                    print fromprov, "union", [(p,p.geom.geom_type,"Empty" if p.geom.is_empty else "OK") for p in subparts]
+                    print fromprov, "union", subparts
                     fullgeom = shapely.ops.cascaded_union([part.geom for part in subparts])
-                   
                 else:
                     # Only one item, so prob means there was nothing left of the giving prov, ie fulltransfers or maybe also just newinfo
-                    print fromprov, "single", subparts
+                    print fromprov, "single"
                     fullgeom = subparts[0].geom
                     
 
@@ -352,31 +246,9 @@ class ResultsTable:
                                 
                 # 3) Add to final data
                 #print fullgeom, subparts[0].type
-                
-                # Error checking
-                if fullgeom.is_empty:
-                    raise Exception("Something went wrong, output province %s has empty geometry" % fromprov)
-                elif not fullgeom.is_valid or "Polygon" not in fullgeom.geom_type:
-                    raise Exception("Something went wrong, output province %s has invalid geometry" % fromprov)
-
-                # temporary error check visualizing
-##                if fromprov.ids["Name"] in ("Kwara","Benue"):
-##                    import pythongis as pg
-##                    dat = pg.VectorData(type="Polygon")
-##                    
-####                    for part in subparts:
-####                        print "part", part, part.geom.is_valid, part.geom.is_empty, part.geom.geom_type
-####                        if part.geom.geom_type == "GeometryCollection":
-####                            print "not showing geomcollection", [g for g in part.geom.geoms]
-####                        else:
-####                            pg.vector.data.Feature(dat, [], part.geom.__geo_interface__).view(500,500)
-##                    
-##                    dat = pg.VectorData(type="Polygon")
-##                    print "ADDING:", fromprov, event.date, fullgeom.is_valid, fullgeom.is_empty, fullgeom.geom_type
-##                    pg.vector.data.Feature(dat, [], fullgeom.__geo_interface__).view(500,500)
-
-                print "added", fromprov, fromprov.start, fromprov.end
-                
+                if not fullgeom.is_valid or fullgeom.is_empty:
+                    warnings.warn("Invalid or empty geometry")
+                    continue # hack
                 self.add_province(country=fromprov.country,
                                   start=None,
                                  end=event.date,
@@ -393,10 +265,10 @@ if __name__ == "__main__":
 
     import pythongis as pg
 
-    CURRENTFILE = r"ne_10m_admin_1_states_provinces.shp"
-    CHANGESFILE = None #r"pshapes_raw_manual.csv"
-    OUTFILE = r"processed.geojson"
-    BUILD = 1
+    CURRENTFILE = r"C:\Users\kimo\Downloads\ne_10m_admin_1_states_provinces\ne_10m_admin_1_states_provinces.shp"
+    CHANGESFILE = r"C:\Users\kimo\Downloads\pshapes_raw (10).csv"
+    OUTFILE = r"C:\Users\kimo\Downloads\processed.geojson"
+    BUILD = 0
 
     if BUILD:
 
@@ -409,16 +281,11 @@ if __name__ == "__main__":
         # Load contemporary table
         
         for feat in pg.VectorData(CURRENTFILE, encoding="latin1"):   
-            if feat["geonunit"] not in ("Cameroon","Southern Cameroons","Northern Cameroons","Nigeria"): continue
-            # correct errors
-            if feat["name"] == "Federal Capital Territory":
-                feat["name"] = "Abuja Capital Territory"
-            # add
+            if feat["geonunit"] not in ("Cameroon","Southern Cameroons","Nigeria","Norway"): continue
             results.add_province(country=feat["geonunit"],
                                  start=None,
                                  end=None,
                                  ids={"Name": feat["name"],
-                                      "Alterns": feat["name_alt"].strip().split("|"),
                                       "HASC": feat["code_hasc"],
                                       "ISO": feat["iso_3166_2"],
                                       "FIPS": feat["fips"]
@@ -445,10 +312,6 @@ if __name__ == "__main__":
         eventstable = tably.load(CHANGESFILE) # CSV EXPORT FROM WEBSITE DATABASE
         eventstable = eventstable.exclude('status == "NonActive"')
         eventstable = eventstable.exclude('fromcountry in "Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
-        
-        # temp hack
-        eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
-
         for changetable in eventstable.split(["date"]):
             event = Event()
 
@@ -470,7 +333,6 @@ if __name__ == "__main__":
                                     start=None,
                                     end=None,
                                     ids={"Name":row["FromName".lower()],
-                                         "Alterns": [], #row["fromalterns"].split("|"),
                                         "HASC":row["FromHASC".lower()],
                                         "ISO":row["FromISO".lower()],
                                         "FIPS":row["FromFIPS".lower()]},
@@ -481,7 +343,6 @@ if __name__ == "__main__":
                                     start=None,
                                     end=None,
                                     ids={"Name":row["ToName".lower()],
-                                         "Alterns": [], #row["toalterns"].split("|"),
                                          "HASC":row["ToHASC".lower()],
                                          "ISO":row["ToISO".lower()],
                                          "FIPS":row["ToFIPS".lower()]},
@@ -533,13 +394,12 @@ if __name__ == "__main__":
 
     # Test time animation
     final = pg.VectorData(OUTFILE, encoding="latin")
-    #print final.inspect()
     layout = pg.renderer.Layout(width=500, height=500, background=(111,111,111))
-    for start in sorted(set(( f["start"] for f in final)), reverse=True):
+    for start in sorted(set(( f["start"] for f in final))):
         print start
         mapp = pg.renderer.Map(width=700, title=str(start), background=(111,111,111))
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
-                        text=lambda f: "{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
+                        text=lambda f: "{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"],end=f["end"]),
                         textoptions=dict(textsize=4),
                         fillcolor=pg.renderer.Color("random", opacity=155),
                         #fillcolor=dict(breaks="unique", key=lambda f:f["country"]),

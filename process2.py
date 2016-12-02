@@ -469,7 +469,7 @@ if __name__ == "__main__":
 
         eventstable = tably.load(CHANGESFILE) # CSV EXPORT FROM WEBSITE DATABASE
         eventstable = eventstable.exclude('status == "NonActive"')
-        eventstable = eventstable.exclude('fromcountry in "Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
+        eventstable = eventstable.exclude('fromcountry in "Dahomey Benin Senegal Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
         
         # temp hack
         eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
@@ -569,7 +569,7 @@ if __name__ == "__main__":
                         #fillcolor=pg.renderer.Color("random", opacity=155),
                         fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
                         )
-        mapp.zoom_auto() #zoom_bbox(-180,90,180,-90) 
+        #mapp.zoom_bbox(*mapp.layers[0].bbox) #zoom_bbox(-180,90,180,-90) 
         mapp.view()
         layout.add_map(mapp)
     layout.view()
