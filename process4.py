@@ -144,11 +144,14 @@ class ResultsTable:
         self.mindate = mindate
         self.maxdate = maxdate
 
-    def add_province(self, country, start, end, ids, other, geometry):
+    def add_province(self, country, start, end, ids, other, geometry):                
         if not geometry:
             raise Exception("ResultsTable province must have geometry")
         elif not shapely.geometry.shape(geometry).is_valid:
-            raise Exception("Invalid geometry: must be valid, and Polygon or MultiPolygon")
+            try:
+                geometry = shapely.geometry.shape(geometry).buffer(0).__geo_interface__
+            except: 
+                raise Exception("Invalid geometry: must be valid, and Polygon or MultiPolygon")
         elif "Polygon" not in shapely.geometry.shape(geometry).geom_type:
             raise Exception("Invalid geometry: must be Polygon or MultiPolygon")
         
@@ -160,10 +163,17 @@ class ResultsTable:
     def find_prov(self, findprov, matchfunc=ids_equal):
         "Lookup id and return matching feature GeoJSON among existing registered provs"
         newprovs = sorted((prov for prov in self.provs if matchfunc(findprov, prov)), key=lambda f: f.end)
-        if len(newprovs) > 1:
-            end = newprovs[0].end
-            if len([p.end for p in newprovs if p.end == end]) > 1:
-                raise Exception("!!!! Found duplicate provinces with same ids existing simultaneously... %s" % [(p.country,p.ids) for p in newprovs])
+        if not newprovs:
+            import difflib
+            matches = sorted([(p,difflib.SequenceMatcher(None,findprov.ids["Name"],p.ids["Name"]).ratio()) for p in self.provs if p.country == findprov.country], key=lambda pair: pair[1])
+            matches = (p for p,r in matches if r >= 0.6)
+            newprovs = sorted(matches, key=lambda p: p.end)
+            
+##        if len(newprovs) > 1:
+##            end = newprovs[0].end
+##            if len([p.end for p in newprovs if p.end == end]) > 1:
+##                raise Exception("!!!! Found duplicate provinces with same ids existing simultaneously... %s" % [(p.country,p.ids) for p in newprovs])
+            
         if newprovs:
             return newprovs[0]
 
@@ -216,7 +226,8 @@ class ResultsTable:
                 
                 if not newprov:
                     # couldnt find provcode, need better lookup, maybe using multiple ids
-                    raise Exception("Couldnt find province %s" % toprov)
+                    avail = "\n".join((repr(p) for p in self.provs if p.country == toprovcountry))
+                    raise Exception("Couldnt find province %s \nAvailable options: \n %s" % (toprov,avail) )
                 
                 if not newprov.geometry or newprov.geometry["type"] == "GeometryCollection":
                     # lookup prov has invalid geom
@@ -269,12 +280,12 @@ class ResultsTable:
                             dat = pg.VectorData(type="Polygon")
                             dat.fields = ["Text"]
                             dat.add_feature(["orig geom"], shapely.geometry.shape(newprov.geometry).__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
+                            mapp.add_layer(dat, fillcolor=pg.renderer.rgb("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
 
                             dat = pg.VectorData(type="Polygon")
                             dat.fields = ["Text"]
                             dat.add_feature(["cutpoly"], change.cutpoly.__geo_interface__)
-                            mapp.add_layer(dat, fillcolor=pg.renderer.Color("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
+                            mapp.add_layer(dat, fillcolor=pg.renderer.rgb("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
                             
                             mapp.add_legend(xy=("99%w","99%h"), anchor="se")
 
@@ -304,12 +315,12 @@ class ResultsTable:
                                 dat = pg.VectorData(type="Polygon")
                                 dat.fields = ["Text"]
                                 dat.add_feature(["orig geom"], shapely.geometry.shape(newprov.geometry).__geo_interface__)
-                                mapp.add_layer(dat, fillcolor=pg.renderer.Color("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
+                                mapp.add_layer(dat, fillcolor=pg.renderer.rgb("red"), legendoptions=dict(title="to "+newprov.ids["Name"]))
 
                                 dat = pg.VectorData(type="Polygon")
                                 dat.fields = ["Text"]
                                 dat.add_feature(["cutpoly"], change.cutpoly.__geo_interface__)
-                                mapp.add_layer(dat, fillcolor=pg.renderer.Color("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
+                                mapp.add_layer(dat, fillcolor=pg.renderer.rgb("blue"), legendoptions=dict(title="from "+change.fromprov.ids["Name"]))
                                 
                                 mapp.add_legend(xy=("99%w","99%h"), anchor="se")
 
@@ -396,6 +407,9 @@ class ResultsTable:
                 #print fullgeom, subparts[0].type
                 
                 # Error checking
+                try: fullgeom = fullgeom.buffer(0)
+                except: pass
+                
                 if fullgeom.is_empty:
                     raise Exception("Something went wrong, output province %s has empty geometry" % fromprov)
                 elif not fullgeom.is_valid or "Polygon" not in fullgeom.geom_type:
@@ -450,7 +464,7 @@ if __name__ == "__main__":
     import pythongis as pg
 
     CURRENTFILE = r"ne_10m_admin_1_states_provinces.shp"
-    CHANGESFILE = None #r"pshapes_raw_manual.csv"
+    CHANGESFILE = r"pshapes_raw_manual.csv"
     OUTFILE = r"processed.geojson"
     BUILD = 1
 
@@ -460,37 +474,6 @@ if __name__ == "__main__":
 
         results = ResultsTable(mindate=datetime.date(year=1900, month=1, day=1),
                                maxdate=datetime.date(year=2015, month=12, day=31))
-
-
-        # Load contemporary table
-
-        #pg.VectorData(CURRENTFILE, encoding="latin1").browse()
-        
-        for feat in pg.VectorData(CURRENTFILE, encoding="latin1"):   
-            if feat["geonunit"] not in ("Benin", "Senegal", "Cameroon","Southern Cameroons","Northern Cameroons","Nigeria","Ivory Coast"): continue
-            # correct errors
-            if feat["name"] == "Federal Capital Territory":
-                feat["name"] = "Abuja Capital Territory"
-            elif feat["adm1_code"] == "SEN-5514":
-                feat["code_hasc"] = "SN.SD"
-            elif feat["adm1_code"] == "SEN-5515":
-                feat["code_hasc"] = "SN.KG"
-            elif feat["adm1_code"] == "BEN-2180":
-                feat["code_hasc"] = "BJ.MO"
-            elif feat["adm1_code"] == "SEN-767":
-                feat["code_hasc"] = "SN.MT"
-            # add
-            results.add_province(country=feat["geonunit"],
-                                 start=None,
-                                 end=None,
-                                 ids={"Name": feat["name"],
-                                      "Alterns": feat["name_alt"].strip().split("|"),
-                                      "HASC": feat["code_hasc"],
-                                      "ISO": feat["iso_3166_2"],
-                                      "FIPS": feat["fips"]
-                                      },
-                                 other={},
-                                 geometry=feat.geometry)
 
 
         # Load events table
@@ -508,18 +491,25 @@ if __name__ == "__main__":
         sys.path.append(r"C:\Users\kimo\Documents\GitHub\Tably")
         import tably
 
-        eventstable = tably.load(CHANGESFILE) # CSV EXPORT FROM WEBSITE DATABASE
-        eventstable = eventstable.exclude('status == "NonActive"')
-        eventstable = eventstable.exclude('fromcountry in "Dahomey Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
+        eventstable = pg.VectorData(CHANGESFILE, encoding="utf8")
+        eventstable = eventstable.select(lambda f: f["status"] != "NonActive")
+        #eventstable = tably.load(CHANGESFILE, encoding="utf8") # CSV EXPORT FROM WEBSITE DATABASE
+        #eventstable = eventstable.exclude('status == "NonActive"')
+        #eventstable = eventstable.exclude('fromcountry in "Dahomey Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
+        eventstable.compute("fromcountry", lambda f: f["fromcountry"].replace("-"," "))
+        eventstable.compute("tocountry", lambda f: f["tocountry"].replace("-"," "))
+        skip = ["Norway","Ivory Coast","Burkina Faso","Guinea","Sierra Leone","Sierra Leone Protectorate","Sierra Leone Colony"]
+        eventstable = eventstable.select(lambda f: f["fromcountry"] not in skip and f["tocountry"] not in skip)
         
         # temp hack
-        eventstable.add_row([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None])
+        eventstable.add_feature([u'http://www.statoids.com/ung.html', u'Pending', u'1976-02-03', u'NewInfo', u'Nigeria', u'Kwara', None, None, None, None, None, None, None, u'Nigeria', u'Kwara', None, None, None, None, None, None, None, None, None, None],
+                                None)
 
-        for changetable in eventstable.split(["date"]):
+        for date,changetable in eventstable.manage.split("date"):
             event = Event()
 
             # parse date correctly
-            date = dateutil.parser.parse(changetable[0].dict["date"])
+            date = dateutil.parser.parse(date)
             event.date = datetime.date(year=date.year, month=date.month, day=date.day)
             
             for row in changetable:
@@ -580,6 +570,44 @@ if __name__ == "__main__":
             results.add_event(event)
 
 
+
+        # Load contemporary table
+
+        countries = set()
+        for f in eventstable:
+            countries.add(f["fromcountry"])
+            countries.add(f["tocountry"])
+
+        curtable = pg.VectorData(CURRENTFILE, encoding="latin1",
+                                select=lambda f: f["geonunit"] in countries)
+        for feat in curtable:   
+            #if feat["geonunit"] not in ("Benin", "Senegal", "Cameroon","Southern Cameroons","Northern Cameroons","Nigeria","Ivory Coast"): continue
+            # correct errors
+            if feat["name"] == "Federal Capital Territory":
+                feat["name"] = "Abuja Capital Territory"
+            elif feat["adm1_code"] == "SEN-5514":
+                feat["code_hasc"] = "SN.SD"
+            elif feat["adm1_code"] == "SEN-5515":
+                feat["code_hasc"] = "SN.KG"
+            elif feat["adm1_code"] == "BEN-2180":
+                feat["code_hasc"] = "BJ.MO"
+            elif feat["adm1_code"] == "SEN-767":
+                feat["code_hasc"] = "SN.MT"
+            # add
+            results.add_province(country=feat["geonunit"],
+                                 start=None,
+                                 end=None,
+                                 ids={"Name": feat["name"],
+                                      "Alterns": feat["name_alt"].strip().split("|"),
+                                      "HASC": feat["code_hasc"],
+                                      "ISO": feat["iso_3166_2"],
+                                      "FIPS": feat["fips"]
+                                      },
+                                 other={},
+                                 geometry=feat.geometry)
+
+
+
         # Process and create final provs
         results.begin_backtracking()
 
@@ -608,10 +636,11 @@ if __name__ == "__main__":
         mapp.add_layer( final.select(lambda f: f["start"] <= start < f["end"]) , # not sure if this filters correct
                         text=lambda f: f["Name"], #.encode("latin").decode("utf8"), #"{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
                         textoptions=dict(textsize=4), #, bbox=lambda f:f.bbox),
-                        fillcolor=pg.renderer.Color("random", opacity=155),
+                        fillcolor=pg.renderer.rgb("random", opacity=155),
                         #fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
                         )
-        #mapp.zoom_bbox(*mapp.layers[0].bbox) #zoom_bbox(-180,90,180,-90) 
+        mapp.zoom_bbox(*mapp.layers[0].bbox) #zoom_bbox(-180,90,180,-90)
+        #mapp.zoom_auto()
         mapp.view()
         layout.add_map(mapp)
     layout.view()
