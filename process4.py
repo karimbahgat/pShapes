@@ -154,9 +154,11 @@ class ResultsTable:
                 raise Exception("Invalid geometry: must be valid, and Polygon or MultiPolygon")
         elif "Polygon" not in shapely.geometry.shape(geometry).geom_type:
             raise Exception("Invalid geometry: must be Polygon or MultiPolygon")
-        
-        if start is None: start = self.mindate
+
+        # TODO: dont set these, should be set with separate events
+        #if start is None: start = self.mindate
         if end is None: end = self.maxdate
+        
         prov = Province(country, start, end, ids, other, geometry)
         self.provs.append(prov)
    
@@ -445,15 +447,34 @@ class ResultsTable:
                                  other={},
                                  geometry=fullgeom.__geo_interface__)
 
-            # 4) Change all events
-##            key = lambda ch: ch.fromprov.country
-##            for fromprovcountry,countrychanges in itertools.groupby(sorted(event.changes, key=key), key=key):
-##                if "*" in (ch.fromprov.ids["Name"] for ch in countrychanges):
-##                    for prov in self.provs:
-##                        # get all country provs valid at the current date
-##                        # ie, either startdate is yet to be set (None), or was just set
-##                        if prov.country == fromprovcountry and (prov.start == None or prov.start == event.date):
-##                            prov.co...
+            # 4) Maybe change all remaining provs via *
+            key = lambda ch: ch.toprov.country
+            for toprovcountry,countrychanges in itertools.groupby(sorted(event.changes, key=key), key=key):
+                countrychanges = list(countrychanges)
+                rest = next((ch for ch in countrychanges if ch.toprov.ids["Name"] == "*"), None)
+                if rest:
+                    addprovs = []
+                    for prov in self.provs:
+                        # get all country provs valid at the current date that have not
+                        # already been changed, ie only those with startdate yet to be set (None)
+                        # TODO: ONLY WORKS FOR NEWINFO...?
+                        if prov.country == toprovcountry and prov.start == None:
+                            addprovs.append(prov)
+                    for prov in addprovs:
+                        # finalize the newer
+                        prov.start = event.date
+                        # add the older
+                        self.add_province(country=rest.fromprov.country,
+                                          start=None,
+                                         end=event.date,
+                                         ids=prov.ids,
+                                         other={},
+                                         geometry=prov.geometry)
+
+        # finally set mindate for all (TODO: replace this with special firstdate events)
+        for prov in self.provs:
+            if prov.start is None:
+                prov.start = self.mindate
 
 
 
@@ -463,7 +484,7 @@ if __name__ == "__main__":
 
     import pythongis as pg
 
-    CURRENTFILE = r"ne_10m_admin_1_states_provinces.shp"
+    CURRENTFILE = r"C:\Users\kimo\Downloads\ne_10m_admin_1_states_provinces\ne_10m_admin_1_states_provinces.shp"
     CHANGESFILE = r"pshapes_raw_manual.csv"
     OUTFILE = r"processed.geojson"
     BUILD = 1
@@ -498,7 +519,7 @@ if __name__ == "__main__":
         #eventstable = eventstable.exclude('fromcountry in "Dahomey Ethiopia Eritrea Norway".split() or tocountry in "Ethiopia Eritrea Norway".split()')
         eventstable.compute("fromcountry", lambda f: f["fromcountry"].replace("-"," "))
         eventstable.compute("tocountry", lambda f: f["tocountry"].replace("-"," "))
-        skip = ["Norway","Ivory Coast","Burkina Faso","Guinea","Sierra Leone","Sierra Leone Protectorate","Sierra Leone Colony"]
+        skip = ["Norway","Ivory Coast","Burkina Faso"] #,"Guinea"] #,"Sierra Leone","Sierra Leone Protectorate","Sierra Leone Colony"]
         eventstable = eventstable.select(lambda f: f["fromcountry"] not in skip and f["tocountry"] not in skip)
         
         # temp hack
@@ -580,6 +601,12 @@ if __name__ == "__main__":
 
         curtable = pg.VectorData(CURRENTFILE, encoding="latin1",
                                 select=lambda f: f["geonunit"] in countries)
+
+        # modify data
+        for curtable = curtable.select(lambda f: f["geonunit"]=="Guinea"):
+            curtable = curtable.select(lambda f: f["geonunit"]!="Guinea")
+
+        # add it
         for feat in curtable:   
             #if feat["geonunit"] not in ("Benin", "Senegal", "Cameroon","Southern Cameroons","Northern Cameroons","Nigeria","Ivory Coast"): continue
             # correct errors
