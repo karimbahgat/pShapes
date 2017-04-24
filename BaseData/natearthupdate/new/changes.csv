@@ -1,0 +1,1385 @@
+country;fromname;fromhasc;fromiso;fromfips;toname;tohasc;toiso;tofips
+AF;Paktika;AF.PK;AF-PIA;AF29;Paktika;AF.PK;AF-PKA;AF29
+AL;Vlorë;AL.VR;AL-VL;AL51;Vlorë;AL.VR;AL-12;AL51
+AL;Berat;AL.BE;AL-BR;AL40;Berat;AL.BE;AL-01;AL40
+AL;Elbasan;AL.EB;AL-EL;AL43;Elbasan;AL.EB;AL-03;AL43
+AL;Gjirokastër;AL.GK;AL-GJ;AL45;Gjirokastër;AL.GK;AL-05;AL45
+AL;Dibër;AL.DB;AL-DI;AL41;Dibër;AL.DB;AL-09;AL41
+AL;Lezhë;AL.LZ;AL-LE;AL48;Lezhë;AL.LZ;AL-08;AL48
+AL;Durrës;AL.DU;AL-DR;AL50;Durrës;AL.DU;AL-02;AL42
+AM;Tavush;AM.TV;AM-TV;AJ40;Tavuš;AM.TV;AM-TV;AM09
+AO;Luanda;AO.LU;AO-LUA;AO10;Luanda;AO.LU;AO-LUA;AO20
+AO;Huambo;AO.HM;AO-;AO08;Huambo;AO.HM;AO-HUA;AO08
+AR;Mendoza;AR.MZ;AR-M;AR08;Mendoza;AR.MZ;AR-M;AR13
+AR;Santiago del Estero;AR.SE;AR-;AR22;Santiago del Estero;AR.SE;AR-G;AR22
+AS;Eastern;AS.ET;AS-;60010;Eastern;AS.ET;AS-;010
+AS;Western;AS.WT;AS-;60050;Western;AS.WT;AS-;050
+AU;Ashmore and Cartier Islands;AU;AU-;     ;Ashmore and Cartier Islands;AU.AS;AU-;AT
+AU;Jervis Bay Territory;AU.JB;AU-;     ;Jervis Bay Territory;AU.JB;AU-;AS01
+AU;Australian Capital Territory;AU.CT;AU-ACT;AS01;Australian Capital Territory;AU.AC;AU-ACT;AS01
+AW;Aruba;AW.;AW-;     ;Aruba;AW.AA;AW-;     
+AX;Finström;AX.EC;AX-;FI01;Finström;AX.FN;AX-;FI01
+AX;Jomala;AX.;AX-;     ;Jomala;AX.JM;AX-;     
+AX;Hammarland;AX.;AX-;     ;Hammarland;AX.HM;AX-;     
+AX;Eckerö;AX.;AX-;     ;Eckerö;AX.EC;AX-;     
+AX;Geta;AX.;AX-;     ;Geta;AX.GT;AX-;     
+AX;Föglö;AX.;AX-;     ;Föglö;AX.FG;AX-;     
+AX;Saltvik;AX.;AX-;     ;Saltvik;AX.SV;AX-;     
+AX;Sund;AX.;AX-;     ;Sund;AX.SD;AX-;     
+AX;Mariehamn;AX.;AX-;     ;Mariehamn;AX.MH;AX-;     
+AX;Lemland;AX.;AX-;     ;Lemland;AX.LE;AX-;     
+AX;Lumparland;AX.;AX-;     ;Lumparland;AX.LU;AX-;     
+AX;Vårdö;AX.;AX-;     ;Vårdö;AX.VR;AX-;     
+AX;Sottunga;AX.;AX-;     ;Sottunga;AX.ST;AX-;     
+AX;Kumlinge;AX.;AX-;     ;Kumlinge;AX.KM;AX-;     
+AX;Brändö;AX.;AX-;     ;Brändö;AX.BR;AX-;     
+AX;Kökar;AX.;AX-;     ;Kökar;AX.KK;AX-;     
+AZ;Yevlakh Rayon;AZ.YV;AZ-;AJ67;Yevlakh;AZ.YV;AZ-YEV;AJ67
+AZ;Cəlilabad;AZ.CL;AZ-;AJ15;Jalilabad;AZ.CL;AZ-CAL;AJ15
+AZ;Masallı;AZ.MA;AZ-MAS;AJ29;Masally;AZ.MA;AZ-MAS;AJ32
+AZ;Siyəzən;AZ.SY;AZ-SIY;AJ42;Siazan;AZ.SY;AZ-SIY;AJ53
+AZ;Xaçmaz;AZ.XZ;AZ-;AJ60;Khachmaz;AZ.XZ;AZ-XAC;AJ60
+AZ;Xocavənd;AZ.XD;AZ-XVD;AJ14;Khojavend;AZ.XD;AZ-XVD;AJ65
+AZ;Lankaran;AZ.SU;AZ-LAN;AJ29;Shusha;AZ.SU;AZ-SUS;AJ55
+AZ;Ordubad;AZ.OR;AZ-ORD;AM08;Ordubad;AZ.OR;AZ-ORD;AJ76
+AZ;Babək;AZ.BB;AZ-;AJ35;Babek;AZ.BK;AZ-BAB;AJ72
+AZ;Culfa;AZ.CF;AZ-CUL;AJ35;Julfa;AZ.CF;AZ-CUL;AJ73
+AZ;Naftalan;AZ.NA;AZ-NA;AJ21;Naftalan;AZ.NA;AZ-NA;AJ34
+AZ;Shirvan;AZ.AB;AZ-SR;AJ46;Shirvan;AZ.AB;AZ-SR;AJ07
+AZ;Yevlakh;AZ.YE;AZ-;AJ67;Yevlakh;AZ.YV;AZ-YEV;AJ67
+AZ;Kangarli;AZ.KG;AZ-;AM10;Kangarli;AZ.KG;AZ-KAN;AJ74
+BD;Dhaka;BD.DA;BD-C;BG81;Dhaka;BD.DH;BD-C;BG81
+BD;Chittagong;BD.CG;BD-B;BG80;Chittagong;BD.CG;BD-B;BG84
+BD;Rajshahi;BD.RJ;BD-E;BG83;Rajshahi;BD.RS;BD-E;BG83
+BD;Rangpur;BD.RP;BD-F;BG83;Rangpur;BD.RP;BD-F;BG87
+BE;Hainaut;BE.;BE-WHT;     ;Hainaut;BE.HT;BE-WHT;BE03
+BE;Limburg;BE.;BE-VLI;     ;Limburg;BE.LI;BE-VLI;BE05
+BE;Flemish Brabant;BE.VB;BE-VBR;     ;Flemish Brabant;BE.VB;BE-VBR;BE12
+BE;Namur;BE.;BE-WNA;     ;Namur;BE.NA;BE-WNA;BE07
+BE;Luxembourg;BE.;BE-WLX;     ;Luxembourg;BE.LX;BE-WLX;BE06
+BE;East Flanders;BE.OV;BE-VOV;     ;East Flanders;BE.OV;BE-VOV;BE08
+BE;West Flanders;BE.;BE-VWV;     ;West Flanders;BE.WV;BE-VWV;BE09
+BE;Antwerp;BE.;BE-VAN;     ;Antwerp;BE.AN;BE-VAN;BE01
+BE;Liege;BE.;BE-WLG;     ;Liege;BE.LG;BE-WLG;BE04
+BE;Walloon Brabant;BE.;BE-WBR;     ;Walloon Brabant;BE.BW;BE-WBR;BE10
+BF;Kompienga;BF.KP;BF-KMP;UV22;Kompienga;BF.ES.KP;BF-KMP;UV57
+BF;Gourma;BF.GM;BF-GOU;UV22;Gourma;BF.ES.GM;BF-GOU;UV50
+BF;Houet;BF.HO;BF-HOU;UV51;Houet;BF.HB.HO;BF-HOU;UV51
+BF;Kénédougou;BF.KN;BF-KEN;UV54;Kénédougou;BF.HB.KN;BF-KEN;UV54
+BF;Banwa;BF.BW;BF-BAN;UV58;Banwa;BF.BO.BW;BF-BAN;UV46
+BF;Kossi;BF.KS;BF-KOS;UV58;Kossi;BF.BO.KS;BF-KOS;UV58
+BF;Balé;BF.BA;BF-BAL;UV63;Balé;BF.BO.BA;BF-BAL;UV45
+BF;Oudalan;BF.OD;BF-OUD;UV33;Oudalan;BF.SA.OD;BF-OUD;UV33
+BF;Soum;BF.SM;BF-SOM;UV40;Soum;BF.SA.SM;BF-SOM;UV40
+BF;Nayala;BF.NY;BF-NAY;UV73;Nayala;BF.BO.NY;BF-NAY;UV66
+BF;Sourou;BF.SR;BF-SOR;UV73;Sourou;BF.BO.SR;BF-SOR;UV73
+BF;Bam;BF.BM;BF-BAM;UV15;Bam;BF.CN.BM;BF-BAM;UV15
+BF;Boulkiemdé;BF.BK;BF-BLK;UV19;Boulkiemdé;BF.CO.BK;BF-BLK;UV19
+BF;Kourwéogo;BF.KW;BF-KOW;UV53;Kourwéogo;BF.PC.KW;BF-KOW;UV60
+BF;Kadiogo;BF.KA;BF-KAD;UV53;Kadiogo;BF.CT.KA;BF-KAD;UV53
+BF;Oubritenga;BF.OB;BF-OUB;UV68;Oubritenga;BF.PC.OB;BF-OUB;UV68
+BF;Passoré;BF.PA;BF-PAS;UV34;Passoré;BF.NO.PA;BF-PAS;UV34
+BF;Zondoma;BF.ZM;BF-ZON;UV34;Zondoma;BF.NO.ZM;BF-ZON;UV78
+BF;Sanguié;BF.SG;BF-SNG;UV36;Sanguié;BF.CO.SG;BF-SNG;UV36
+BF;Sissili;BF.SS;BF-SIS;UV72;Sissili;BF.CO.SS;BF-SIS;UV72
+BF;Ziro;BF.ZR;BF-ZIR;UV72;Ziro;BF.CO.ZR;BF-ZIR;UV77
+BF;Loroum;BF.LO;BF-LOR;UV15;Loroum;BF.NO.LO;BF-LOR;UV62
+BF;Yatenga;BF.YT;BF-YAT;UV76;Yatenga;BF.NO.YT;BF-YAT;UV76
+BF;Namentenga;BF.NM;BF-NAM;UV64;Namentenga;BF.CN.NM;BF-NAM;UV64
+BF;Sanmatenga;BF.ST;BF-SMT;UV70;Sanmatenga;BF.CN.ST;BF-SMT;UV70
+BF;Boulgou;BF.BL;BF-BLG;UV49;Boulgou;BF.CE.BL;BF-BLG;UV49
+BF;Koulpélogo;BF.KL;BF-KOP;UV49;Koulpélogo;BF.CE.KL;BF-KOP;UV59
+BF;Ganzourgou;BF.GZ;BF-GAN;UV50;Ganzourgou;BF.PC.GZ;BF-GAN;UV20
+BF;Kouritenga;BF.KR;BF-KOT;UV28;Kouritenga;BF.CE.KR;BF-KOT;UV28
+BF;Nahouri;BF.NR;BF-;UV65;Nahouri;BF.CS.NR;BF-NAO;UV65
+BF;Zoundwéogo;BF.ZW;BF-ZOU;UV44;Zoundwéogo;BF.CS.ZW;BF-ZOU;UV44
+BF;Bougouriba;BF.BB;BF-BGR;UV48;Bougouriba;BF.SO.BB;BF-BGR;UV48
+BF;Ioba;BF.IO;BF-IOB;UV48;Ioba;BF.SO.IO;BF-IOB;UV52
+BF;Tuy;BF.TU;BF-;UV51;Tuy;BF.HB.TU;BF-TUI;UV74
+BF;Léraba;BF.LE;BF-LER;UV54;Léraba;BF.CD.LE;BF-LER;UV61
+BF;Poni;BF.PO;BF-PON;UV69;Poni;BF.SO.PO;BF-PON;UV69
+BF;Gnagna;BF.GG;BF-GNA;UV21;Gnagna;BF.ES.GG;BF-GNA;UV21
+BF;Séno;BF.SE;BF-SEN;UV71;Séno;BF.SA.SE;BF-SEN;UV71
+BF;Yagha;BF.YG;BF-YAG;UV71;Yagha;BF.SA.YG;BF-YAG;UV75
+BF;Tapoa;BF.TA;BF-TAP;UV42;Tapoa;BF.ES.TA;BF-TAP;UV42
+BF;Noumbiel;BF.;BF-NOU;UV69;Noumbiel;BF.SO.NB;BF-NOU;UV67
+BG;Sliven;BG.SL;BG-20;BU39;Sliven;BG.SL;BG-20;BU56
+BG;Stara Zagora;BG.SZ;BG-24;BU43;Stara Zagora;BG.SZ;BG-24;BU59
+BG;Pazardzhik;BG.PZ;BG-13;BU51;Pazardzhik;BG.PZ;BG-13;BU48
+BG;Smolyan;BG.SM;BG-21;BU51;Smolyan;BG.SM;BG-21;BU57
+BG;Sofia;BG.SF;BG-23;BU42;Sofiya;BG.SF;BG-23;BU58
+BG;Pernik;BG.PN;BG-14;BU58;Pernik;BG.PN;BG-14;BU49
+BG;Gabrovo;BG.GB;BG-07;BU46;Gabrovo;BG.GB;BG-07;BU41
+BG;Pleven;BG.PV;BG-15;BU46;Pleven;BG.PV;BG-15;BU50
+BG;Veliko Tarnovo;BG.VT;BG-04;BU46;Veliko Turnovo;BG.VT;BG-04;BU62
+BG;Vratsa;BG.VR;BG-;BU47;Vratsa;BG.VR;BG-06;BU64
+BG;Kyustendil;BG.KY;BG-10;BU58;Kyustendil;BG.KY;BG-10;BU45
+BG;Vidin;BG.VD;BG-05;BU47;Vidin;BG.VD;BG-05;BU63
+BG;Yambol;BG.YA;BG-28;BU39;Yambol;BG.YA;BG-28;BU65
+BG;Shumen;BG.SH;BG-27;BU61;Shumen;BG.SH;BG-27;BU54
+BG;Dobrich;BG.DO;BG-08;BU61;Dobrich;BG.DO;BG-08;BU40
+BG;Silistra;BG.SI;BG-19;RO41;Silistra;BG.SI;BG-19;BU55
+BG;Ruse;BG.RS;BG-18;BU52;Ruse;BG.RS;BG-18;BU53
+BG;Blagoevgrad;BG.BL;BG-01;MK78;Blagoevgrad;BG.BL;BG-01;BU38
+BH;Al Janūbīyah;BH.SO;BH-14;     ;Southern;BH.SN;BH-14;BA17
+BH;Ash Shamālīyah;BH.NO;BH-17;     ;Northern;BH.NN;BH-17;BA18
+BH;Al Manāmah;BH.CA;BH-13;     ;Capital;BH.CP;BH-13;BA16
+BI;Bururi;BI.BR;BI-BR;BY10;Bururi;BI.BI;BI-BR;BY10
+BI;Bujumbura Rural;BI.BU;BI-BL;BY25;Bujumbura Rural;BI.BL;BI-BL;BY25
+BJ;Mono;BJ.CF;BJ-MO;BN15;Mono;BJ.MO;BJ-MO;BN15
+BM;Devonshire;BM.DE;BM-DEV;     ;Devonshire;BM.DE;BM-DEV;BD01
+BM;Hamilton;BM.HA;BM-HAM;     ;Hamilton;BM.HA;BM-HAM;BD02
+BM;Paget;BM.PA;BM-PAG;     ;Paget;BM.PA;BM-PAG;BD04
+BM;Pembroke;BM.PE;BM-PEM;     ;Pembroke;BM.PE;BM-PEM;BD05
+BM;Saint George's;BM.SC;BM-SGE;     ;Saint George's;BM.SC;BM-SGE;BD07
+BM;Sandys;BM.SA;BM-SAN;     ;Sandys;BM.SA;BM-SAN;BD08
+BM;Southampton;BM.SO;BM-SOU;     ;Southampton;BM.SO;BM-SOU;BD10
+BM;Warwick;BM.WA;BM-WAR;     ;Warwick;BM.WA;BM-WAR;BD11
+BR;São Paulo;BR.SP;BR-SP;BR32;São Paulo;BR.SP;BR-SP;BR27
+BR;Acre;BR.;BR-AC;BR01;Acre;BR.AC;BR-AC;BR01
+BR;Rondônia;BR.;BR-RO;BR24;Rondônia;BR.RO;BR-RO;BR24
+BS;New Providence;BS.NW;BS-;     ;New Providence;BS.NW;BS-;
+BS;West Grand Bahama;BS.WG;BS-WG;BF54;West Grand Bahama;BS.WB;BS-WG;BF54
+BS;East Grand Bahama;BS.EG;BS-EG;BF41;East Grand Bahama;BS.EB;BS-EG;BF41
+BS;North Abaco;BS.NO;BS-NO;BF46;North Abaco;BS.NA;BS-NO;BF46
+BS;Central Abaco;BS.CO;BS-CO;BF37;Central Abaco;BS.CB;BS-CO;BF37
+BS;South Abaco;BS.SO;BS-SO;BF50;South Abaco;BS.SB;BS-SO;BF50
+BS;Berry Islands;BS.BY;BS-BY;BF32;Berry Islands;BS.BR;BS-BY;BF32
+BS;North Andros;BS.NS;BS-NS;BF47;North Andros;BS.NN;BS-NS;BF47
+BS;Central Andros;BS.CS;BS-CS;BF38;Central Andros;BS.CN;BS-CS;BF38
+BS;South Andros;BS.SA;BS-SA;BF51;South Andros;BS.SN;BS-SA;BF51
+BS;Exuma;BS.EX;BS-EX;BF10;Exuma;BS.EM;BS-EX;BF10
+BS;Harbour Island;BS.HI;BS-HI;BF22;Harbour Island;BS.HB;BS-HI;BF22
+BT;Gasa;BT.GA;BT-GA;BT15;Gasa;BT.GA;BT-GA;BT23
+BT;Punakha;BT.PN;BT-23;BT00;Punakha;BT.PN;BT-23;BT15
+BT;Tashi Yangtse;BT.TY;BT-TY;BT00;Tashi Yangtse;BT.TY;BT-TY;BT24
+BT;Wangdi Phodrang;BT.WP;BT-;BT22;Wangdi Phodrang;BT.WP;BT-24;BT22
+BW;North-West;BW.NW;BW-NW;BC08;North-West;BW.NC;BW-NW;BC11
+BW;Central;BW.CE;BW-CE;BC01;Central;BW.CT;BW-CE;BC01
+BW;Southern;BW.SO;BW-SO;BC10;Southern;BW.SN;BW-SO;BC10
+BW;North-East;BW.NE;BW-NE;BC08;North-East;BW.NR;BW-NE;BC08
+BW;Gaborone;BW.;BW-;BC;Gaborone;BW.GB;BW-GA;BC14
+BW;Francistown;BW.;BW-;BC;Francistown;BW.FR;BW-FR;BC13
+BW;Lobatse;BW.;BW-;BC;Lobatse;BW.LB;BW-LO;BC16
+BW;Jwaneng;BW.;BW-;BC;Jwaneng;BW.JW;BW-JW;BC15
+BY;Mogilev;BY.MA;BY-MA;BO04;Mogilev;BY.MA;BY-MA;BO06
+BY;Minsk;BY.MI;BY-MI;BO06;Minsk;BY.MI;BY-MI;BO05
+CA;Nunavut;CA.NU;CA-NU;CA10;Nunavut;CA.NU;CA-NU;CA14
+CD;Équateur;CD.EQ;CD-EQ;CG02;Équateur;CD.ET;CD-EQ;CG02
+CD;Sud-Kivu;CD.KV;CD-SK;CG12;Sud-Kivu;CD.SK;CD-SK;CG12
+CD;Maniema;CD.;CD-MA;     ;Maniema;CD.MN;CD-MA;     
+CD;Nord-Kivu;CD.;CD-NK;CG11;Nord-Kivu;CD.NK;CD-NK;CG11
+CG;Cuvette-Ouest;CG.CO;CG-15;CF10;Cuvette-Ouest;CG.CO;CG-15;CF14
+CG;Kouilou;CG.KO;CG-5;CF04;Kouilou;CG.KL;CG-5;CF04
+CH;Vaud;CH.VD;CH-VD;SZ06;Vaud;CH.VD;CH-VD;SZ23
+CH;Basel-Landschaft;CH.BS;CH-BL;SZ05;Basel-Landschaft;CH.BL;CH-BL;SZ03
+CH;Basel-Stadt;CH.BS;CH-BS;SZ03;Basel-Stadt;CH.BS;CH-BS;SZ04
+CH;Solothurn;CH.;CH-;SZ18;Solothurn;CH.SO;CH-;SZ18
+CH;Obwalden;CH.NW;CH-OW;SZ14;Obwalden;CH.OW;CH-OW;SZ14
+CI;Savanes;CI.;CI-;     ;Savanes;CI.SV;CI-SV;IV87
+CI;Denguélé;CI.DE;CI-;IV23;Denguélé;CI.DE;CI-DN;IV77
+CI;Bas-Sassandra;CI.BS.SO;CI-;IV32;Bas-Sassandra;CI.BA;CI-BS;IV76
+CI;Zanzan;CI.ZA;CI-;IV11;Zanzan;CI.ZA;CI-ZZ;IV92
+CI;Vallée du Bandama;CI.VB;CI-;IV20;Vallée du Bandama;CI.VB;CI-VB;IV90
+CI;Lagunes;CI.LG.AB;CI-;IV61;Lagunes;CI.LN;CI-LG;IV82
+CI;Lacs;CI.LC.TM;CI-;IV56;Lacs;CI.LA;CI-LC;IV81
+CL;Tarapacá;CL.TA;CL-TA;CI13;Tarapacá;CL.TP;CL-TA;CI15
+CL;Los Ríos;CL.AR;CL-LR;CI09;Los Ríos;CL.LR;CL-LR;CI17
+CL;Los Lagos;CL.LL;CL-LL;CI09;Los Lagos;CL.LG;CL-LL;CI14
+CL;Maule;CL.ML;CL-ML;CI06;Maule;CL.ML;CL-ML;CI11
+CN;Qinghai;CN.QH;CN-63;     ;Qinghai;CN.QH;CN-63;CH06
+CO;San Andrés y Providencia;CO.SA;CO-;CO17;San Andrés y Providencia;CO.SA;CO-SAP;CO25
+CO;Cundinamarca;CO.CU;CO-CUN;     ;Cundinamarca;CO.CU;CO-CUN;CO33
+CO;Valle del Cauca;CO.VC;CO-VAC;CO11;Valle del Cauca;CO.VC;CO-VAC;CO29
+CO;Magdalena;CO.MA;CO-MAG;CO18;Magdalena;CO.MA;CO-MAG;CO38
+CO;Arauca;CO.AR;CO-;CO03;Arauca;CO.AR;CO-ARA;CO03
+CU;Pinar del Río;CU.PR;CU-01;CU01;Pinar del Río;CU.PD;CU-01;CU01
+CU;Ciego de Ávila;CU.CA;CU-08;CU05;Ciego de Ávila;CU.CA;CU-08;CU07
+CU;Artemisa;CU.AR;CU-;CU17;Artemisa;CU.AR;CU-15;CU17
+CU;Mayabeque;CU.MQ;CU-;CU18;Mayabeque;CU.MQ;CU-16;CU18
+CV;São Filipe;CV.SF;CV-SF;CV18;São Filipe;CV.FP;CV-SF;CV18
+CV;Tarrafal;CV.TA;CV-TA;CV20;Tarrafal;CV.TF;CV-TA;CV20
+CV;Santa Catarina;CV.CA;CV-CA;CV15;Santa Catarina;CV.CT;CV-CA;CV15
+CV;Santa Cruz;CV.CR;CV-CR;CV16;Santa Cruz;CV.CZ;CV-CR;CV16
+CV;São Lourenço dos Órgãos;CV.SO;CV-SO;CV25;São Lourenço dos Órgãos;CV.LO;CV-SO;CV25
+CV;Praia;CV.PR;CV-PR;CV14;Praia;CV.PC;CV-PR;CV14
+CW;Curaçao;CW.;CW-;     ;Curaçao;CW.CU;CW-;     
+CY;Limassol;CY.LI;CY-;CY05;Limassol;CY.LI;CY-02;CY05
+CZ;Ústecký;CZ.;CZ-US;     ;Ústecký;CZ.UK;CZ-US;EZ89
+CZ;Plzeňský;CZ.;CZ-PL;     ;Plzeňský;CZ.PK;CZ-PL;EZ87
+CZ;Jihomoravský;CZ.;CZ-JM;     ;Jihomoravský;CZ.BK;CZ-JM;EZ78
+CZ;Zlínský;CZ.;CZ-ZL;     ;Zlínský;CZ.ZK;CZ-ZL;EZ90
+CZ;Olomoucký;CZ.;CZ-OL;     ;Olomoucký;CZ.OK;CZ-OL;EZ84
+CZ;Pardubický;CZ.;CZ-PA;     ;Pardubický;CZ.EK;CZ-PA;EZ86
+CZ;Karlovarský;CZ.KK;CZ-KA;EZ09;Karlovarský;CZ.KK;CZ-KA;EZ81
+CZ;Jihočeský;CZ.CK;CZ-JC;EZ01;Jihočeský;CZ.CK;CZ-JC;EZ79
+CZ;Vysočina;CZ.JK;CZ-VY;EZ02;Vysočina;CZ.JK;CZ-VY;EZ80
+CZ;Středočeský;CZ.SK;CZ-ST;EZ05;Středočeský;CZ.SK;CZ-ST;EZ88
+CZ;Liberecký;CZ.LK;CZ-LI;EZ03;Liberecký;CZ.LK;CZ-LI;EZ83
+CZ;Královéhradecký;CZ.HK;CZ-KR;EZ07;Královéhradecký;CZ.HK;CZ-KR;EZ82
+CZ;Moravskoslezský;CZ.VK;CZ-MO;PL04;Moravskoslezský;CZ.VK;CZ-MO;EZ85
+DE;Brandenburg;DE.;DE-BB;GM11;Brandenburg;DE.BB;DE-BB;GM11
+DJ;Arta;DJ.;DJ-AR;     ;Arta;DJ.AR;DJ-AR;DJ08
+DK;Sjaælland;DK.;DK-85;     ;Zealand;DK.SL;DK-85;DA20
+DO;Santo Domingo;DO.SD;DO-32;DR00;Santo Domingo;DO.SD;DO-32;DR37
+DO;Independencia;DO.IN;DO-10;DR;Independencia;DO.IN;DO-10;DR09
+DO;San José de Ocoa;DO.JO;DO-31;DR00;San José de Ocoa;DO.JO;DO-31;DR36
+DO;San Cristóbal;DO.CR;DO-;DR33;San Cristóbal;DO.CR;DO-21;DR33
+DO;Distrito Nacional;DO.NC;DO-;DR34;Distrito Nacional;DO.NC;DO-01;DR34
+DZ;Tindouf;DZ.TN;DZ-37;AG54;Tiaret;DZ.TR;DZ-14;AG13
+DZ;El Oued;DZ.;DZ-;     ;El Oued;DZ.EO;DZ-39;AG43
+DZ;Bordj Bou Arréridj;DZ.BB;DZ-;AG39;Bordj Bou Arréridj;DZ.BB;DZ-34;AG39
+DZ;M'Sila;DZ.MS;DZ-28;AG32;Msila;DZ.MS;DZ-28;AG27
+DZ;Constantine;DZ.CO;DZ-25;AG48;Constantine;DZ.CO;DZ-25;AG04
+DZ;Tébessa;DZ.TB;DZ-;AG33;Tébessa;DZ.TB;DZ-12;AG33
+EC;Guayas;EC.GU;EC-G;EC10;Guayas;EC.GY;EC-G;EC10
+EC;Orellana;EC.NA;EC-D;EC24;Orellana;EC.OR;EC-D;EC24
+EC;Pichincha;EC.PI;EC-;EC19;Pichincha;EC.PC;EC-P;EC18
+EC;Napo;EC.;EC-N;     ;Napo;EC.NA;EC-N;EC23
+EC;Tungurahua;EC.TU;EC-T;EC23;Tungurahua;EC.TU;EC-T;EC19
+ER;Anseba;ER.AN;ER-AN;ER05;Anseba;ER.AN;ER-AN;ER01
+ER;Debub;ER.DU;ER-DU;ER06;Debub;ER.DU;ER-DU;ER02
+ER;Semenawi Keyih Bahri;ER.SK;ER-SK;ER01;Semenawi Keyih Bahri;ER.SK;ER-SK;ER06
+ER;Maekel;ER.MA;ER-;ER02;Maekel;ER.MA;ER-;ER05
+ER;Debubawi Keyih Bahri;ER.DK;ER-DK;DJ04;Debubawi Keyih Bahri;ER.DK;ER-DK;ER03
+ES;Álava;ES.PV;ES-VI;SP94;Álava;ES.PV.AA;ES-VI;SP01
+ES;Albacete;ES.CM;ES-AB;SP84;Albacete;ES.CM.AB;ES-AB;SP02
+ES;Alicante;ES.VC;ES-A;SP89;Alicante;ES.VC.AN;ES-A;SP03
+ES;Almería;ES.AN;ES-AL;SP80;Almería;ES.AN.AM;ES-AL;SP04
+ES;Asturias;ES.AS;ES-O;SP95;Asturias;ES.AS.AS;ES-O;SP34
+ES;Ávila;ES.CL;ES-AV;SP85;Ávila;ES.CL.AV;ES-AV;SP05
+ES;Badajoz;ES.EX;ES-BA;SP90;Badajoz;ES.EX.BD;ES-BA;SP06
+ES;Baleares;ES.PM;ES-PM;SP07;Baleares;ES.PM.BL;ES-PM;SP07
+ES;Barcelona;ES.CT;ES-B;SP86;Barcelona;ES.CT.BR;ES-B;SP08
+ES;Burgos;ES.CL;ES-BU;SP85;Burgos;ES.CL.BU;ES-BU;SP09
+ES;Cáceres;ES.EX;ES-CC;SP90;Cáceres;ES.EX.CC;ES-CC;SP10
+ES;Cádiz;ES.AN;ES-CA;SP80;Cádiz;ES.AN.CD;ES-CA;SP11
+ES;Cantabria;ES.CB;ES-S;SP85;Cantabria;ES.CB.CN;ES-S;SP39
+ES;Castellón;ES.VC;ES-CS;SP89;Castellón;ES.VC.CS;ES-CS;SP12
+ES;Ceuta;ES.CE;ES-CE;SP00;Ceuta;ES.CE.CE;ES-CE;
+ES;Ciudad Real;ES.CM;ES-;SP84;Ciudad Real;ES.CM.CR;ES-CR;SP13
+ES;Córdoba;ES.AN;ES-CO;SP80;Córdoba;ES.AN.CO;ES-CO;SP14
+ES;Cuenca;ES.CM;ES-CU;SP84;Cuenca;ES.CM.CU;ES-CU;SP15
+ES;Granada;ES.AN;ES-GR;SP80;Granada;ES.AN.GD;ES-GR;SP17
+ES;Guadalajara;ES.CM;ES-GU;SP84;Guadalajara;ES.CM.GJ;ES-GU;SP18
+ES;Huelva;ES.AN;ES-H;SP80;Huelva;ES.AN.HL;ES-H;SP20
+ES;Huesca;ES.AR;ES-HU;SP81;Huesca;ES.AR.HS;ES-HU;SP21
+ES;Jaén;ES.AN;ES-J;SP80;Jaén;ES.AN.JA;ES-J;SP22
+ES;La Rioja;ES.LO;ES-LO;SP85;La Rioja;ES.LO.LR;ES-LO;SP27
+ES;Las Palmas;ES.CN;ES-GC;     ;Las Palmas;ES.CN.LP;ES-GC;SP24
+ES;León;ES.CL;ES-LE;SP85;León;ES.CL.LN;ES-LE;SP25
+ES;Lugo;ES.GA;ES-LU;SP91;Lugo;ES.GA.LG;ES-LU;SP28
+ES;Madrid;ES.MD;ES-;SP87;Madrid;ES.MD.MD;ES-M;SP29
+ES;Málaga;ES.AN;ES-MA;SP80;Málaga;ES.AN.MG;ES-MA;SP30
+ES;Melilla;ES.CE;ES-ML;SP00;Melilla;ES.ML.ME;ES-ML;
+ES;Murcia;ES.MU;ES-MU;SP96;Murcia;ES.MU.MR;ES-MU;SP31
+ES;Navarra;ES.NA;ES-NA;SP88;Navarra;ES.NA.NV;ES-NA;SP32
+ES;Palencia;ES.CL;ES-P;SP85;Palencia;ES.CL.PL;ES-P;SP35
+ES;Pontevedra;ES.GA;ES-PO;SP91;Pontevedra;ES.GA.PV;ES-PO;SP36
+ES;Salamanca;ES.CL;ES-SA;SP85;Salamanca;ES.CL.SL;ES-SA;SP37
+ES;Santa Cruz de Tenerife;ES.CN;ES-TF;     ;Santa Cruz de Tenerife;ES.CN.SC;ES-TF;SP38
+ES;Segovia;ES.CL;ES-SG;SP85;Segovia;ES.CL.SG;ES-SG;SP40
+ES;Sevilla;ES.AN;ES-SE;SP80;Sevilla;ES.AN.SV;ES-SE;SP41
+ES;Soria;ES.CL;ES-SO;SP85;Soria;ES.CL.SR;ES-SO;SP42
+ES;Tarragona;ES.CT;ES-T;SP86;Tarragona;ES.CT.TG;ES-T;SP43
+ES;Teruel;ES.AR;ES-TE;SP81;Teruel;ES.AR.TE;ES-TE;SP44
+ES;Toledo;ES.CM;ES-TO;SP84;Toledo;ES.CM.TD;ES-TO;SP45
+ES;Valencia;ES.VC;ES-;SP89;Valencia;ES.VC.VN;ES-V;SP46
+ES;Valladolid;ES.CL;ES-VA;SP85;Valladolid;ES.CL.VD;ES-VA;SP47
+ES;Bizkaia;ES.PV;ES-BI;SP94;Vizcaya;ES.PV.VZ;ES-BI;SP48
+ES;Zamora;ES.CL;ES-ZA;SP85;Zamora;ES.CL.ZM;ES-ZA;SP49
+ES;Zaragoza;ES.AR;ES-Z;SP81;Zaragoza;ES.AR.ZG;ES-Z;SP50
+ET;Tigray;ET.TI;ET-TI;ET06;Tigray;ET.TI;ET-TI;ET53
+ET;Afar;ET.AF;ET-AF;ET26;Afar;ET.AF;ET-AF;ET45
+ET;Somali;ET.SO;ET-SO;ET48;Somali;ET.SO;ET-SO;ET52
+FI;Lapland;FI.;FI-10;     ;Lapland;FI.LA;FI-10;FI26
+FI;Central Finland;FI.;FI-08;     ;Central Finland;FI.CF;FI-08;FI24
+FI;Kainuu;FI.;FI-05;     ;Kainuu;FI.KA;FI-05;FI22
+FI;Central Ostrobothnia;FI.;FI-07;     ;Central Ostrobothnia;FI.CO;FI-07;FI23
+FI;Ostrobothnia;FI.;FI-12;     ;Ostrobothnia;FI.OS;FI-12;FI29
+FI;Päijät-Häme;FI.;FI-16;     ;Päijät-Häme;FI.PH;FI-16;FI27
+FI;Tavastia Proper;FI.;FI-06;     ;Kanta-Häme;FI.KH;FI-06;FI20
+FI;Kymenlaakso;FI.;FI-09;     ;Kymenlaakso;FI.KY;FI-09;FI25
+FI;South Karelia;FI.;FI-02;     ;South Karelia;FI.SK;FI-02;FI17
+FI;North Karelia;FI.;FI-13;     ;North Karelia;FI.NK;FI-13;FI30
+FI;Satakunta;FI.;FI-17;     ;Satakunta;FI.SA;FI-17;FI32
+FI;Uusimaa;FI.;FI-18;     ;Uusimaa;FI.US;FI-18;FI35
+FJ;Eastern;FJ.CE;FJ-E;FJ02;Eastern;FJ.EA;FJ-E;FJ02
+FJ;Northern;FJ.W;FJ-N;FJ03;Northern;FJ.NO;FJ-N;FJ03
+FJ;Western;FJ.W;FJ-W;FJ05;Western;FJ.WE;FJ-W;FJ05
+FK;Falkland Islands;FK;FK-;     ;Falkland Islands;FK.FK;FK-;     
+FR;Ain;FR.AI;FR-01;FRB9;Ain;FR.AR.AI;FR-01;FR01
+FR;Aisne;FR.AS;FR-02;FRB6;Aisne;FR.NC.AS;FR-02;FR02
+FR;Allier;FR.AL;FR-03;FR98;Allier;FR.AR.AL;FR-03;FR03
+FR;Alpes-de-Haute-Provence;FR.AP;FR-04;FRB8;Alpes-de-Haute-Provence;FR.PR.AP;FR-04;FR12
+FR;Alpes-Maritimes;FR.AM;FR-06;FRB8;Alpes-Maritimes;FR.PR.AM;FR-06;FR04
+FR;Ardèche;FR.AH;FR-07;FRB9;Ardèche;FR.AR.AH;FR-07;FR05
+FR;Ardennes;FR.AN;FR-08;FRA4;Ardennes;FR.AO.AN;FR-08;FR06
+FR;Ariège;FR.AG;FR-09;FRB3;Ariège;FR.LP.AG;FR-09;FR07
+FR;Aube;FR.AB;FR-10;FRA4;Aube;FR.AO.AB;FR-10;FR08
+FR;Aude;FR.AD;FR-11;FRA9;Aude;FR.LP.AD;FR-11;FR09
+FR;Aveyron;FR.AV;FR-12;FRB3;Aveyron;FR.LP.AV;FR-12;FR10
+FR;Bas-Rhin;FR.BR;FR-67;FR96;Bas-Rhin;FR.AO.BR;FR-67;FR11
+FR;Bouches-du-Rhône;FR.BD;FR-13;FRB8;Bouches-du-Rhône;FR.PR.BD;FR-13;FR15
+FR;Calvados;FR.CV;FR-14;FR99;Calvados;FR.ND.CV;FR-14;FR16
+FR;Cantal;FR.CL;FR-15;FR98;Cantal;FR.AR.CL;FR-15;FR17
+FR;Charente;FR.CT;FR-;FRB7;Charente;FR.AC.CT;FR-16;FR18
+FR;Charente-Maritime;FR.CM;FR-17;FRB7;Charente-Maritime;FR.AC.CM;FR-17;FR19
+FR;Cher;FR.CH;FR-18;FRA3;Cher;FR.CN.CH;FR-18;FR20
+FR;Corrèze;FR.CZ;FR-19;FRB1;Corrèze;FR.AC.CZ;FR-19;FR21
+FR;Corse-du-Sud;FR.CS;FR-2A;FR14;Corse-du-Sud;FR.CE.CS;FR-2A;FR90
+FR;Côte-d'Or;FR.CO;FR-21;FRA1;Côte-d'Or;FR.BF.CO;FR-21;FR22
+FR;Côtes-d'Armor;FR.CA;FR-22;FRA2;Côtes-d'Armor;FR.BT.CA;FR-22;FR23
+FR;Creuse;FR.CR;FR-23;FRB1;Creuse;FR.AC.CR;FR-23;FR24
+FR;Deux-Sèvres;FR.DS;FR-79;FRB7;Deux-Sèvres;FR.AC.DS;FR-79;FR25
+FR;Dordogne;FR.DD;FR-24;FR97;Dordogne;FR.AC.DD;FR-24;FR26
+FR;Doubs;FR.DB;FR-25;FRA6;Doubs;FR.BF.DB;FR-25;FR27
+FR;Drôme;FR.DM;FR-26;FRB9;Drôme;FR.AR.DM;FR-26;FR28
+FR;Essonne;FR.ES;FR-91;FRA8;Essonne;FR.IF.ES;FR-91;FR79
+FR;Eure;FR.EU;FR-27;FRA7;Eure;FR.ND.EU;FR-27;FR29
+FR;Eure-et-Loir;FR.EL;FR-28;FRA3;Eure-et-Loir;FR.CN.EL;FR-28;FR30
+FR;Finistère;FR.FI;FR-29;FRA2;Finistère;FR.BT.FI;FR-29;FR31
+FR;Gard;FR.GA;FR-;FRA9;Gard;FR.LP.GA;FR-30;FR32
+FR;Gers;FR.GE;FR-32;FRB3;Gers;FR.LP.GE;FR-32;FR33
+FR;Gironde;FR.GI;FR-33;FR97;Gironde;FR.AC.GI;FR-33;FR34
+FR;Haute-Corse;FR.HC;FR-2B;FR14;Haute-Corse;FR.CE.HC;FR-2B;FR96
+FR;Haute-Garonne;FR.HG;FR-31;FRB3;Haute-Garonne;FR.LP.HG;FR-31;FR35
+FR;Haute-Loire;FR.HL;FR-43;FR98;Haute-Loire;FR.AR.HL;FR-43;FR36
+FR;Haute-Marne;FR.HM;FR-52;FRA4;Haute-Marne;FR.AO.HM;FR-52;FR37
+FR;Haute-Saône;FR.HN;FR-70;FRA6;Haute-Saône;FR.BF.HN;FR-70;FR39
+FR;Haute-Savoie;FR.HS;FR-74;FRB9;Haute-Savoie;FR.AR.HS;FR-74;FR40
+FR;Haute-Vienne;FR.HV;FR-87;FRB1;Haute-Vienne;FR.AC.HV;FR-87;FR42
+FR;Hautes-Alpes;FR.HA;FR-05;FRB8;Hautes-Alpes;FR.PR.HA;FR-05;FR38
+FR;Hautes-Pyrénées;FR.HP;FR-65;FRB3;Hautes-Pyrénées;FR.LP.HP;FR-65;FR41
+FR;Hauts-de-Seine;FR.HD;FR-92;FRA8;Hauts-de-Seine;FR.IF.HD;FR-92;FR77
+FR;Hérault;FR.HE;FR-34;FRA9;Hérault;FR.LP.HE;FR-34;FR44
+FR;Ille-et-Vilaine;FR.IV;FR-;FRA2;Ille-et-Vilaine;FR.BT.IV;FR-35;FR45
+FR;Indre;FR.IN;FR-36;FRA3;Indre;FR.CN.IN;FR-36;FR46
+FR;Indre-et-Loire;FR.IL;FR-37;FRA3;Indre-et-Loire;FR.CN.IL;FR-37;FR47
+FR;Isère;FR.IS;FR-38;FRB9;Isère;FR.AR.IS;FR-38;FR48
+FR;Jura;FR.JU;FR-39;FRA6;Jura;FR.BF.JU;FR-39;FR49
+FR;Landes;FR.LD;FR-40;FR97;Landes;FR.AC.LD;FR-40;FR50
+FR;Loir-et-Cher;FR.LC;FR-41;FRA3;Loir-et-Cher;FR.CN.LC;FR-41;FR54
+FR;Loire;FR.LR;FR-42;FRB9;Loire;FR.AR.LR;FR-42;FR51
+FR;Loire-Atlantique;FR.LA;FR-44;FRA5;Loire-Atlantique;FR.PL.LA;FR-44;FR52
+FR;Loiret;FR.LT;FR-45;FRA3;Loiret;FR.CN.LT;FR-45;FR53
+FR;Lot;FR.LO;FR-46;FRB3;Lot;FR.LP.LO;FR-46;FR55
+FR;Lot-et-Garonne;FR.LG;FR-47;FR97;Lot-et-Garonne;FR.AC.LG;FR-47;FR56
+FR;Lozère;FR.LZ;FR-48;FRA9;Lozère;FR.LP.LZ;FR-48;FR57
+FR;Maine-et-Loire;FR.ML;FR-49;FRA5;Maine-et-Loire;FR.PL.ML;FR-49;FR58
+FR;Manche;FR.MH;FR-50;FR99;Manche;FR.ND.MH;FR-50;FR59
+FR;Marne;FR.MR;FR-51;FRA4;Marne;FR.AO.MR;FR-51;FR60
+FR;Mayenne;FR.MY;FR-;FRA5;Mayenne;FR.PL.MY;FR-53;FR61
+FR;Meuse;FR.MS;FR-55;FRB2;Meuse;FR.AO.MS;FR-55;FR63
+FR;Morbihan;FR.MB;FR-56;FRA2;Morbihan;FR.BT.MB;FR-56;FR64
+FR;Moselle;FR.MO;FR-57;FRB2;Moselle;FR.AO.MO;FR-57;FR65
+FR;Nièvre;FR.NI;FR-58;FRA1;Nièvre;FR.BF.NI;FR-58;FR66
+FR;Nord;FR.NO;FR-59;FRB4;Nord;FR.NC.NO;FR-59;FR67
+FR;Oise;FR.OI;FR-60;FRB6;Oise;FR.NC.OI;FR-60;FR68
+FR;Orne;FR.OR;FR-61;FR99;Orne;FR.ND.OR;FR-61;FR69
+FR;Paris;FR.VP;FR-75;FRA8;Ville de Paris;FR.IF.VP;FR-75;FR94
+FR;Pas-de-Calais;FR.PC;FR-62;FRB4;Pas-de-Calais;FR.NC.PC;FR-62;FR70
+FR;Puy-de-Dôme;FR.PD;FR-63;FR98;Puy-de-Dôme;FR.AR.PD;FR-63;FR71
+FR;Pyrénées-Atlantiques;FR.PA;FR-64;FR97;Pyrénées-Atlantiques;FR.AC.PA;FR-64;FR13
+FR;Pyrénées-Orientales;FR.PO;FR-66;FRA9;Pyrénées-Orientales;FR.LP.PO;FR-66;FR72
+FR;Rhône;FR.RH;FR-69;FRB9;Rhône;FR.AR.RH;FR-69;FR73
+FR;Saône-et-Loire;FR.SL;FR-71;FRA1;Saône-et-Loire;FR.BF.SL;FR-71;FR74
+FR;Sarthe;FR.ST;FR-;FRA5;Sarthe;FR.PL.ST;FR-72;FR75
+FR;Savoie;FR.SV;FR-V;FRB9;Savoie;FR.AR.SV;FR-73;FR76
+FR;Seine-Maritime;FR.SM;FR-76;FRA7;Seine-Maritime;FR.ND.SM;FR-76;FR80
+FR;Seine-Saint-Denis;FR.SS;FR-93;FRA8;Seine-Saint-Denis;FR.IF.SS;FR-93;FR91
+FR;Somme;FR.SO;FR-80;FRB6;Somme;FR.NC.SO;FR-80;FR81
+FR;Tarn;FR.TA;FR-81;FRB3;Tarn;FR.LP.TA;FR-81;FR82
+FR;Tarn-et-Garonne;FR.TG;FR-82;FRB3;Tarn-et-Garonne;FR.LP.TG;FR-82;FR83
+FR;Territoire de Belfort;FR.TB;FR-90;FRA6;Territoire de Belfort;FR.BF.TB;FR-90;FR14
+FR;Val-d'Oise;FR.VO;FR-95;FRA8;Val-d'Oise;FR.IF.VO;FR-95;FR93
+FR;Val-de-Marne;FR.VM;FR-94;FRA8;Val-de-Marne;FR.IF.VM;FR-94;FR92
+FR;Var;FR.VR;FR-83;FRB8;Var;FR.PR.VR;FR-83;FR84
+FR;Vaucluse;FR.VC;FR-84;FRB8;Vaucluse;FR.PR.VC;FR-84;FR85
+FR;Vendée;FR.VD;FR-85;FRA5;Vendée;FR.PL.VD;FR-85;FR86
+FR;Vienne;FR.VN;FR-86;FRB7;Vienne;FR.AC.VN;FR-86;FR87
+FR;Vosges;FR.VG;FR-88;FRB2;Vosges;FR.AO.VG;FR-88;FR88
+FR;Yonne;FR.YO;FR-;FRA1;Yonne;FR.BF.YO;FR-89;FR89
+FR;Yvelines;FR.YV;FR-78;FRA8;Yvelines;FR.IF.YV;FR-78;FR95
+GB;East Ayrshire;GB.EA;GB-EAY;UK87;East Ayrshire;GB.EA;GB-EAY;UKU4
+GB;East Dunbartonshire;GB.ED;GB-EDU;UK87;East Dunbartonshire;GB.ED;GB-EDU;UKU5
+GB;East Renfrewshire;GB.ER;GB-ERW;UK87;East Renfrewshire;GB.ER;GB-ERW;UKU7
+GB;Glasgow;GB.GG;GB-GLG;UK87;Glasgow;GB.GG;GB-GLG;UKV2
+GB;Inverclyde;GB.IC;GB-IVC;UK87;Inverclyde;GB.IC;GB-IVC;UKV4
+GB;North Lanarkshire;GB.NN;GB-NLK;UK87;North Lanarkshire;GB.NN;GB-NLK;UKV8
+GB;Renfrewshire;GB.RF;GB-RFW;UK87;Renfrewshire;GB.RF;GB-RFW;UKW2
+GB;South Ayrshire;GB.SA;GB-SAY;UK87;South Ayrshire;GB.SA;GB-SAY;UKW4
+GB;South Lanarkshire;GB.SL;GB-SLK;UK87;South Lanarkshire;GB.SL;GB-SLK;UKW5
+GB;West Dunbartonshire;GB.WD;GB-WDU;UK87;West Dunbartonshire;GB.WD;GB-WDU;UKW7
+GB;Aberdeen;GB.AR;GB-;UK82;Aberdeen;GB.AR;GB-ABE;UKT5
+GB;Aberdeenshire;GB.AS;GB-ABD;UK82;Aberdeenshire;GB.AS;GB-ABD;UKT6
+GB;Moray;GB.MO;GB-MRY;UK82;Moray;GB.MO;GB-MRY;UKV6
+GB;Falkirk;GB.FK;GB-FAL;UK79;Falkirk;GB.FK;GB-FAL;UKU9
+GB;Stirling;GB.ZG;GB-STG;UK79;Stirling;GB.ZG;GB-STG;UKW6
+GB;Clackmannanshire;GB.CC;GB-CLK;UK88;Clackmannanshire;GB.CC;GB-CLK;UKU1
+GB;Perthshire and Kinross;GB.;GB-PKN;UK88;Perthshire and Kinross;GB.PK;GB-PKN;UKW1
+GB;Angus;GB.AG;GB-ANS;UK84;Angus;GB.AG;GB-ANS;UKT7
+GB;Dundee;GB.DU;GB-DND;UK84;Dundee;GB.DU;GB-DND;UKU3
+GB;Fife;GB.FI;GB-FIF;UK84;Fife;GB.FI;GB-FIF;UKV1
+GB;East Lothian;GB.EL;GB-ELN;UK84;East Lothian;GB.EL;GB-ELN;UKU6
+GB;Edinburgh;GB.EB;GB-;UK84;Edinburgh;GB.EB;GB-EDH;UKU8
+GB;Midlothian;GB.ML;GB-MLN;UK84;Edinburgh;GB.EB;GB-EDH;UKU8
+GB;West Lothian;GB.WH;GB-WLN;UK84;West Lothian;GB.WH;GB-WLN;UKW9
+GB;Scottish Borders;GB.BO;GB-SCB;UK78;Scottish Borders;GB.BO;GB-SCB;UKT9
+GB;Darlington;GB.DA;GB-DAL;UK13;Darlington;GB.DA;GB-DAL;UKD1
+GB;Durham;GB.DH;GB-DUR;UK13;Durham;GB.DH;GB-DUR;UKD8
+GB;Hartlepool;GB.HP;GB-HPL;UK07;Hartlepool;GB.HP;GB-HPL;UKF5
+GB;Middlesbrough;GB.MB;GB-MDB;UK07;Middlesbrough;GB.MB;GB-MDB;UKI5
+GB;Redcar and Cleveland;GB.RC;GB-RCC;UK07;Redcar and Cleveland;GB.RC;GB-RCC;UKK9
+GB;Stockton-on-Tees;GB.ZT;GB-STT;UK07;Stockton-on-Tees;GB.ZT;GB-STT;UKN3
+GB;Northumberland;GB.NB;GB-NBL;UK32;Northumberland;GB.NB;GB-NBL;UKJ6
+GB;Hampshire;GB.HA;GB-HAM;UK19;Hampshire;GB.HA;GB-HAM;UKF2
+GB;Southampton;GB.ZH;GB-STH;UK19;Southampton;GB.ZH;GB-STH;UKM4
+GB;Milton Keynes;GB.MK;GB-MIK;UK31;Milton Keynes;GB.MK;GB-MIK;UKI6
+GB;Gloucestershire;GB.GC;GB-GLS;UK16;Gloucestershire;GB.GC;GB-GLS;UKE6
+GB;Buckinghamshire;GB.BU;GB-;UK04;Buckinghamshire;GB.BU;GB-BKM;UKB9
+GB;Hertfordshire;GB.HT;GB-HRT;UK21;Hertfordshire;GB.HT;GB-HRT;UKF8
+GB;Bath and North East Somerset;GB.BN;GB-BAS;UK01;Bath and North East Somerset;GB.BN;GB-BAS;UKA4
+GB;Bristol;GB.BS;GB-;UK01;Bristol;GB.BS;GB-BST;UKB7
+GB;North Somerset;GB.NS;GB-NSM;UK01;North Somerset;GB.NS;GB-NSM;UKJ4
+GB;South Gloucestershire;GB.SJ;GB-SGC;UK01;South Gloucestershire;GB.SJ;GB-SGC;UKM6
+GB;Somerset;GB.SM;GB-SOM;UK36;Somerset;GB.SM;GB-SOM;UKM3
+GB;Devon;GB.DO;GB-DEV;UK11;Devon;GB.DO;GB-DEV;UKD4
+GB;Bournemouth;GB.BM;GB-BMH;UK12;Bournemouth;GB.BM;GB-BMH;UKB2
+GB;Dorset;GB.DS;GB-DOR;UK12;Dorset;GB.DS;GB-DOR;UKD6
+GB;Poole;GB.BM;GB-POL;UK12;Poole;GB.PL;GB-POL;UKK5
+GB;Cambridgeshire;GB.CM;GB-CAM;UK05;Cambridgeshire;GB.CM;GB-CAM;UKC3
+GB;Leicestershire;GB.;GB-LEC;UK26;Leicestershire;GB.LE;GB-LEC;UKH5
+GB;Kingston upon Hull;GB.KH;GB-;UK22;Kingston upon Hull;GB.KH;GB-KHL;UKG6
+GB;North East Lincolnshire;GB.NE;GB-NEL;UK22;North East Lincolnshire;GB.NE;GB-NEL;UKJ2
+GB;North Lincolnshire;GB.NL;GB-NLN;UK22;North Lincolnshire;GB.NL;GB-NLN;UKJ3
+GB;Derby;GB.DE;GB-DER;UK10;Derby;GB.DE;GB-DER;UKD2
+GB;Derbyshire;GB.DB;GB-DBY;UK10;Derbyshire;GB.DB;GB-DBY;UKD3
+GB;Lincolnshire;GB.LI;GB-LIN;UK32;Lincolnshire;GB.LI;GB-LIN;UKH7
+GB;Belfast;GB.BF;GB-BFS;UK58;Belfast;GB.BF;GB-BFS;UKR3
+GB;Carmarthenshire;GB.CI;GB-CMN;UK91;Carmarthenshire;GB.CI;GB-CMN;UKX7
+GB;Ceredigion;GB.;GB-;UK91;Ceredigion;GB.CG;GB-CGN;UKX6
+GB;Pembrokeshire;GB.PE;GB-PEM;UK91;Pembrokeshire;GB.PE;GB-PEM;UKY7
+GB;Halton;GB.HL;GB-;UK28;Halton;GB.HL;GB-HAL;UKE9
+GB;Cornwall;GB.CO;GB-CON;UK08;Cornwall;GB.CO;GB-CON;UKC6
+GB;Powys;GB.PO;GB-POW;UK95;Powys;GB.PO;GB-POW;UKY8
+GB;Bridgend;GB.BJ;GB-BGE;UK94;Bridgend;GB.BJ;GB-BGE;UKX3
+GB;Caerphilly;GB.CP;GB-CAY;UK94;Caerphilly;GB.CP;GB-CAY;UKX4
+GB;Merthyr Tydfil;GB.MT;GB-MTY;UK94;Merthyr Tydfil;GB.MT;GB-MTY;UKY3
+GB;Rhondda, Cynon, Taff;GB.RT;GB-RCT;UK94;Rhondda, Cynon, Taff;GB.RT;GB-RCT;UKY9
+GB;Cardiff;GB.CA;GB-CRF;UK96;Cardiff;GB.CA;GB-CRF;UKX5
+GB;Vale of Glamorgan;GB.VG;GB-VGL;UK96;Vale of Glamorgan;GB.VG;GB-VGL;UKZ3
+GB;Neath Port Talbot;GB.NP;GB-NTL;UK97;Neath Port Talbot;GB.NP;GB-NTL;UKY5
+GB;Swansea;GB.SW;GB-SWA;UK97;Swansea;GB.SW;GB-SWA;UKZ1
+GB;York;GB.YK;GB-YOR;UK30;York;GB.YK;GB-YOR;UKQ5
+GB;Telford and Wrekin;GB.TK;GB-TFW;UK35;Telford and Wrekin;GB.TK;GB-TFW;UKO2
+GB;Blackburn with Darwen;GB.BW;GB-BBD;UK25;Blackburn with Darwen;GB.BW;GB-BBD;UKA8
+GB;Lancashire;GB.LA;GB-LAN;UK25;Lancashire;GB.LA;GB-LAN;UKH2
+GB;East Riding of Yorkshire;GB.EY;GB-ERY;UK22;East Riding of Yorkshire;GB.EY;GB-ERY;UKE1
+GB;Denbighshire;GB.DI;GB-;UK90;Denbighshire;GB.DI;GB-DEN;UKX9
+GB;Flintshire;GB.FL;GB-FLN;UK90;Flintshire;GB.FL;GB-FLN;UKY1
+GB;Wrexham;GB.WX;GB-WRX;UK90;Wrexham;GB.WX;GB-WRX;UKZ4
+GB;Anglesey;GB.AY;GB-;UK93;Anglesey;GB.AY;GB-AGY;UKX1
+GB;Conwy;GB.CW;GB-CWY;UK93;Conwy;GB.CW;GB-CWY;UKX8
+GB;Gwynedd;GB.GD;GB-GWN;UK93;Gwynedd;GB.GD;GB-GWN;UKY2
+GB;Blaenau Gwent;GB.BG;GB-BGW;UK92;Blaenau Gwent;GB.BG;GB-BGW;UKX2
+GB;Monmouthshire;GB.MM;GB-MON;UK92;Monmouthshire;GB.MM;GB-MON;UKY4
+GB;Newport;GB.NO;GB-NWP;UK92;Newport;GB.NO;GB-NWP;UKY6
+GB;Torfaen;GB.TF;GB-TOF;UK92;Torfaen;GB.TF;GB-TOF;UKZ2
+GB;Dumfries and Galloway;GB.DG;GB-DGY;UK80;Dumfries and Galloway;GB.DG;GB-DGY;UKU2
+GB;Cumbria;GB.CU;GB-CMA;UK09;Cumbria;GB.CU;GB-CMA;UKC9
+GB;North Yorkshire;GB.NY;GB-NYK;UK30;North Yorkshire;GB.NY;GB-NYK;UKJ7
+GB;Plymouth;GB.DO;GB-PLY;UK08;Plymouth;GB.PM;GB-PLY;UKK4
+GB;Torbay;GB.TB;GB-TOB;UK11;Torbay;GB.TB;GB-TOB;UKO4
+GB;Essex;GB.EX;GB-ESS;UK15;Essex;GB.EX;GB-ESS;UKE4
+GB;Suffolk;GB.SF;GB-;UK39;Suffolk;GB.SF;GB-SFK;UKN5
+GB;Norfolk;GB.NF;GB-NFK;UK29;Norfolk;GB.NF;GB-NFK;UKI9
+GB;Brighton and Hove;GB.BH;GB-BNH;UK44;Brighton and Hove;GB.BH;GB-BNH;UKB6
+GB;Thurrock;GB.TR;GB-THR;UK15;Thurrock;GB.TR;GB-THR;UKO3
+GB;East Sussex;GB.ES;GB-ESX;UK14;East Sussex;GB.ES;GB-ESX;UKE2
+GB;Medway;GB.MW;GB-MDW;UK24;Medway;GB.MW;GB-MDW;UKI3
+GB;Southend-on-Sea;GB.SS;GB-SOS;UK24;Southend-on-Sea;GB.SS;GB-SOS;UKM5
+GB;Highland;GB.HI;GB-HLD;UK83;Highland;GB.HI;GB-HLD;UKV3
+GB;Argyll and Bute;GB.AB;GB-AGB;UK83;Argyll and Bute;GB.AB;GB-AGB;UKT8
+GB;Shetland Islands;GB.AR;GB-ABE;UK83;Shetland Islands;GB.SH;GB-ZET;UKW3
+GB;West Sussex;GB.WS;GB-WSX;UK44;West Sussex;GB.WS;GB-WSX;UKP6
+GB;Northamptonshire;GB.NA;GB-NTH;UK31;Northamptonshire;GB.NA;GB-NTH;UKJ1
+GB;Warwickshire;GB.WR;GB-WAR;UK42;Warwickshire;GB.WR;GB-WAR;UKP3
+GB;Oxfordshire;GB.OX;GB-OXF;UK34;Oxfordshire;GB.OX;GB-OXF;UKK2
+GB;Luton;GB.LU;GB-LUT;UK02;Luton;GB.LU;GB-LUT;UKI1
+GB;Surrey;GB.SR;GB-SRY;UK40;Surrey;GB.SR;GB-SRY;UKN7
+GB;Swindon;GB.SN;GB-SWD;UK46;Swindon;GB.SN;GB-SWD;UKN9
+GB;Wiltshire;GB.WL;GB-WIL;UK46;Wiltshire;GB.WL;GB-WIL;UKP8
+GB;Isle of Wight;GB.IW;GB-IOW;UK23;Isle of Wight;GB.IW;GB-IOW;UKG2
+GB;Portsmouth;GB.PS;GB-POR;UK23;Portsmouth;GB.PS;GB-POR;UKK6
+GB;Peterborough;GB.PB;GB-;UK05;Peterborough;GB.PB;GB-PTE;UKK3
+GB;Leicester;GB.LC;GB-LCE;UK26;Leicester;GB.LC;GB-LCE;UKH4
+GB;Rutland;GB.RL;GB-RUT;UK26;Rutland;GB.RL;GB-RUT;UKL4
+GB;Nottingham;GB.NG;GB-NGM;UK33;Nottingham;GB.NG;GB-NGM;UKJ8
+GB;Nottinghamshire;GB.NT;GB-NTT;UK33;Nottinghamshire;GB.NT;GB-NTT;UKJ9
+GB;Eilean Siar;GB.WI;GB-ELS;UK89;Eilean Siar;GB.WI;GB-ELS;UKW8
+GB;Warrington;GB.WT;GB-WRT;UK06;Warrington;GB.WT;GB-WRT;UKP2
+GB;Herefordshire;GB.HE;GB-;UK20;Herefordshire;GB.HE;GB-HEF;UKF7
+GB;Worcestershire;GB.WC;GB-WOR;UK20;Worcestershire;GB.WC;GB-WOR;UKQ4
+GB;Staffordshire;GB.ST;GB-STS;UK38;Staffordshire;GB.ST;GB-STS;UKM9
+GB;Stoke-on-Trent;GB.SO;GB-STE;UK38;Stoke-on-Trent;GB.SO;GB-STE;UKN4
+GB;Shropshire;GB.SP;GB-SHR;UK35;Shropshire;GB.SP;GB-SHR;UKL6
+GB;Kent;GB.KE;GB-KEN;UK24;Kent;GB.KE;GB-KEN;UKG5
+GB;Newcastle upon Tyne;GB.TW;GB-NET;UK41;Newcastle upon Tyne;GB.NU;GB-NET;UKI7
+GB;North Tyneside;GB.TW;GB-NTY;UK41;North Tyneside;GB.NI;GB-NTY;UKJ5
+GB;South Tyneside;GB.TW;GB-STY;UK41;South Tyneside;GB.SX;GB-STY;UKM7
+GB;Sunderland;GB.TW;GB-SND;UK41;Sunderland;GB.SD;GB-SND;UKN6
+GB;Gateshead;GB.TW;GB-GAT;UK41;Gateshead;GB.GH;GB-GAT;UKE5
+GB;Knowsley;GB.MS;GB-KWL;UK28;Knowsley;GB.KN;GB-KWL;UKG9
+GB;Sefton;GB.MS;GB-SFT;UK28;Sefton;GB.SE;GB-SFT;UKL8
+GB;Liverpool;GB.MS;GB-LIV;UK28;Liverpool;GB.LV;GB-LIV;UKH8
+GB;Blackpool;GB.LA;GB-BPL;UK25;Blackpool;GB.BP;GB-BPL;UKA9
+GB;Kirklees;GB.WY;GB-KIR;UK45;Kirklees;GB.KK;GB-KIR;UKG8
+GB;Calderdale;GB.WY;GB-CLD;UK45;Calderdale;GB.CX;GB-CLD;UKC2
+GB;Bradford;GB.WY;GB-BRD;UK45;Bradford;GB.BV;GB-BRD;UKB4
+GB;Leeds;GB.WY;GB-LDS;UK45;Leeds;GB.LS;GB-LDS;UKH3
+GB;Wakefield;GB.WY;GB-WKF;UK45;Wakefield;GB.WK;GB-WKF;UKO7
+GB;Salford;GB.MN;GB-SLF;UK18;Salford;GB.ZF;GB-SLF;UKL5
+GB;Wigan;GB.MN;GB-WGN;UK18;Wigan;GB.WN;GB-WGN;UKP7
+GB;Bolton;GB.MN;GB-BOL;UK18;Bolton;GB.BT;GB-BOL;UKB1
+GB;Bury;GB.MN;GB-BUR;UK18;Bury;GB.BR;GB-BUR;UKC1
+GB;Rochdale;GB.MN;GB-RCH;UK18;Rochdale;GB.RD;GB-RCH;UKL2
+GB;Oldham;GB.MN;GB-OLD;UK18;Oldham;GB.OL;GB-OLD;UKK1
+GB;Tameside;GB.MN;GB-TAM;UK18;Tameside;GB.TM;GB-TAM;UKO1
+GB;Stockport;GB.MN;GB-SKP;UK18;Stockport;GB.SK;GB-SKP;UKN2
+GB;Manchester;GB.MN;GB-MAN;UK18;Manchester;GB.MN;GB-MAN;UKI2
+GB;Trafford;GB.MN;GB-;UK18;Trafford;GB.TD;GB-TRF;UKO6
+GB;Rotherham;GB.SY;GB-ROT;UK37;Rotherham;GB.RH;GB-ROT;UKL3
+GB;Sheffield;GB.SY;GB-SHF;UK37;Sheffield;GB.SV;GB-SHF;UKL9
+GB;Barnsley;GB.SY;GB-BNS;UK37;Barnsley;GB.BX;GB-BNS;UKA3
+GB;Doncaster;GB.SY;GB-DNC;UK37;Doncaster;GB.DC;GB-DNC;UKD5
+GB;Birmingham;GB.WM;GB-BIR;UK43;Birmingham;GB.BI;GB-BIR;UKA7
+GB;Sandwell;GB.WM;GB-SAW;UK43;Sandwell;GB.ZW;GB-SAW;UKL7
+GB;Dudley;GB.WM;GB-DUD;UK43;Dudley;GB.DY;GB-DUD;UKD7
+GB;Wolverhampton;GB.WM;GB-WLV;UK43;Wolverhampton;GB.WV;GB-WLV;UKQ3
+GB;Walsall;GB.WM;GB-WLL;UK43;Walsall;GB.WZ;GB-WLL;UKO8
+GB;Solihull;GB.WM;GB-SOL;UK43;Solihull;GB.SI;GB-SOL;UKM2
+GB;Coventry;GB.WM;GB-COV;UK43;Coventry;GB.CT;GB-COV;UKC7
+GB;Central Bedfordshire;GB.BD;GB-;UK02;Central Bedfordshire;GB.CB;GB-CBF;UKZ6
+GB;Bedford;GB.BD;GB-;UK02;Bedford;GB.FO;GB-BDF;UKZ5
+GB;Reading;GB.BK;GB-RDG;UK03;Reading;GB.RG;GB-RDG;UKK7
+GB;West Berkshire;GB.BK;GB-WBK;UK03;West Berkshire;GB.WB;GB-WBK;UKP4
+GB;Wokingham;GB.BK;GB-WOK;UK03;Wokingham;GB.WO;GB-WOK;UKQ2
+GB;Bracknell Forest;GB.BK;GB-BRC;UK03;Bracknell Forest;GB.BC;GB-BRC;UKB3
+GB;Slough;GB.BK;GB-SLG;UK03;Slough;GB.ZL;GB-SLG;UKM1
+GB;Cheshire East;GB.CH;GB-;UK06;Cheshire East;GB.CQ;GB-CHE;UKZ7
+GB;Cheshire West and Chester;GB.WT;GB-;UK06;Cheshire West and Chester;GB.CZ;GB-CHW;UKZ8
+GB;Halton;GB.WT;GB-HAL;UK06;Halton;GB.HL;GB-HAL;UKE9
+GB;Isles of Scilly;GB.IS;GB-IOS;UK08;Isles of Scilly;GB.IS;GB-IOS;UKZ9
+GG;Sark;GG;GG-;     ;Sark;GG.SK;GG-;     
+GI;Gibraltar;GI;GI-;     ;Gibraltar;GI.GI;GI-;     
+GL;Kommuneqarfik Sermersooq;GL.VG;GL-SM;     ;Sermersooq;GL.SE;GL-SM;GL07
+GL;Kommune Kujalleq;GL.VG;GL-KU;     ;Kujalleq;GL.KU;GL-KU;GL04
+GL;Qeqqata Kommunia;GL.VG;GL-QE;     ;Qeqqata;GL.QT;GL-QE;GL06
+GL;Qaasuitsup Kommunia;GL.NG;GL-QA;     ;Qaasuitsup;GL.QS;GL-QA;GL05
+GN;Kankan;GN.KA;GN-K;GV32;Kankan;GN.KA;GN-KA;GV32
+GN;Kérouané;GN.KE;GN-;GV15;Kérouané;GN.KE;GN-KE;GV15
+GN;Tougué;GN.TO;GN-;GV28;Tougué;GN.TO;GN-TO;GV28
+GQ;Bioko Norte;GQ.BN;GQ-BN;EK05;Bioko Norte;GQ.BN;GQ-BN;EK04
+GQ;Bioko Sur;GQ.BS;GQ-BS;EK04;Bioko Sur;GQ.BS;GQ-BS;EK05
+GS;South Georgia and the South Sandwich Islands;GS;GS-;     ;South Georgia and the South Sandwich Islands;GS.GS;GS-;     
+GW;Biombo;GW.BM;GW-BM;PU05;Biombo;GW.BM;GW-BM;PU12
+GY;Mahaica-Berbice;GY.MA;GY-MA;GY13;Mahaica-Berbice;GY.MA;GY-MA;GY15
+GY;Upper Takutu-Upper Essequibo;GY.UT;GY-UT;GY18;Upper Takutu-Upper Essequibo;GY.UT;GY-UT;GY19
+GY;Upper Demerara-Berbice;GY.UD;GY-UD;GY19;Upper Demerara-Berbice;GY.UD;GY-UD;GY18
+GY;Pomeroon-Supenaam;GY.PM;GY-PM;GY11;Pomeroon-Supenaam;GY.PM;GY-PM;GY16
+GY;East Berbice-Corentyne;GY.EB;GY-EB;GY12;East Berbice-Corentyne;GY.EB;GY-EB;GY13
+GY;Demerara-Mahaica;GY.DE;GY-DE;GY14;Demerara-Mahaica;GY.DE;GY-DE;GY12
+GY;Essequibo Islands-West Demerara;GY.ES;GY-ES;GY15;Essequibo Islands-West Demerara;GY.ES;GY-ES;GY14
+GY;Cuyuni-Mazaruni;GY.CU;GY-CU;GY16;Cuyuni-Mazaruni;GY.CU;GY-CU;GY11
+HK;Central and Western;HK.;HK-;     ;Central and Western;HK.CW;HK-;     
+HK;Wan Chai;HK.;HK-;     ;Wan Chai;HK.WC;HK-;     
+HK;Eastern;HK.;HK-;     ;Eastern;HK.EA;HK-;     
+HK;Southern;HK.;HK-;     ;Southern;HK.SO;HK-;     
+HK;Yau Tsim Mong;HK.;HK-;     ;Yau Tsim Mong;HK.YT;HK-;     
+HK;Kowloon City;HK.;HK-;     ;Kowloon City;HK.KC;HK-;     
+HK;Sham Shui Po;HK.;HK-;     ;Sham Shui Po;HK.SS;HK-;     
+HK;Wong Tai Sin;HK.;HK-;     ;Wong Tai Sin;HK.WT;HK-;     
+HK;Kwun Tong;HK.;HK-;     ;Kwun Tong;HK.KU;HK-;     
+HK;Sai Kung;HK.;HK-;     ;Sai Kung;HK.SK;HK-;     
+HK;Sha Tin;HK.;HK-;     ;Sha Tin;HK.ST;HK-;     
+HK;Kwai Tsing;HK.;HK-;     ;Kwai Tsing;HK.KI;HK-;     
+HK;Tsuen Wan;HK.;HK-;     ;Tsuen Wan;HK.TW;HK-;     
+HK;Tuen Mun;HK.;HK-;     ;Tuen Mun;HK.TM;HK-;     
+HK;Yuen Long;HK.;HK-;     ;Yuen Long;HK.YL;HK-;     
+HK;North;HK.;HK-;     ;North;HK.NO;HK-;     
+HK;Tai Po;HK.;HK-;     ;Tai Po;HK.TP;HK-;     
+HK;Islands;HK.;HK-;     ;Islands;HK.IS;HK-;     
+HN;Islas de la Bahía;HN.IB;HN-IB;HO01;Islas de la Bahía;HN.IB;HN-IB;HO11
+HR;Šibensko-Kninska;HR.SB;HR-;HR13;Šibensko-Kninska;HR.SB;HR-15;HR13
+HR;Zadarska;HR.ZD;HR-;HR19;Zadarska;HR.ZD;HR-13;HR19
+HR;Krapinsko-Zagorska;HR.KZ;HR-;SI92;Krapinsko-Zagorska;HR.KZ;HR-02;HR07
+HR;Primorsko-Goranska;HR.PG;HR-;HR12;Primorsko-Goranska;HR.PG;HR-08;HR12
+HR;Brodsko-Posavska;HR.SP;HR-;HR02;Brodsko-Posavska;HR.SP;HR-12;HR02
+HR;Brodsko-Posavska;HR.SP;HR-;HR11;Brodsko-Posavska;HR.SP;HR-12;HR02
+HR;Bjelovarska-Bilogorska;HR.BB;HR-;HR01;Bjelovarska-Bilogorska;HR.BB;HR-07;HR01
+HR;Varaždinska;HR.VA;HR-;HR16;Varaždinska;HR.VA;HR-05;HR16
+HU;Pest;HU.PE;HU-PE;HU16;Pest;HU.PT;HU-PE;HU16
+HU;Békés;HU.BE;HU-;HU03;Békés;HU.BE;HU-BE;HU03
+HU;Hajdú-Bihar;HU.HB;HU-HB;HU07;Hajdú-Bihar;HU.HB;HU-HB;HU10
+HU;Sopron;HU.SN;HU-SN;HU22;Sopron;HU.SN;HU-SN;HU34
+HU;Érd;HU.ED;HU-ED;HU43;Érd;HU.ED;HU-ER;HU43
+HU;Veszprém;HU.VM;HU-VM;HU39;Veszprém;HU.VE;HU-VE;HU23
+HU;Szeged;HU.SD;HU-SD;HU34;Szeged;HU.SD;HU-SD;HU19
+HU;Békéscsaba;HU.MC;HU-BC;HU26;Békéscsaba;HU.BC;HU-BC;HU26
+ID;Kalimantan Timur;ID.KI;ID-KI;ID14;Kalimantan Timur;ID.KM;ID-KI;ID14
+ID;Sulawesi Selatan;ID.SE;ID-;ID38;Sulawesi Selatan;ID.SE;ID-SN;ID38
+ID;Maluku Utara;ID.LA;ID-MU;ID29;Maluku Utara;ID.MU;ID-MU;ID29
+IE;Monaghan;IE.;IE-MN;     ;Monaghan;IE.MN;IE-MN;     
+IE;Waterford;IE.WD;IE-;EI41;Waterford;IE.WD;IE-WD;EI41
+IE;Galway;IE.GY;IE-;EI10;Galway;IE.GY;IE-G;EI10
+IE;Limerick;IE.LK;IE-;EI16;Limerick;IE.LK;IE-LK;EI16
+IE;Cork;IE.CK;IE-;EI04;Cork;IE.CK;IE-CO;EI04
+IN;Andhra Pradesh;IN.AP;IN-AP;IN02;Andhra Pradesh;IN.AD;IN-AP;IN02
+IN;Manipur;IN.MN;IN-;IN17;Manipur;IN.MN;IN-MN;IN17
+IN;Tamil Nadu;IN.;IN-TN;IN22;Tamil Nadu;IN.TN;IN-TN;IN25
+IN;Gujarat;IN.;IN-GJ;IN32;Gujarat;IN.GJ;IN-GJ;IN09
+IN;Goa;IN.GA;IN-;IN08;Goa;IN.GA;IN-GA;IN33
+IN;Daman and Diu;IN.;IN-DD;IN32;Daman and Diu;IN.DD;IN-DD;IN32
+IO;British Indian Ocean Territory;IO;IO-;     ;British Indian Ocean Territory;IO.IO;IO-;     
+IQ;At-Ta'mim;IQ.TS;IQ-TS;IZ13;Kirkuk;IQ.TS;IQ-KI;IZ13
+IQ;Wasit;IQ.WA;IQ-;IZ16;Wasit;IQ.WA;IQ-WA;IZ16
+IQ;As-Sulaymaniyah;IQ.SU;IQ-SU;IZ05;As-Sulaymaniyah;IQ.SL;IQ-SU;IZ05
+IR;Mazandaran;IR.MN;IR-21;IR17;Mazandaran;IR.MN;IR-21;IR35
+IR;Tehran;IR.TH;IR-07;IR26;Tehran;IR.TE;IR-07;IR26
+IR;Markazi;IR.MK;IR-;IR34;Markazi;IR.MK;IR-22;IR34
+IR;East Azarbaijan;IR.EA;IR-01;IR01;East Azarbaijan;IR.EA;IR-01;IR33
+IR;Alborz;IR.AL;IR-07;IR26;Alborz;IR.AL;IR-32;IR44
+IS;Suðurnes;IS.SU;IS-2;IC10;Southern Peninsula;IS.SU;IS-2;IC43
+IT;Grosseto;IT.GR;IT-GR;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Livorno;IT.LI;IT-LI;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Pisa;IT.PI;IT-PI;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Massa-Carrara;IT.MS;IT-MS;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Lucca;IT.LU;IT-LU;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Pistoia;IT.PT;IT-PT;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Prato;IT.PO;IT-PO;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Firenze;IT.FI;IT-FI;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Arezzo;IT.AR;IT-AR;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Siena;IT.SI;IT-SI;IT16;Tuscany;IT.TC;IT-52;IT16
+IT;Pescara;IT.PE;IT-PE;IT01;Abruzzi;IT.AB;IT-65;IT01
+IT;Teramo;IT.TE;IT-TE;IT01;Abruzzi;IT.AB;IT-65;IT01
+IT;L'Aquila;IT.AQ;IT-AQ;IT01;Abruzzi;IT.AB;IT-65;IT01
+IT;Chieti;IT.CH;IT-CH;IT01;Abruzzi;IT.AB;IT-65;IT01
+IT;Turin;IT.TO;IT-TO;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Biella;IT.BI;IT-BI;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Vercelli;IT.VC;IT-VC;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Verbano-Cusio-Ossola;IT.VB;IT-VB;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Novara;IT.NO;IT-NO;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Alessandria;IT.AL;IT-AL;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Asti;IT.AT;IT-AT;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Cuneo;IT.CN;IT-CN;IT12;Piedmont;IT.PM;IT-21;IT12
+IT;Bergamo;IT.BG;IT-BG;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Sondrio;IT.SO;IT-SO;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Brescia;IT.BS;IT-BS;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Mantova;IT.MN;IT-MN;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Cremona;IT.CR;IT-CR;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Lodi;IT.LO;IT-LO;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Pavia;IT.PV;IT-PV;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Milano;IT.MI;IT-MI;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Varese;IT.VA;IT-VA;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Como;IT.CO;IT-CO;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Lecco;IT.LC;IT-LC;IT09;Lombardy;IT.LM;IT-25;IT09
+IT;Monza e Brianza;IT.MB;IT-MB;IT09;Lombardy;IT.LM;IT-25;IT09
+JO;Zarqa;JO.AZ;JO-AZ;JO13;Zarqa;JO.AZ;JO-AZ;JO17
+JP;Gifu;JP.GF;JP-;JA09;Gifu;JP.GF;JP-21;JA09
+JP;Kanagawa;JP.KN;JP-;JA19;Kanagawa;JP.KN;JP-14;JA19
+JP;Nagasaki;JP.NS;JP-42;JA32;Nagasaki;JP.NS;JP-42;JA27
+JP;Okinawa;JP.ON;JP-47;JA40;Okinawa;JP.ON;JP-47;JA47
+KE;Nairobi;KE.NA;KE-110;KE05;Nairobi;KE.NB;KE-30;KE05
+KG;Ysyk-Köl;KG.YK;KG-Y;KG06;Ysyk-Köl;KG.YK;KG-Y;KG07
+KG;Naryn;KG.NA;KG-N;KG03;Naryn;KG.NA;KG-N;KG04
+KG;Jalal-Abad;KG.DA;KG-J;KG02;Jalal-Abad;KG.DA;KG-J;KG03
+KG;Talas;KG.TL;KG-T;KG04;Talas;KG.TL;KG-T;KG06
+KG;Osh;KG.OS;KG-O;KG08;Osh;KG.OH;KG-O;KG08
+KH;Kâmpóng Cham;KH.KM;KH-3;CB02;Kâmpóng Cham;KH.KC;KH-3;CB02
+KM;Moûhîlî;KM.AN;KM-M;CN03;Mohéli;KM.MO;KM-M;CN03
+KM;Andjouân;KM.MO;KM-A;CN01;Anjouan;KM.AN;KM-A;CN01
+KN;Trinity Palmetto Point;KN.TP;KN-14;SC14;Trinity Palmetto Point;KN.TP;KN-15;SC15
+KP;Hwanghae-bukto;KP.WB;KP-06;KN07;Hwanghae-bukto;KP.WK;KP-06;KN07
+KP;Hamgyŏng-bukto;KP.HG;KP-09;KN04;Hamgyŏng-bukto;KP.HG;KP-09;KN17
+KP;Hamgyŏng-namdo;KP.HN;KP-08;KN13;Hamgyŏng-namdo;KP.HN;KP-08;KN03
+KP;P'yŏngan-namdo;KP.PN;KP-02;KN10;P'yŏngan-namdo;KP.PM;KP-02;KN15
+KP;Rasŏn;KP.NJ;KP-13;KN04;Najin Sŏnbong-si;KP.NJ;KP-13;KN18
+KR;Gwangju;KR.KJ;KR-29;KS16;Gwangju;KR.KJ;KR-29;KS18
+KR;Daegu;KR.TG;KR-;KS15;Daegu;KR.TG;KR-27;KS15
+KR;Sejong;KR.SJ;KR-;KS22;Sejong;KR.SJ;KR-50;KS22
+KZ;Pavlodar;KZ.PA;KZ-;KZ11;Pavlodar;KZ.PA;KZ-PAV;KZ11
+KZ;Almaty;KZ.AA;KZ-ALA;KZ01;Almaty;KZ.AA;KZ-ALM;KZ01
+LA;Vientiane [prefecture];LA.VT;LA-VI;LA00;Vientiane;LA.VI;LA-VI;LA27
+LA;Vientiane;LA.VI;LA-;LA27;Vientiane;LA.VI;LA-VI;LA27
+LA;Bolikhamxai;LA.BL;LA-BL;LA00;Bolikhamxai;LA.BL;LA-BL;LA23
+LB;Beqaa;LB.BI;LB-BI;LE11;Beqaa;LB.BQ;LB-BI;LE08
+LB;North Lebanon;LB.AS;LB-AS;LE09;North Lebanon;LB.NL;LB-AS;LE09
+LB;South Lebanon;LB.JA;LB-;LE06;South Lebanon;LB.JA;LB-JA;LE06
+LC;Anse-la-Raye;LC.AR;LC-01;SF01;Anse-la-Raye;LC.AR;LC-01;ST01
+LC;Castries;LC.CN;LC-02;ST03;Castries;LC.CS;LC-02;ST03
+LC;Choiseul;LC.CS;LC-03;ST04;Choiseul;LC.CH;LC-03;ST04
+LK;Kilinŏchchi;LK.KL;LK-42;     ;Kilinochchi;LK.KL;LK-42;
+LR;River Gee;LR.RG;LR-X2~;LI22;River Gee;LR.RG;LR-RG;LI22
+LR;Gbapolu;LR.GP;LR-X1~;LI21;Gbarpolu;LR.GP;LR-GP;LI21
+LR;Grand Bassa;LR.MG;LR-GB;LI11;Grand Bassa;LR.GB;LR-GB;LI11
+LT;Alytaus;LT.AS;LT-;LH56;Alytus;LT.AS;LT-AL;LH56
+LT;Kauno;LT.KS;LT-;LH57;Kaunas;LT.KS;LT-KU;LH57
+LT;Šiauliai;LT.SH;LT-;LH61;Šiauliai;LT.SH;LT-SA;LH61
+LT;Utenos;LT.UN;LT-;LH64;Utena;LT.UN;LT-UT;LH64
+LT;Vilniaus;LT.VI;LT-;LH65;Vilnius;LT.VI;LT-VL;LH65
+LV;Saldus;LV.SD;LV-;LG;Saldus;LV.SD;LV-088;LGC4
+LV;Bauska;LV.BK;LV-;LG;Bauska;LV.BK;LV-016;LG49
+LV;Daugavpils;LV.DP;LV-DGV;LG;Daugavpils;LV.DP;LV-025;LG58
+LV;Dobele;LV.DB;LV-;LG;Dobele;LV.DB;LV-026;LG59
+LV;Gulbene;LV.GU;LV-;LG;Gulbene;LV.GU;LV-033;LG66
+LV;Jelgava;LV.JL;LV-JEL;LG;Jelgava;LV.JL;LV-041;LG76
+LV;Limbaži;LV.LI;LV-;LG;Limbaži;LV.LI;LV-054;LG89
+LV;Madona;LV.MD;LV-;LG;Madona;LV.MD;LV-059;LG93
+LV;Ogre;LV.OR;LV-;LG;Ogre;LV.OR;LV-067;LGA1
+LV;Talsi;LV.TL;LV-;LG;Talsi;LV.TL;LV-097;LGD4
+LV;Tukums;LV.TK;LV-;LG;Tukums;LV.TK;LV-099;LGD6
+LV;Valmiera;LV.VE;LV-VMR;LG;Valmiera;LV.VE;LV-VMR;LGD9
+LV;Liepāja;LV.LJ;LV-LPX;LG;Liepāja;LV.LJ;LV-LPX;LG16
+LV;Jelgava;LV.JE;LV-JEL;LG;Jelgava;LV.JL;LV-041;LG76
+LV;Daugavpils;LV.DV;LV-DGV;LG;Daugavpils;LV.DP;LV-025;LG58
+LV;Ventspils;LV.VS;LV-VEN;LG;Ventspils;LV.VN;LV-106;LGE5
+LV;Krustpils;LV.KT;LV-;LG;Krustpils;LV.KT;LV-049;LG85
+LV;Ādaži;LV.AD;LV-;LG;Ādaži;LV.AD;LV-011;LG34
+LV;Jaunpils;LV.JU;LV-;LG;Jaunpils;LV.JU;LV-040;LG73
+LV;Salaspils;LV.SS;LV-;LG;Salaspils;LV.SS;LV-087;LGC3
+LV;Ventspils;LV.VN;LV-VEN;LG;Ventspils;LV.VN;LV-106;LGE5
+LY;Al Jufrah;LY.JU;LY-JU;LY05;Al Jufrah;LY.JF;LY-JU;LY64
+LY;Al Kufrah;LY.KF;LY-KF;LY08;Al Kufrah;LY.KU;LY-KF;LY65
+LY;Al Marqab;LY.MB;LY-MB;LY50;Al Marqab;LY.MR;LY-MB;LY82
+LY;Ghat;LY.GT;LY-GT;LY52;Ghat;LY.GH;LY-GT;LY71
+LY;Murzuq;LY.MQ;LY-MQ;LY30;Murzuq;LY.MU;LY-MQ;LY73
+LY;Misratah;LY.MI;LY-MI;LY58;Misratah;LY.MS;LY-MI;LY72
+LY;Sabha;LY.SB;LY-SB;LY34;Sabha;LY.SA;LY-SB;LY75
+LY;Al Jifarah;LY.JI;LY-JI;LY03;Al Jifarah;LY.JR;LY-JI;LY81
+LY;An Nuqat al Khams;LY.NQ;LY-NQ;LY51;An Nuqat al Khams;LY.NK;LY-NQ;LY67
+LY;Az Zawiyah;LY.ZA;LY-ZA;LY53;Az Zawiyah;LY.ZW;LY-ZA;LY68
+LY;Al Marj;LY.HZ;LY-MJ;LY48;Al Marj;LY.MA;LY-MJ;LY66
+LY;Al Jabal al Akhdar;LY.JA;LY-JA;LY49;Al Jabal al Akhdar;LY.JK;LY-JA;LY63
+LY;Benghazi;LY.BA;LY-BA;LY54;Benghazi;LY.BG;LY-BA;LY69
+LY;Surt;LY.SR;LY-SR;LY60;Surt;LY.ST;LY-SR;LY76
+LY;Al Butnan;LY.BU;LY-BU;LY42;Al Butnan;LY.BN;LY-BU;LY79
+MC;Monaco;MC;MC-;     ;Monaco;MC.MC;MC-;     
+MD;Cahul;MD.CH;MD-CA;MD51;Cahul;MD.CH;MD-CA;MD64
+MD;Taraclia;MD.TA;MD-TA;MD51;Taraclia;MD.TA;MD-TA;MD90
+MD;Comrat;MD.GA;MD-;MD51;Găgăuzia;MD.GA;MD-GA;MD51
+MD;Transnistria;MD.DB;MD-;MD72;Transnistria;MD.DU;MD-SN;MD58
+MD;Rezina;MD.RZ;MD-;MD83;Rezina;MD.RZ;MD-RE;MD83
+MD;Străşeni;MD.ST;MD-ST;MD87;Străşeni;MD.ST;MD-ST;MD89
+MD;Bender;MD.BD;MD-;MD62;Bender;MD.BD;MD-BD;MD62
+ME;Bar;ME.BA;ME-02;AL49;Bar;ME.BA;ME-02;MJ02
+ME;Ulcinj;ME.UL;ME-20;AL49;Ulcinj;ME.UL;ME-20;MJ20
+ME;Budva;ME.BU;ME-05;MJ00;Budva;ME.BU;ME-05;MJ05
+ME;Cetinje;ME.CE;ME-06;MJ00;Cetinje;ME.CE;ME-06;MJ06
+ME;Rožaje;ME.RO;ME-17;AL47;Rožaje;ME.RO;ME-17;MJ17
+ME;Plav;ME.PV;ME-13;AL49;Plav;ME.PA;ME-13;MJ13
+ME;Herceg Novi;ME.HN;ME-08;HR03;Herceg Novi;ME.HN;ME-08;MJ08
+ME;Kotor;ME.KT;ME-10;HR03;Kotor;ME.KT;ME-10;MJ10
+ME;Andrijevica;ME.AN;ME-01;MJ00;Andrijevica;ME.AN;ME-01;MJ01
+ME;Berane;ME.BE;ME-03;MJ00;Berane;ME.BR;ME-03;MJ03
+ME;Bijelo Polje;ME.BP;ME-04;MJ00;Bijelo Polje;ME.BP;ME-04;MJ04
+ME;Danilovgrad;ME.DA;ME-07;MJ00;Danilovgrad;ME.DA;ME-07;MJ07
+ME;Kolašin;ME.KL;ME-09;MJ00;Kolašin;ME.KL;ME-09;MJ09
+ME;Mojkovac;ME.MK;ME-11;MJ00;Mojkovac;ME.MK;ME-11;MJ11
+ME;Plužine;ME.PU;ME-15;MJ00;Plužine;ME.PU;ME-15;MJ15
+ME;Pljevlja;ME.PL;ME-14;MJ00;Pljevlja;ME.PL;ME-14;MJ14
+ME;Podgorica;ME.PG;ME-16;MJ00;Podgorica;ME.PG;ME-16;MJ16
+ME;Tivat;ME.TI;ME-19;MJ00;Tivat;ME.TI;ME-19;MJ19
+ME;Šavnik;ME.SA;ME-18;MJ00;Šavnik;ME.SA;ME-18;MJ18
+ME;Žabljak;ME.ZA;ME-21;MJ00;Žabljak;ME.ZA;ME-21;MJ21
+MK;Vevčani;MK.VV;MK-12;MK99;Vevčani;MK.VV;MK-12;MKB3
+MK;Demir Hisar;MK.DM;MK-25;MK24;Demir Hisar;MK.DM;MK-25;MKD3
+MK;Ohrid;MK.OD;MK-58;MK74;Ohrid;MK.OD;MK-58;MKE2
+MK;Prilep;MK.PP;MK-62;MK82;Prilep;MK.PP;MK-62;MKE3
+MK;Kriva Palanka;MK.KZ;MK-52;MK85;Kriva Palanka;MK.KZ;MK-44;MK52
+MK;Veles;MK.VE;MK-13;MKB1;Veles;MK.VE;MK-13;MKF1
+MK;Lipkovo;MK.LI;MK-48;MK01;Lipkovo;MK.LI;MK-48;MK59
+MK;Zrnovci;MK.ZR;MK-33;MK19;Zrnovci;MK.ZR;MK-33;MKC6
+MK;Gradsko;MK.GR;MK-;MK35;Gradsko;MK.GR;MK-20;MK35
+MK;Lozovo;MK.LO;MK-49;MK35;Lozovo;MK.LO;MK-49;MK60
+MK;Kavadartsi;MK.AV;MK-36;MK42;Kavadartsi;MK.AV;MK-36;MKD6
+MK;Kumanovo;MK.UM;MK-47;MK57;Kumanovo;MK.UM;MK-47;MKD7
+MK;Novatsi;MK.NV;MK-;MK71;Novatsi;MK.NV;MK-55;MKE1
+MK;Debar;MK.DB;MK-21;MK21;Debar;MK.DB;MK-21;MKD2
+MK;Tetovo;MK.ET;MK-76;MKA6;Tetovo;MK.ET;MK-76;MKE8
+MK;Bogovinje;MK.VJ;MK-06;MK10;Bogovinje;MK.VJ;MK-06;MKC7
+MK;Gostivar;MK.GT;MK-19;MK34;Gostivar;MK.GT;MK-19;MKD4
+MK;Valandovo;MK.VA;MK-10;MKA8;Valandovo;MK.VA;MK-10;MKE9
+MK;Dojran;MK.SD;MK-26;MK00;Dojran;MK.SD;MK-26;MKE5
+MK;Vinitsa;MK.NI;MK-;MKB4;Vinitsa;MK.NI;MK-14;MKF2
+MK;Makedonska Kamenica;MK.MK;MK-51;MK52;Makedonska Kamenica;MK.MK;MK-51;MK62
+MK;Rankovce;MK.RN;MK-85;MK85;Rankovce;MK.RN;MK-65;MK85
+ML;Timbuktu;ML.TB;ML-6;ML08;Timbuktu;ML.TT;ML-6;ML08
+ML;Gao;ML.GA;ML-7;ML09;Gao;ML.GO;ML-7;ML09
+ML;Bamako;ML.KK;ML-BKO;ML01;Bamako;ML.BA;ML-BKO;ML01
+ML;Mopti;ML.MO;ML-5;ML22;Mopti;ML.MO;ML-5;ML04
+MM;Mandalay;MM.MD;MM-04;BM08;Mandalay;MM.ML;MM-04;BM08
+MN;Hovd;MN.HD;MN-043;MG00;Hovd;MN.HD;MN-043;MG12
+MN;Orhon;MN.ER;MN-035;MG22;Orhon;MN.ER;MN-035;MG25
+MN;Dundgovi;MN.DU;MN-059;MG00;Dundgovi;MN.DU;MN-059;MG08
+MN;Övörhangay;MN.OH;MN-;MG00;Övörhangay;MN.OH;MN-055;MG15
+MN;Darhan-Uul;MN.DA;MN-037;MG05;Darhan-Uul;MN.DA;MN-037;MG23
+MO;Macau;MO;MO-M;     ;Macau;MO.MA;MO-M;MC02
+MT;Attard;MT;MT-01;     ;Attard;MT.CE.AT;MT-01;MT01
+MT;Mdina;MT;MT-29;     ;Mdina;MT.NO.MD;MT-29;MT20
+MT;Mosta;MT;MT-32;     ;Mosta;MT.NO.MO;MT-32;MT35
+MT;Naxxar;MT;MT-38;     ;Naxxar;MT.NO.NA;MT-38;MT38
+MT;Lija;MT;MT-24;     ;Lija;MT.CE.LI;MT-24;MT29
+MT;Balzan;MT;MT-02;     ;Balzan;MT.CE.BA;MT-02;MT02
+MT;Iklin;MT;MT-19;     ;Iklin;MT.CE.IK;MT-19;MT19
+MT;Swieqi;MT;MT-57;     ;Swieqi;MT.NO.SW;MT-57;MT57
+MT;Pembroke;MT;MT-40;     ;Pembroke;MT.NO.PE;MT-40;MT40
+MT;Sliema;MT;MT-56;     ;Sliema;MT.CE.SL;MT-56;MT56
+MT;Birkirkara;MT;MT-04;     ;Birkirkara;MT.CE.BI;MT-04;MT04
+MT;Msida;MT;MT-34;     ;Msida;MT.CE.MS;MT-34;MT23
+MT;Ta' Xbiex;MT;MT-58;     ;Ta' Xbiex;MT.CE.TA;MT-58;MT59
+MT;Santa Venera;MT;MT-54;MT53;Santa Venera;MT.CE.SV;MT-54;MT53
+MT;Qormi;MT;MT-43;     ;Qormi;MT.SO.QO;MT-43;MT43
+MT;Dingli;MT;MT-07;     ;Dingli;MT.NO.DI;MT-07;MT07
+MT;Valletta;MT;MT-60;     ;Valletta;MT.SE.VA;MT-60;MT60
+MT;Kalkara;MT;MT-21;     ;Kalkara;MT.SE.KA;MT-21;MT26
+MT;Birgu;MT;MT-03;     ;Birgu;MT.SE.BR;MT-03;MT03
+MT;Floriana;MT;MT-09;     ;Floriana;MT.SE.FL;MT-09;MT09
+MT;Marsa;MT;MT-26;     ;Marsa;MT.SE.MX;MT-26;MT31
+MT;Paola;MT;MT-39;     ;Paola;MT.SE.PA;MT-39;MT39
+MT;Fgura;MT;MT-08;     ;Fgura;MT.SE.FG;MT-08;MT08
+MT;Tarxien;MT;MT-59;     ;Tarxien;MT.SE.TA;MT-59;MT58
+MT;Marsaxlokk;MT;MT-28;     ;Marsaxlokk;MT.SE.MA;MT-28;MT33
+MT;Luqa;MT;MT-25;     ;Luqa;MT.SO.LU;MT-25;MT30
+MT;Gudja;MT;MT-11;     ;Gudja;MT.SO.GU;MT-11;MT16
+MT;Mqabba;MT;MT-33;     ;Mqabba;MT.SO.MQ;MT-33;MT22
+MT;Kirkop;MT;MT-23;     ;Kirkop;MT.SO.KI;MT-23;MT28
+MT;Safi;MT;MT-;     ;Safi;MT.SO.SA;MT-47;MT47
+MT;Qrendi;MT;MT-44;     ;Qrendi;MT.SO.QR;MT-44;MT44
+MT;Nadur;-99;MT-37;     ;Nadur;MT.GO.NA;MT-37;MT37
+MT;Qala;-99;MT-42;     ;Qala;MT.GO.QA;MT-42;MT42
+MT;Munxar;-99;MT-36;     ;Munxar;MT.GO.MU;MT-36;MT36
+MT;Sannat;-99;MT-52;     ;Sannat;MT.GO.SA;MT-52;MT54
+MT;Xewkija;-99;MT-62;     ;Xewkija;MT.GO.XE;MT-62;MT62
+MU;Flacq;MU.;MU-FL;     ;Flacq;MU.FL;MU-FL;MP13
+MU;Grand Port;MU.;MU-GP;     ;Grand Port;MU.GP;MU-GP;MP14
+MU;Moka;MU.;MU-MO;     ;Moka;MU.MO;MU-MO;MP15
+MU;Pamplemousses;MU.;MU-PA;     ;Pamplemousses;MU.PA;MU-PA;MP16
+MU;Plaines Wilhems;MU.;MU-PW;     ;Plaines Wilhems;MU.PW;MU-PW;MP17
+MU;Port Louis;MU.;MU-;     ;Port Louis;MU.PL;MU-;MP18
+MU;Rivière du Rempart;MU.;MU-RR;     ;Rivière du Rempart;MU.RR;MU-RR;MP19
+MU;Rivière Noire;MU.;MU-BL;     ;Black River;MU.BL;MU-BL;MP12
+MU;Rodrigues;MU.;MU-;     ;Rodrigues;MU.RO;MU-;MP23
+MU;Savanne;MU.;MU-SA;     ;Savanne;MU.SA;MU-SA;MP20
+MV;Shaviyani;MV.SH;MV-24;     ;Shaviyani;MV.SH;MV-24;MV45
+MV;Raa;MV.RA;MV-13;     ;Raa;MV.RA;MV-13;MV44
+MV;Noonu;MV.NO;MV-25;     ;Noonu;MV.NO;MV-25;MV43
+MV;Baa;MV.BA;MV-20;     ;Baa;MV.BA;MV-20;MV31
+MV;Kaafu;MV.KA;MV-26;     ;Kaafu;MV.KA;MV-26;MV38
+MV;Faafu;MV.FA;MV-14;     ;Faafu;MV.FA;MV-14;MV33
+MV;Meemu;MV.ME;MV-12;     ;Meemu;MV.ME;MV-12;MV41
+MV;Thaa;MV.TH;MV-08;     ;Thaa;MV.TH;MV-08;MV46
+MV;Laamu;MV.LM;MV-05;     ;Laamu;MV.LM;MV-05;MV05
+MV;Gnaviyani;MV.NA;MV-29;     ;Naviyani;MV.NA;MV-29;MV42
+MV;Addu;MV.SE;MV-01;     ;Addu;MV.SE;MV-01;MV01
+MW;Chitipa;MW.CT;MW-CT;MI08;Chitipa;MW.CT;MW-CT;MI04
+MW;Chitipa;MW.CT;MW-;MI04;Chitipa;MW.CT;MW-CT;MI04
+MW;Chikwawa;MW.CK;MW-;MI02;Chikwawa;MW.CK;MW-CK;MI02
+MW;Mwanza;MW.MW;MW-MW;MI25;Mwanza;MW.MN;MW-MW;MI25
+MW;Likoma;MW.NA;MW-LK;MI17;Likoma;MW.LK;MW-LK;MI27
+MW;Neno;MW.MW;MW-NE;MI31;Neno;MW.NN;MW-NE;MI31
+MX;Nayarit;MX.NA;MX-;MX18;Nayarit;MX.NA;MX-NAY;MX18
+MX;Tabasco;MX.TB;MX-TAB;MX32;Tabasco;MX.TB;MX-TAB;MX27
+MX;Yucatán;MX.YU;MX-;MX31;Yucatán;MX.YU;MX-YUC;MX31
+MZ;Maputo;MZ.MP;MZ-;MZ04;Maputo;MZ.MP;MZ-L;MZ04
+NA;Karas;NA.KA;NA-KA;WA03;Karas;NA.KA;NA-KA;WA31
+NA;Hardap;NA.HA;NA-HA;WA02;Hardap;NA.HA;NA-HA;WA30
+NA;Khomas;NA.KH;NA-KH;WA04;Khomas;NA.KH;NA-KH;WA21
+NA;Kunene;NA.KU;NA-KU;WA05;Kunene;NA.KU;NA-KU;WA32
+NA;Erongo;NA.ER;NA-ER;WA01;Erongo;NA.ER;NA-ER;WA29
+NA;Otjozondjupa;NA.OD;NA-OD;WA01;Otjozondjupa;NA.OD;NA-OD;WA39
+NA;Omusati;NA.OS;NA-OS;WA05;Omusati;NA.OS;NA-OS;WA36
+NA;Oshana;NA.ON;NA-ON;WA11;Oshana;NA.ON;NA-ON;WA37
+NA;Ohangwena;NA.OW;NA-OW;WA08;Ohangwena;NA.OW;NA-OW;WA33
+NA;Omaheke;NA.OH;NA-OH;WA09;Omaheke;NA.OH;NA-OH;WA35
+NA;Oshikoto;NA.OT;NA-OT;WA12;Oshikoto;NA.OT;NA-OT;WA38
+NC;Nord;NC.NO;NC-;NC00;Nord;NC.NO;NC-;NC02
+NE;Niamey;NE.NI;NE-8;NG09;Niamey;NE.NI;NE-8;NG08
+NF;Norfolk Island;NF;NF-;     ;Norfolk Island;NF.NF;NF-;     
+NG;Ekiti;NG.EK;NG-EK;NI51;Ekiti;NG.EK;NG-EK;NI54
+NI;Rivas;lake;NI-RI;NU00;Rivas;NI.RI;NI-RI;NU15
+NO;Nordland;NO.NO;NO-18;JN00;Nordland;NO.NO;NO-18;NO09
+NO;Nord-Trøndelag;NO.NT;NO-;NO10;Nord-Trøndelag;NO.NT;NO-17;NO10
+NU;Niue;NU;NU-;     ;Niue;NU.NU;NU-;     
+NZ;Waikato;NZ.WK;NZ-WKO;     ;Waikato;NZ.WK;NZ-WKO;NZG1
+NZ;Wellington;NZ.WG;NZ-WGN;     ;Wellington;NZ.WG;NZ-WGN;NZG2
+OM;Ad Dakhliyah;OM.DA;OM-DA;MU02;Ad Dakhliyah;OM.DA;OM-DA;MU01
+OM;Al Wusta;OM.WU;OM-WU;MU02;Al Wusta;OM.WU;OM-WU;MU03
+OM;Dhofar;OM.JA;OM-;MU02;Dhofar;OM.JA;OM-ZU;MU08
+OM;Al Dhahira;OM.ZA;OM-ZA;AE02;Adh Dhahirah;OM.DH;OM-ZA;MU09
+OM;Muscat;OM.MA;OM-MA;MU02;Muscat;OM.MA;OM-MA;MU06
+OM;Al Buraymi;OM.BU;OM-BU;AE02;Al Buraymi;OM.BU;OM-BU;MU10
+OM;Ash Sharqiyah North;OM.SN;OM-;MU12;Ash Sharqiyah North;OM.SN;OM-SS;MU12
+PA;Darién;PA.DR;PA-5;PM05;Darién;PA.DA;PA-5;PM05
+PA;Emberá;PA.EM;PA-EM;PM05;Emberá;PA.EM;PA-EM;PM11
+PE;Callao;PE.;PE-;     ;Callao;PE.CL;PE-CAL;PE07
+PE;Callao;PE.CL;PE-CAL;PE21;Callao;PE.CL;PE-CAL;PE07
+PE;San Martín;PE.SM;PE-;PE22;San Martín;PE.SM;PE-SAM;PE22
+PE;Ayacucho;PE.AY;PE-AYA;PE09;Ayacucho;PE.AY;PE-AYA;PE05
+PG;Southern Highlands;PG.SH;PG-SHM;PP05;Southern Highlands;PG.SL;PG-SHM;PP05
+PG;Western Highlands;PG.WH;PG-WHM;PP16;Western Highlands;PG.WL;PG-WHM;PP16
+PG;Morobe;PG.MR;PG-;PP14;Morobe;PG.MR;PG-MPL;PP14
+PG;National Capital District;PG.CE;PG-;     ;National Capital District;PG.NC;PG-NCD;PP20
+PH;Tawi-Tawi;PH.TT;PH-TAW;RP72;Tawi-Tawi;PH.TT;PH-TAW;RPO4
+PH;Zamboanga del Sur;PH.ZS;PH-ZAS;RP66;Zamboanga del Sur;PH.ZS;PH-ZAS;RPP1
+PH;Guimaras;PH.GU;PH-GUI;RP30;Guimaras;PH.GU;PH-GUI;RPJ3
+PH;Batanes;PH.BN;PH-BTN;RP07;Batanes;PH.BN;PH-BTN;RP08
+PH;Apayao;PH.AP;PH-APA;RP32;Apayao;PH.AP;PH-APA;RPH6
+PH;Ifugao;PH.IF;PH-IFU;RP32;Ifugao;PH.IF;PH-IFU;RP27
+PH;Cavite;PH.CV;PH-CAV;RP07;Cavite;PH.CV;PH-CAV;RP20
+PH;Biliran;PH.BI;PH-BIL;RP37;Biliran;PH.BI;PH-BIL;RPH9
+PH;Davao del Norte;PH.DV;PH-DAV;RP24;Davao del Norte;PH.DV;PH-DAV;RPI7
+PH;Compostela Valley;PH.CL;PH-COM;RP24;Compostela Valley;PH.CL;PH-COM;RPI6
+PH;Surigao del Norte;PH.DI;PH-SUN;RP61;Dinagat Islands;PH.DI;PH-DIN;RPI9
+PH;Davao del Sur;PH.DS;PH-DAS;RP25;Davao del Sur;PH.DR;PH-DAS;RP25
+PH;Sarangani;PH.SG;PH-SAR;RP25;Sarangani;PH.SG;PH-SAR;RPM9
+PH;Kalinga;PH.AP;PH-KAL;RP32;Kalinga;PH.KA;PH-KAL;RPJ7
+PH;Isabela;PH.;PH-ISA;RP22;Isabela;PH.IB;PH-ISA;RP31
+PH;Cebu;PH.;PH-CEB;     ;Cebu;PH.CB;PH-CEB;RP21
+PH;Iloilo;PH.;PH-ILI;     ;Iloilo;PH.II;PH-ILI;RP30
+PH;Cotabato;PH.;PH-NCO;RP56;Cotabato;PH.NC;PH-NCO;RP57
+PL;Pomeranian;PL.PM;PL-PM;PL31;Pomorskie;PL.PM;PL-PM;PL82
+PL;West Pomeranian;PL.ZP;PL-ZP;PL62;Zachodniopomorskie;PL.ZP;PL-ZP;PL87
+PL;Lubusz;PL.LB;PL-LB;PL71;Lubuskie;PL.LB;PL-LB;PL76
+PL;Greater Poland;PL.WP;PL-WP;PL34;Wielkopolskie;PL.WP;PL-WP;PL86
+PL;Masovian;PL.MZ;PL-MZ;PL59;Mazowieckie;PL.MZ;PL-MZ;PL78
+PL;Świętokrzyskie;PL.SK;PL-SK;PL36;Świętokrzyskie;PL.SK;PL-SK;PL84
+PL;Podlachian;PL.PD;PL-PD;PL44;Podlaskie;PL.PD;PL-PD;PL81
+PL;Lublin;PL.LU;PL-;PL23;Lubelskie;PL.LU;PL-;PL75
+PL;Subcarpathian;PL.PK;PL-PK;PL63;Podkarpackie;PL.PK;PL-PK;PL80
+PL;Opole;PL.OP;PL-OP;PL48;Opolskie;PL.OP;PL-OP;PL79
+PN;Pitcairn Islands;PN;PN-;     ;Pitcairn Islands;PN.PN;PN-;     
+PS;West Bank;PS;PS-;     ;West Bank;PS.WE;PS-WBK;WE
+PT;Azores;PT.AC;PT-;PO23;Azores;PT.AC;PT-20;PO23
+PT;Madeira;PT.MA;PT-;PO10;Madeira;PT.MA;PT-30;PO10
+PT;Viseu;PT.VI;PT-;PO22;Viseu;PT.VI;PT-18;PO22
+PW;Aimeliik;PW.AM;PW-002;     ;Aimeliik;PW.AM;PW-002;PS01
+PW;Airai;PW.AR;PW-004;     ;Airai;PW.AR;PW-004;PS02
+PW;Angaur;PW.AN;PW-010;     ;Angaur;PW.AN;PW-010;PS03
+PW;Kayangel;PW.KA;PW-100;     ;Kayangel;PW.KA;PW-100;PS05
+PW;Koror;PW.KO;PW-150;     ;Koror;PW.KO;PW-150;PS06
+PW;Melekeok;PW.ME;PW-212;     ;Melekeok;PW.ME;PW-212;PS07
+PW;Ngaraard;PW.ND;PW-214;     ;Ngaraard;PW.ND;PW-214;PS08
+PW;Ngarchelong;PW.NC;PW-218;     ;Ngarchelong;PW.NC;PW-218;PS09
+PW;Ngardmau;PW.NM;PW-222;     ;Ngardmau;PW.NM;PW-222;PS10
+PW;Ngatpang;PW.NP;PW-224;     ;Ngatpang;PW.NP;PW-224;PS11
+PW;Ngchesar;PW.NS;PW-226;     ;Ngchesar;PW.NS;PW-226;PS12
+PW;Ngeremlengui;PW.NL;PW-227;     ;Ngeremlengui;PW.NL;PW-227;PS13
+PW;Ngiwal;PW.NW;PW-228;     ;Ngiwal;PW.NW;PW-228;PS14
+PW;Peleliu;PW.PE;PW-350;     ;Peleliu;PW.PE;PW-350;PS15
+PW;Sonsorol;PW.SO;PW-370;     ;Sonsorol;PW.SO;PW-370;PS16
+PY;Alto Paraguay;PY.AG;PY-16;PA03;Alto Paraguay;PY.AG;PY-16;PA23
+PY;Itapúa;PY.IT;PY-;PA11;Itapúa;PY.IT;PY-7;PA11
+QA;Al Wakrah;QA.WA;QA-WA;QA05;Al Wakrah;QA.WA;QA-WA;QA10
+QA;Al Khawr;QA.KH;QA-KH;QA04;Al Khawr;QA.KR;QA-KH;QA04
+QA;Madinat ach Shamal;QA.MS;QA-MS;QA07;Madinat ach Shamal;QA.MS;QA-MS;QA08
+QA;Umm Salal;QA.US;QA-US;QA09;Umm Salal;QA.SL;QA-US;QA09
+QA;Al Daayen;QA.DY;QA-ZA;QA09;Al Daayen;QA.DY;QA-ZA;QA13
+RO;Neamt;RO.NT;RO-;RO28;Neamț;RO.NT;RO-NT;RO28
+RS;Južno-Backi;RS.JC;RS-;RB02;South Bačka;RS.JC;RS-06;RB02
+RS;Južno-Banatski;RS.JN;RS-;RB02;South Banat;RS.JN;RS-04;RB02
+RS;Pirotski;RS.PI;RS-;BU47;Pirot;RS.PI;RS-22;BU47
+RS;Borski;RS.BO;RS-;RO26;Bor;RS.BO;RS-14;RO26
+RS;Zlatiborski;RS.ZL;RS-;BK00;Zlatibor;RS.ZL;RS-16;BK00
+RS;Zapadno-Backi;RS.ZC;RS-;HR10;West Bačka;RS.ZC;RS-05;HR10
+RS;Severno-Backi;RS.SC;RS-;HU19;North Bačka;RS.SC;RS-01;HU19
+RS;Branicevski;RS.BR;RS-;RO12;Braničevo;RS.BR;RS-11;RO12
+RS;Sremski;RS.SM;RS-;HR18;Srem;RS.SM;RS-07;HR18
+RS;Moravicki;RS.MR;RS-;RB00;Morava;RS.MR;RS-17;RB00
+RS;Podunavski;RS.PD;RS-;RB00;Danube;RS.PD;RS-10;RB00
+RS;Pomoravski;RS.PM;RS-;RB00;Pomoravlje;RS.PM;RS-13;RB00
+RS;Pomoravski;RS.RN;RS-;RB00;Rasina;RS.RN;RS-19;RB00
+RS;Toplicki;RS.TO;RS-;RB00;Toplica;RS.TO;RS-21;RB00
+RS;Kolubarski;RS.KB;RS-;BK00;Kolubara;RS.KB;RS-09;BK00
+RS;Macvanski;RS.MA;RS-;BK00;Mačva;RS.MA;RS-08;BK00
+RS;Pcinjski;RS.PC;RS-;MK59;Pčinja;RS.PC;RS-24;MK59
+RS;Jablanicki;RS.JA;RS-;MK97;Jablanica;RS.JA;RS-23;MK97
+RS;Zajecarski;RS.ZJ;RS-;RB00;Zaječar;RS.ZJ;RS-15;RB00
+RU;Karachay-Cherkess;RU.KC;RU-KC;RS32;Karachay-Cherkess;RU.KC;RU-KC;RS27
+RU;Murmansk;RU.MM;RU-MUR;RS28;Murmansk;RU.MM;RU-MUR;RS49
+RU;Arkhangel'sk;RU.VO;RU-VLG;RS06;Arkhangel'sk;RU.AR;RU-ARK;RS06
+RU;Vologda;RU.VO;RU-;RS85;Vologda;RU.VO;RU-VLG;RS85
+RU;Ryazan';RU.RZ;RU-;RS62;Ryazan';RU.RZ;RU-RYA;RS62
+RU;Nenets;RU.NN;RU-;RS50;Nenets;RU.NN;RU-NEN;RS50
+RU;Komi;RU.KO;RU-;RS34;Komi;RU.KO;RU-KO;RS34
+RU;Tatarstan;RU.TT;RU-;RS73;Tatarstan;RU.TT;RU-TA;RS73
+RU;Altay;RU.AL;RU-AL;RS04;Altay;RU.AL;RU-ALT;RS04
+RU;Gorno-Altay;RU.GA;RU-;RS03;Gorno-Altay;RU.GA;RU-AL;RS03
+RU;Khakass;RU.KK;RU-;RS31;Khakass;RU.KK;RU-KK;RS31
+RU;Dagestan;RU.DA;RU-;RS17;Dagestan;RU.DA;RU-DA;RS17
+RU;Irkutsk;RU.IR;RU-IRK;RS20;Irkutsk;RU.IK;RU-IRK;RS20
+RU;Krasnoyarsk;RU.KY;RU-KYA;RS39;Krasnoyarsk;RU.KX;RU-KYA;RS91
+RU;Buryat;RU.BU;RU-;RS11;Buryat;RU.BU;RU-BU;RS11
+RU;Kamchatka;RU.KA;RU-KAM;RS26;Kamchatka;RU.KQ;RU-KAM;RS92
+RW;Southern;RW.;RW-05;     ;Southern;RW.SU;RW-05;RW15
+RW;Western;RW.;RW-04;     ;Western;RW.OU;RW-04;RW14
+RW;Eastern;RW.;RW-02;     ;Eastern;RW.ES;RW-02;RW11
+RW;Northern;RW.;RW-03;     ;Northern;RW.NO;RW-03;RW13
+RW;Kigali City;RW.;RW-01;     ;Kigali City;RW.KV;RW-01;RW12
+SA;Al Jawf;SA.JF;SA-12;SA03;Al Jawf;SA.JF;SA-12;SA20
+SB;Rennell and Bellona;SB.RB;SB-RB;BP10;Rennell and Bellona;SB.RB;SB-RB;BP13
+SB;Central;SB.GC;SB-CE;BP10;Central;SB.CN;SB-CE;BP10
+SB;Guadalcanal;SB.GC;SB-GU;BP06;Guadalcanal;SB.GU;SB-GU;BP06
+SB;Western;SB.WE;SB-CH;BP11;Western;SB.WE;SB-WE;BP11
+SB;Choiseul;SB.CH;SB-;BP11;Choiseul;SB.CH;SB-CH;BP12
+SC;Outer Islands;SC.;SC-;     ;Outer Islands;SC.OI;SC-;
+SC;Anse aux Pins;SC.;SC-01;     ;Anse aux Pins;SC.PI;SC-01;SE01
+SC;Anse Boileau;SC.;SC-02;     ;Anse Boileau;SC.AB;SC-02;SE02
+SC;Au Cap;SC.;SC-04;     ;Au Cap;SC.LO;SC-04;SE28
+SC;Anse Royale;SC.;SC-05;     ;Anse Royale;SC.RO;SC-05;SE05
+SC;Baie Lazare;SC.;SC-06;     ;Baie Lazare;SC.BL;SC-06;SE06
+SC;Baie Sainte Anne;SC.;SC-07;     ;Baie Sainte Anne;SC.BS;SC-07;SE07
+SC;Beau Vallon;SC.;SC-08;     ;Beau Vallon;SC.BV;SC-08;SE08
+SC;Bel Air;SC.;SC-09;     ;Bel Air;SC.BA;SC-09;SE09
+SC;Cascade;SC.;SC-11;     ;Cascade;SC.CA;SC-11;SE11
+SC;Glacis;SC.;SC-12;     ;Glacis;SC.GL;SC-12;SE12
+SC;La Digue and Inner Islands;SC.;SC-;     ;La Digue and Inner Islands;SC.DI;SC-15;SE25
+SC;English River;SC.;SC-16;     ;English River;SC.RA;SC-16;SE26
+SC;Mont Buxton;SC.;SC-17;     ;Mont Buxton;SC.MB;SC-17;SE17
+SC;Mont Fleuri;SC.;SC-18;     ;Mont Fleuri;SC.MF;SC-18;SE18
+SC;Plaisance;SC.;SC-19;     ;Plaisance;SC.PL;SC-19;SE19
+SC;Pointe La Rue;SC.;SC-20;     ;Pointe La Rue;SC.PR;SC-20;SE20
+SC;Port Glaud;SC.;SC-21;     ;Port Glaud;SC.PG;SC-21;SE27
+SC;Saint Louis;SC.;SC-22;     ;Saint Louis;SC.SL;SC-22;SE22
+SC;Takamaka;SC.;SC-23;     ;Takamaka;SC.TA;SC-23;SE23
+SC;Les Mamelles;SC.;SC-24;     ;Les Mamelles;SC.LM;SC-24;SE29
+SC;Roche Caïman;SC.;SC-25;     ;Roche Caïman;SC.RC;SC-25;SE30
+SD;Red Sea;SD.RS;SD-RS;EG02;Red Sea;SD.RS;SD-RS;SU36
+SD;Central Darfur;SD.WD;SD-DE;SU47;Central Darfur;SD.CD;SD-DC;SU61
+SD;North Darfur;SD.ND;SD-;SU55;North Darfur;SD.ND;SD-DN;SU55
+SE;Gotland;SE.GT;SE-;SW18;Gotland;SE.GT;SE-I;SW05
+SE;Västra Götaland;SE.VG;SE-O;     ;Västra Götaland;SE.VG;SE-O;SW28
+SE;Skåne;SE.SN;SE-;SW11;Skåne;SE.SN;SE-M;SW27
+SH;Ascension;SH.;SH;     ;Ascension;SH.AC;SH-AC;SH01
+SH;Saint Helena;SH.;AC;     ;Saint Helena;SH.SH;SH-HL;SH02
+SH;Tristan da Cunha;SH.;TA;     ;Tristan da Cunha;SH.TA;SH-TA;SH03
+SI;Vrhnika;SI.LJ.VR;SI-140;SIE5;Vrhnika;SI.LJ.VN;SI-140;SIE5
+SI;Bled;SI.GO.BL;SI-003;SI03;Bled;SI.GO.BD;SI-003;SI03
+SI;Naklo;SI.GO.NA;SI-082;SI62;Naklo;SI.GO.NA;SI-082;SI82
+SI;Izola;SI.JP.IZ;SI-;SI40;Izola;SI.JP.IZ;SI-040;SI40
+SI;Koper;SI.JP.KP;SI-;SI50;Koper;SI.JP.KP;SI-050;SI50
+SI;Piran;SI.JP.PI;SI-;SIJ9;Piran;SI.JP.PI;SI-090;SIJ9
+SI;Kuzma;SI.PM.KU;SI-;SII2;Kuzma;SI.PM.KU;SI-056;SII2
+SI;Cerkvenjak;SI.PD.CE;SI-153;SI00;Cerkvenjak;SI.PD.CE;SI-153;SIF9
+SI;Benedikt;SI.PD.BE;SI-148;SI00;Benedikt;SI.PD.BE;SI-148;SIF4
+SI;Sveta Ana;SI.PD.SA;SI-181;SI00;Sveta Ana;SI.PD.SA;SI-181;SIM3
+SI;Grad;SI.PM.GD;SI-158;SI00;Grad;SI.PM.GD;SI-158;SIG8
+SI;Destrnik;SI.PD.DE;SI-018;SI18;Destrnik;SI.PD.DE;SI-018;SIG1
+SI;Lenart;SI.PD.LE;SI-058;SII3;Lenart;SI.PD.LN;SI-058;SII3
+SI;Novo Mesto;SI.DO.NM;SI-085;SIJ7;Novo Mesto;SI.DO.NV;SI-085;SIJ7
+SI;Bistrica ob Sotli;SI.SA.BS;SI-149;SI92;Bistrica ob Sotli;SI.SA.BS;SI-149;SIF5
+SI;Podvelka;SI.KO.PO;SI-093;SI93;Podvelka;SI.KO.PO;SI-093;SIK2
+SI;Slovenska Bistrica;SI.PD.SB;SI-113;SIL8;Slovenska Bistrica;SI.PD.SL;SI-113;SIL8
+SI;Komenda;SI.LJ.KM;SI-164;SI00;Komenda;SI.LJ.KM;SI-164;SIH8
+SI;Oplotnica;SI.PD.OP;SI-171;SI00;Oplotnica;SI.PD.OP;SI-171;SIJ8
+SI;Hajdina;SI.PD.HA;SI-159;SI00;Hajdina;SI.PD.HA;SI-159;SIG9
+SI;Podlehnik;SI.PD.PO;SI-172;SI00;Podlehnik;SI.PD.PO;SI-172;SIK1
+SI;Prevalje;SI.KO.PR;SI-;SI00;Prevalje;SI.KO.PR;SI-175;SIK6
+SI;Selnica ob Dravi;SI.PD.SD;SI-178;SI00;Selnica ob Dravi;SI.PD.SD;SI-178;SIL5
+SI;Lovrenc na Pohorju;SI.PD.LP;SI-167;SI00;Lovrenc na Pohorju;SI.PD.LP;SI-167;SII8
+SI;Trzin;SI.LJ.TR;SI-186;SI00;Trzin;SI.LJ.TR;SI-186;SIM8
+SI;Jezersko;SI.GO.JZ;SI-163;SI00;Jezersko;SI.GO.JZ;SI-163;SIH5
+SI;Dobrna;SI.SA.DR;SI-155;SI00;Dobrna;SI.SA.DR;SI-155;SIG3
+SI;Tabor;SI.SA.TA;SI-184;SI00;Tabor;SI.SA.TA;SI-184;SIM5
+SI;Vransko;SI.SA.VR;SI-189;SI00;Vransko;SI.SA.VR;SI-189;SIN4
+SI;Prebold;SI.SA.PR;SI-174;SI00;Prebold;SI.SA.PR;SI-174;SIK4
+SI;Polzela;SI.SA.PL;SI-173;SI00;Polzela;SI.SA.PL;SI-173;SIK3
+SI;Kostel;SI.LJ.KS;SI-165;SI00;Kostel;SI.LJ.KS;SI-165;SIH9
+SI;Dolenjske Toplice;SI.DO.DT;SI-157;SI00;Dolenjske Toplice;SI.DO.DT;SI-157;SIG6
+SI;Horjul;SI.LJ.HO;SI-;SI00;Horjul;SI.LJ.HO;SI-162;SIH3
+SI;Dobje;SI.SA.DJ;SI-154;SI00;Dobje;SI.SA.DJ;SI-154;SIG2
+SI;Dobrepolje;SI.LJ.DB;SI-020;SI00;Dobrepolje;SI.LJ.DB;SI-020;SI20
+SI;Bloke;SI.NO.BL;SI-150;SI00;Bloke;SI.NO.BL;SI-150;SIF6
+SI;Maribor;SI.PD.MB;SI-070;SI70;Maribor;SI.PD.MB;SI-070;SIJ2
+SI;Ribnica na Pohorju;SI.KO.RP;SI-177;SIA5;Ribnica na Pohorju;SI.KO.RP;SI-177;SIL2
+SI;Lendava;SI.PM.LE;SI-;SI59;Lendava;SI.PM.LE;SI-059;SII4
+SI;Velika Polana;SI.PM.VP;SI-187;SI00;Velika Polana;SI.PM.VP;SI-187;SIM9
+SI;Dobrovnik;SI.PM.DO;SI-;SI00;Dobrovnik;SI.PM.DO;SI-156;SIG5
+SI;Markovci;SI.PD.MK;SI-168;SI00;Markovci;SI.PD.MK;SI-168;SIJ3
+SI;Cankova;SI.PM.CA;SI-152;SI10;Cankova;SI.PM.CA;SI-152;SIF8
+SI;Gornja Radgona;SI.PM.GR;SI-029;SI29;Gornja Radgona;SI.PM.GG;SI-029;SI29
+SI;Cerklje na Gorenjskem;SI.GO.CG;SI-;SI12;Cerklje na Gorenjskem;SI.GO.CG;SI-012;SI12
+SI;Trbovlje;SI.ZS;SI-129;SI34;Trbovlje;SI.ZS.TR;SI-129;SID3
+SI;Kozje;SI.SA.KO;SI-051;SI08;Kozje;SI.SA.KO;SI-051;SI51
+SI;Ljubljana;SI.LJ;SI-061;SI61;Ljubljana;SI.LJ.LJ;SI-061;SI61
+SI;Metlika;SI.DO.CR;SI-073;SI73;Metlika;SI.DO.ME;SI-073;SI73
+SI;Mozirje;SI.SA.MO;SI-079;SI79;Mozirje;SI.SA.MZ;SI-079;SI79
+SI;Muta;SI.KO.MU;SI-;SI81;Muta;SI.KO.MU;SI-081;SI81
+SI;Slovenj Gradec;SI.KO;SI-112;SIC2;Slovenj Gradec;SI.KO.SG;SI-112;SIC2
+SI;Trebnje;SI.DO.TR;SI-130;SID4;Trebnje;SI.DO.TN;SI-130;SID4
+SK;Nitriansky;SK.NI;SK-;SI04;Nitra;SK.NI;SK-;LO04
+SK;Trnavský;SK.TA;SK-;SI07;Trnava;SK.TA;SK-;LO07
+SL;Western;SL.WE;SL-;SL04;Western;SL.WE;SL-W;SL04
+SN;Sédhiou;SN.KD;SN-SE;SG11;Sédhiou;SN.SD;SN-SE;SG18
+SN;Kédougou;SN.TC;SN-KE;SG05;Kédougou;SN.KG;SN-KE;SG17
+SN;Kaffrine;SN.;SN-KA;     ;Kaffrine;SN.KF;SN-KA;SG16
+SN;Saint-Louis;SN.SL;SN-SL;SG14;Saint-Louis;SN.ST;SN-SL;SG14
+SN;Kaolack;SN.;SN-KL;     ;Kaolack;SN.KC;SN-KL;SG10
+SN;Matam;SN.SL;SN-MT;SG14;Matam;SN.MT;SN-MT;SG15
+SN;Kolda;SN.KD;SN-KD;SG11;Kolda;SN.KO;SN-KD;SG11
+SN;Tambacounda;SN.TC;SN-TC;SG05;Tambacounda;SN.TB;SN-TC;SG05
+SO;Shabeellaha Hoose;SO.SH;SO-SH;SO02;Shabeellaha Hoose;SO.SH;SO-SH;SO14
+SR;Commewijne;SR.CM;SR-CM;NS13;Commewijne;SR.CM;SR-CM;NS11
+SS;North Bahr-al-Ghazal;SD.NB;SS-BN;SU54;North Bahr-al-Ghazal;SS.NB;SS-BN;OD05
+SS;Lakes;SD.EB;SS-LK;SU37;Lakes;SS.EB;SS-LK;OD04
+SS;West Equatoria;SD.WE;SS-EW;SU45;West Equatoria;SS.WE;SS-EW;OD10
+SS;Central Equatoria;UG.MY;SS-EC;SU44;Central Equatoria;SS.BG;SS-EC;OD01
+SS;Upper Nile;SD.UN;SS-NU;SU35;Upper Nile;SS.UN;SS-NU;OD07
+SS;Jungoli;SD.JG;SS-JG;SU51;Jungoli;SS.JG;SS-JG;OD03
+SS;Unity;SD.WH;SS-UY;SU40;Unity;SS.WH;SS-UY;OD06
+SS;Warap;SD.WR;SS-WR;SU59;Warap;SS.WR;SS-WR;OD08
+SS;West Bahr-al-Ghazal;SD.WB;SS-;SU46;West Bahr-al-Ghazal;SS.WB;SS-BW;OD09
+SS;East Equatoria;SD.EE;SS-EE;SU57;East Equatoria;SS.EE;SS-EE;OD02
+SX;Sint Maarten;SX.;NL-SX;     ;Sint Maarten;SX.SM;NL-SX;     
+TD;Hadjer-Lamis;TD.HD;TD-;CD18;Hadjer-Lamis;TD.HD;TD-HL;CD18
+TD;Kanem;TD.KM;TD-;CD06;Kanem;TD.KM;TD-KA;CD06
+TD;Lac;TD.LC;TD-;CD07;Lac;TD.LC;TD-LC;CD07
+TD;Batha;TD.BA;TD-;CD01;Batha;TD.BA;TD-BA;CD01
+TD;Guéra;TD.GR;TD-;CD05;Guéra;TD.GR;TD-GR;CD05
+TD;Ouaddaï;TD.OA;TD-;CD12;Ouaddaï;TD.OA;TD-OD;CD12
+TD;Logone Occidental;TD.LO;TD-;CD08;Logone Occidental;TD.LO;TD-LO;CD08
+TD;Logone Oriental;TD.LR;TD-;CD09;Logone Oriental;TD.LR;TD-LR;CD09
+TD;Tandjilé;TD.TA;TD-;CD14;Tandjilé;TD.TA;TD-TA;CD14
+TD;Mandoul;TD.MA;TD-MA;CD11;Mandoul;TD.MA;TD-MA;CD19
+TD;Borkou;TD.BR;TD-;CD23;Borkou;TD.BR;TD-BO;CD23
+TD;Chari-Baguirmi;TD.CG;TD-;CD15;Chari-Baguirmi;TD.CG;TD-CB;CD15
+TD;Moyen-Chari;TD.MO;TD-;CD17;Moyen-Chari;TD.MO;TD-MC;CD17
+TG;Maritime;TG.MA;TG-;TO24;Maritime;TG.MA;TG-M;TO24
+TH;Phangnga;TH.PG;TH-82;TH59;Phangnga;TH.PG;TH-82;TH61
+TH;Lampang;TH.LG;TH-;TH06;Lampang;TH.LG;TH-52;TH06
+TH;Chai Nat;TH.CN;TH-;TH32;Chai Nat;TH.CN;TH-18;TH32
+TH;Samut Sakhon;TH.SS;TH-;TH55;Samut Sakhon;TH.SS;TH-74;TH55
+TH;Maha Sarakham;TH.MS;TH-;TH24;Maha Sarakham;TH.MS;TH-44;TH24
+TH;Nakhon Ratchasima;TH.NR;TH-30;TH32;Nakhon Ratchasima;TH.NR;TH-30;TH27
+TH;Nong Khai;TH.NK;TH-43;TH17;Nong Khai;TH.NH;TH-43;TH17
+TH;Bueng Kan;TH.BK;TH-;TH81;Bueng Kan;TH.BK;TH-38;TH81
+TJ;Khatlon;TJ.KL;TJ-KT;TI03;Khatlon;TJ.KL;TJ-KT;TI02
+TJ;Leninabad;TJ.LE;TJ-SU;TI04;Sogd;TJ.LE;TJ-SU;TI03
+TJ;Dushanbe;TJ.DU;Tj-X1~;TI04;Dushanbe;TJ.DU;TJ-DU;TI04
+TL;Dili;TP.DL;TL-DI;TT00;Dili;TL.DL;TL-DI;TT06
+TL;Ambeno;TP.AM;TL-OE;TT00;Ambeno;TL.AM;TL-OE;TT12
+TL;Aileu;TP.AL;TL-AL;TT00;Aileu;TL.AL;TL-AL;TT01
+TL;Ainaro;TP.AN;TL-AN;TT00;Ainaro;TL.AN;TL-AN;TT02
+TL;Baucau;TP.BC;TL-BA;TT00;Baucau;TL.BC;TL-BA;TT03
+TL;Bobonaro;TP.BB;TL-BO;TT00;Bobonaro;TL.BB;TL-BO;TT04
+TL;Cova Lima;TP.CL;TL-CO;TT00;Cova Lima;TL.CL;TL-CO;TT05
+TL;Ermera;TP.ER;TL-ER;TT00;Ermera;TL.ER;TL-ER;TT07
+TL;Manatuto;TP.MT;TL-MT;TT00;Manatuto;TL.MT;TL-MT;TT10
+TL;Manufahi;TP.MF;TL-MF;TT00;Manufahi;TL.MF;TL-MF;TT11
+TL;Viqueque;TP.VQ;TL-VI;TT00;Viqueque;TL.VQ;TL-VI;TT13
+TN;Ben Arous (Tunis Sud);TN.BA;TN-13;TS32;Ben Arous;TN.BA;TN-13;TS27
+TN;Gafsa;TN.GF;TN-71;TS10;Gafsa;TN.GF;TN-71;TS30
+TN;Sfax;TN.SF;TN-;TS32;Sfax;TN.SF;TN-61;TS32
+TO;Tongatapu;TO.;TO-04;     ;Tongatapu;TO.TT;TO-04;TN02
+TO;Vava'u;TO.;TO-05;     ;Vava'u;TO.VA;TO-05;TN03
+TO;Niuas;TO.;TO-03;     ;Niuas;TO.NI;TO-03;TN05
+TO;Ha'apai;TO.;TO-02;     ;Ha'apai;TO.HA;TO-02;TN01
+TO;'Eua;TO.;TO-01;     ;'Eua;TO.EU;TO-01;TN04
+TR;Afyonkarahisar;TR.AF;TR-;TU03;Afyonkarahisar;TR.AF;TR-03;TU03
+TR;Amasya;TR.AM;TR-;TU05;Amasya;TR.AM;TR-05;TU05
+TR;Mus;TR.MS;TR-;TU49;Muş;TR.MS;TR-49;TU49
+TR;Bayburt;TR.BB;TR-;TU77;Bayburt;TR.BB;TR-69;TU77
+TT;Diego Martin;TT.DM;TT-DMN;TD00;Diego Martin;TT.DM;TT-DMN;TD15
+TT;Siparia;TT.SI;TT-SIP;TD00;Siparia;TT.SI;TT-SIP;TD22
+TT;Arima;TT.TP;TT-ARI;TD01;Arima;TT.AR;TT-ARI;TD01
+TT;Sangre Grande;TT.SN;TT-SGE;TD00;Sangre Grande;TT.SN;TT-SGE;TD21
+TT;Princes Town;TT.PT;TT-PRT;TD00;Princes Town;TT.PT;TT-PRT;TD19
+TT;Point Fortin;TT.PF;TT-PTF;TD00;Point Fortin;TT.PF;TT-PTF;TD18
+TT;Tunapuna/Piarco;TT.TP;TT-TUP;TD00;Tunapuna/Piarco;TT.TP;TT-TUP;TD23
+TT;Chaguanas;TT.CH;TT-CHA;TD00;Chaguanas;TT.CH;TT-CHA;TD13
+TW;Kaohsiung City;TW.KH.KC;TW-KHH;     ;Kaohsiung City;TW.KH.KS;TW-KHH;TW02
+TW;Pingtung;TW.TW.PT;TW-PIF;     ;Pingtung;TW.TA.PT;TW-PIF;TW18
+TW;Tainan City;TW.TW.TN;TW-TNN;     ;Tainan City;TW.TN.TI;TW-TNN;TW21
+TW;Hsinchu City;TW.TW.HS;TW-HSZ;     ;Hsinchu City;TW.TA.HS;TW-HSZ;TW08
+TW;Hsinchu;TW.TW.HH;TW-HSQ;     ;Hsinchu;TW.TA.HH;TW-HSQ;TW09
+TW;Yilan;TW.TW.IL;TW-ILA;     ;Ilan;TW.TA.IL;TW-ILA;TW26
+TW;Keelung City;TW.TW.CL;TW-KEE;     ;Keelung City;TW.TA.CL;TW-KEE;TW12
+TW;Miaoli;TW.TW.ML;TW-MIA;     ;Miaoli;TW.TA.ML;TW-MIA;TW15
+TW;New Taipei City;TW.TW.TP;TW-TPQ;TW03;New Taipei City;TW.NT.TP;TW-NWT;TW23
+TW;Taoyuan;TW.TW.TY;TW-TAO;     ;Taoyuan;TW.TA.TY;TW-TAO;TW25
+TW;Changhua;TW.TW.CG;TW-CHA;     ;Changhwa;TW.TA.CG;TW-CHA;TW05
+TW;Chiayi;TW.TW.CH;TW-CYQ;     ;Chiayi;TW.TA.CH;TW-CYQ;TW07
+TW;Chiayi City;TW.TW.CS;TW-CYI;     ;Chiayi City;TW.TA.CS;TW-CYI;TW06
+TW;Hualien;TW.TW.HL;TW-HUA;     ;Hualien;TW.TA.HL;TW-HUA;TW10
+TW;Nantou;TW.TW.NT;TW-NAN;     ;Nantou;TW.TA.NT;TW-NAN;TW16
+TW;Taichung City;TW.TW.TG;TW-TXG;     ;Taichung City;TW.TG.TU;TW-TXG;TW19
+TW;Yunlin;TW.TW.YL;TW-YUN;     ;Yunlin;TW.TA.YL;TW-YUN;TW27
+TW;Taitung;TW.TW.TT;TW-TTT;     ;Taitung;TW.TA.TT;TW-TTT;TW24
+TW;Penghu;TW.TW.PH;TW-PEN;     ;Penghu;TW.TA.PH;TW-PEN;TW17
+TW;Kinmen;TW.FK.KM;TW-;     ;Kinmen;TW.FK.KM;TW-KIN;TW13
+TZ;Rukwa;TZ.RK;TZ-20;TZ24;Rukwa;TZ.RU;TZ-20;TZ24
+TZ;Mwanza;TZ.MW;TZ-18;TZ12;Mwanza;TZ.MZ;TZ-18;TZ12
+TZ;Shinyanga;TZ.SH;TZ-22;TZ15;Shinyanga;TZ.SY;TZ-22;TZ15
+TZ;Kagera;TZ.KR;TZ-05;TZ19;Kagera;TZ.KG;TZ-05;TZ19
+TZ;Kaskazini-Unguja;TZ.ZN;TZ-;TZ22;Zanzibar North;TZ.ZN;TZ-07;TZ22
+TZ;Iringa;TZ.IR;TZ-04;TZ04;Iringa;TZ.IG;TZ-04;TZ04
+TZ;Katavi;TZ.KA;TZ-;TZ29;Katavi;TZ.KA;TZ-28;TZ29
+TZ;Simiyu;TZ.SI;TZ-;TZ31;Simiyu;TZ.SI;TZ-30;TZ31
+TZ;Geita;TZ.GE;TZ-;TZ28;Geita;TZ.GE;TZ-27;TZ28
+TZ;Njombe;TZ.NJ;TZ-;TZ30;Njombe;TZ.NJ;TZ-29;TZ30
+UA;Crimea;UA.KR;UA-43;UP08;Crimea;UA.KR;UA-43;UP11
+UA;Mykolayiv;UA.MY;UA-48;UP14;Mykolayiv;UA.MY;UA-48;UP16
+UA;Rivne;UA.RV;UA-56;UP18;Rivne;UA.RV;UA-56;UP19
+UA;L'viv;UA.LV;UA-46;UP13;L'viv;UA.LV;UA-46;UP15
+UA;Ternopil';UA.TP;UA-61;UP19;Ternopil';UA.TP;UA-61;UP22
+UA;Transcarpathia;UA.ZK;UA-21;UP22;Transcarpathia;UA.ZK;UA-21;UP25
+UA;Volyn;UA.VO;UA-07;UP21;Volyn;UA.VO;UA-07;UP24
+UA;Kiev;UA.KV;UA-30;UP11;Kiev;UA.KV;UA-32;UP13
+UA;Odessa;UA.MY;UA-51;UP15;Odessa;UA.OD;UA-51;UP17
+UA;Vinnytsya;UA.VI;UA-;UP20;Vinnytsya;UA.VI;UA-05;UP23
+UA;Zhytomyr;UA.ZT;UA-18;UP24;Zhytomyr;UA.ZT;UA-18;UP27
+UA;Sumy;UA.SM;UA-59;UP18;Sumy;UA.SM;UA-59;UP21
+UA;Luhans'k;UA.LH;UA-09;UP12;Luhans'k;UA.LH;UA-09;UP14
+UA;Poltava;UA.PL;UA-53;UP16;Poltava;UA.PL;UA-53;UP18
+UA;Zaporizhzhya;UA.ZP;UA-23;UP23;Zaporizhzhya;UA.ZP;UA-23;UP26
+UA;Kiev City;UA.KM;UA-30;UP12;Kiev City;UA.KC;UA-30;UP12
+UG;Kumi;UG.KU;UG-208;UG46;Kumi;UG.QM;UG-208;UG46
+UG;Iganga;UG.IN;UG-203;UGA2;Iganga;UG.IC;UG-203;UGA3
+UG;Kamuli;UG.KX;UG-205;UGA3;Kamuli;UG.QU;UG-205;UGA4
+UG;Amolatar;UG.LI.KO;UG-314;UGB4;Amolatar;UG.AT;UG-314;UGB7
+UG;Kaliro;UG.RO.BL;UG-220;UGC2;Kaliro;UG.RO;UG-220;UGD2
+UG;Namutumba;UG.BK.BS;UG-222;UGD2;Namutumba;UG.BK;UG-222;UGE1
+UG;Soroti;UG.SR;UG-211;UG95;Soroti;UG.ST;UG-211;UG95
+UG;Mukono;UG.MN;UG-108;UG90;Mukono;UG.MV;UG-108;UG90
+UG;Pallisa;UG.PL;UG-210;UGB3;Pallisa;UG.PS;UG-210;UGB5
+UG;Mpigi;UG.MI;UG-106;UG89;Mpigi;UG.MJ;UG-106;UG89
+UG;Adjumani;UG.AD;UG-;UG65;Adjumani;UG.AD;UG-301;UG98
+UG;Arua;UG.AW.AU;UG-303;UG99;Arua;UG.AX;UG-303;UGA1
+UG;Koboko;UG.OK.KB;UG-316;UGC4;Koboko;UG.OK;UG-316;UGD4
+UG;Buliisa;UG.BL;UG-419;UGD1;Buliisa;UG.BL;UG-419;UGC5
+UG;Nebbi;UG.NE;UG-310;UG58;Nebbi;UG.NB;UG-310;UG58
+UG;Moyo;UG.MY;UG-309;UG72;Moyo;UG.MY;UG-309;UGB3
+UG;Kiboga;UG.KG;UG-103;UG42;Kiboga;UG.QO;UG-103;UG42
+UG;Wakiso;UG.WA;UG-113;UG37;Wakiso;UG.WA;UG-113;UG96
+UG;Mubende;UG.MD;UG-107;UGB2;Mubende;UG.MD;UG-107;UGB4
+UG;Mityana;UG.TY.BS;UG-114;UGC6;Mityana;UG.TY;UG-114;UGD8
+UG;Nakaseke;UG.NK;UG-115;UGC7;Nakaseke;UG.NK;UG-115;UGD9
+UG;Kitgum;UG.TG;UG-;UG84;Kitgum;UG.QT;UG-305;UG84
+UG;Gulu;UG.GL.AW;UG-304;UGA1;Gulu;UG.GL;UG-304;UGA2
+UG;Lira;UG.LA;UG-307;UGA7;Lira;UG.LL;UG-307;UGA8
+UG;Dokolo;UG.DO.DK;UG-318;UGD3;Dokolo;UG.DO;UG-318;UGC7
+UG;Pader;UG.PD;UG-312;UG92;Pader;UG.PR;UG-312;UG92
+UG;Masindi;UG.MC;UG-409;UG50;Masindi;UG.MZ;UG-409;UG50
+UG;Oyam;UG.OY.OA;UG-321;UGD6;Oyam;UG.OY;UG-321;UGE2
+UG;Bundibugyo;UG.BN;UG-401;UG28;Bundibugyo;UG.BX;UG-401;UG28
+UG;Kyenjojo;UG.KJ;UG-415;UG85;Kyenjojo;UG.QJ;UG-415;UG85
+UG;Kapchorwa;UG.KP;UG-206;UGA4;Kapchorwa;UG.QP;UG-206;UGA5
+UG;Sironko;UG.SI.BD;UG-215;UG94;Sironko;UG.SK;UG-215;UG94
+UG;Mbale;UG.ME.BN;UG-209;UGA9;Mbale;UG.ME;UG-209;UGB1
+UG;Manafwa;UG.MF;UG-;UGC5;Manafwa;UG.MW;UG-221;UGD6
+UG;Bugiri;UG.BG;UG-201;UG66;Bugiri;UG.BI;UG-201;UG66
+UG;Butaleja;UG.BJ.BN;UG-219;UGB7;Butaleja;UG.BJ;UG-219;UGC6
+UG;Katakwi;UG.KK.UU;UG-207;UGA5;Katakwi;UG.KK;UG-207;UGA6
+UG;Kotido;UG.KF.JE;UG-306;UGA6;Kotido;UG.KF;UG-306;UGA7
+UG;Amuria;UG.AM;UG-216;UGB5;Amuria;UG.AM;UG-216;UGB8
+UG;Kaabong;UG.AB;UG-315;UGC1;Kaabong;UG.AB;UG-315;UGD1
+UG;Abim;UG.AI.LB;UG-317;UGC8;Abim;UG.AI;UG-317;UGB6
+UG;Moroto;UG.MT;UG-308;UG88;Moroto;UG.MX;UG-308;UG88
+UG;Nakapiripirit;UG.NP;UG-311;UG91;Nakapiripirit;UG.NI;UG-311;UG91
+UG;Rakai;UG.RA;UG-110;UG61;Rakai;UG.RI;UG-110;UG61
+UG;Masaka;UG.MA;UG-105;UG71;Masaka;UG.MQ;UG-105;UG71
+UG;Bushenyi;UG.BS;UG-402;UG29;Bushenyi;UG.BC;UG-402;UG29
+UG;Kasese;UG.KS;UG-;UG40;Kasese;UG.KS;UG-406;UG40
+UG;Ibanda;UG.IB.IA;UG-416;UGB8;Ibanda;UG.IB;UG-416;UGC8
+UG;Isingiro;UG.NG.BK;UG-417;UGB9;Isingiro;UG.NG;UG-417;UGC9
+UG;Mbarara;UG.RR;UG-;UGC3;Mbarara;UG.RR;UG-410;UGB2
+UG;Mbarara;UG.RR.KS;UG-410;UGB1;Mbarara;UG.RR;UG-410;UGB2
+UG;Zombo;UG.ZO;UG-;UGH7;Zombo;UG.ZO;UG-331;UGH7
+UG;Ngora;UG.NR;UG-;UGG9;Ngora;UG.NR;UG-231;UGG9
+UG;Luuka;UG.LK;UG-;UGG4;Luuka;UG.LK;UG-229;UGG4
+UG;Buyende;UG.BY;UG-;UGF3;Buyende;UG.BY;UG-226;UGF3
+UG;Kibuku;UG.QB;UG-;UGF6;Kibuku;UG.QB;UG-227;UGF6
+UG;Serere;UG.SX;UG-;UGH5;Serere;UG.SX;UG-232;UGH5
+UG;Buikwe;UG.BZ;UG-;UGE7;Buikwe;UG.BZ;UG-117;UGE7
+UG;Buvuma;UG.BV;UG-;UGF2;Buvuma;UG.BV;UG-120;UGF2
+UG;Butambala;UG.BT;UG-;UGF1;Butambala;UG.BT;UG-119;UGF1
+UG;Gomba;UG.GM;UG-;UGF4;Gomba;UG.GM;UG-121;UGF4
+UG;Kyankwanzi;UG.QZ;UG-;UGG1;Kyankwanzi;UG.QZ;UG-123;UGG1
+UG;Lamwo;UG.LM;UG-;UGG3;Lamwo;UG.LM;UG-327;UGG3
+UG;Apac;UG.AC;UG-302;UG98;Apac;UG.AQ;UG-302;UG99
+UG;Kole;UG.QL;UG-;UGF8;Kole;UG.QL;UG-326;UGF8
+UG;Alebtong;UG.AL;UG-;UGE4;Alebtong;UG.AL;UG-323;UGE4
+UG;Otuke;UG.OT;UG-;UGH3;Otuke;UG.OT;UG-330;UGH3
+UG;Agago;UG.AG;UG-;UGE3;Agago;UG.AG;UG-322;UGE3
+UG;Kiryandongo;UG.QD;UG-;UGF7;Kiryandongo;UG.QD;UG-420;UGF7
+UG;Ntoroko;UG.NO;UG-;UGH1;Ntoroko;UG.NO;UG-423;UGH1
+UG;Kyegegwa;UG.QG;UG-;UGG2;Kyegegwa;UG.QG;UG-421;UGG2
+UG;Kween;UG.QW;UG-;UGF9;Kween;UG.QW;UG-228;UGF9
+UG;Bulambuli;UG.BB;UG-;UGE9;Bulambuli;UG.BB;UG-225;UGE9
+UG;Namayingo;UG.NY;UG-;UGG7;Namayingo;UG.NY;UG-230;UGG7
+UG;Napak;UG.NQ;UG-;UGG8;Napak;UG.NQ;UG-328;UGG8
+UG;Amudat;UG.AZ;UG-;UGE5;Amudat;UG.AZ;UG-324;UGE5
+UG;Lwengo;UG.LE;UG-;UGG5;Lwengo;UG.LE;UG-124;UGG5
+UG;Bukomansimbi;UG.BM;UG-;UGE8;Bukomansimbi;UG.BM;UG-118;UGE8
+UG;Kalungu;UG.QA;UG-;UGF5;Kalungu;UG.QA;UG-122;UGF5
+UG;Rubirizi;UG.RZ;UG-;UGH4;Rubirizi;UG.RZ;UG-424;UGH4
+UG;Sheema;UG.SH;UG-;UGH6;Sheema;UG.SH;UG-425;UGH6
+UG;Buhweju;UG.BH;UG-;UGE6;Buhweju;UG.BH;UG-325;UGE6
+UG;Nwoya;UG.NW;UG-;UGH2;Nwoya;UG.NW;UG-329;UGH2
+UM;Baker Island;UM.FQ;UM-81;FQ050;Baker Island;UM.FQ;UM-81;FQ
+UM;Howland Island;UM.HQ;UM-84;HQ100;Howland Island;UM.HQ;UM-84;HQ
+UM;Jarvis Island;UM.DQ;UM-86;DQ150;Jarvis Island;UM.DQ;UM-86;DQ
+UM;Johnston Atoll;UM.JQ;UM-67;JQ200;Johnston Atoll;UM.JQ;UM-67;JQ
+UM;Kingman Reef;UM.KQ;UM-89;KQ250;Kingman Reef;UM.KQ;UM-89;KQ
+UM;Midway Islands;UM.MQ;UM-71;MQ300;Midway Islands;UM.MQ;UM-71;MQ
+UM;Navassa Island;UM.BQ;UM-76;BQ350;Navassa Island;UM.BQ;UM-76;BQ
+UM;Palmyra Atoll;UM.LQ;UM-95;LQ400;Palmyra Atoll;UM.LQ;UM-95;LQ
+US;Minnesota;US.MN;US-MN;US32;Minnesota;US.MN;US-MN;US27
+UZ;Namangan;UZ.NG;UZ-NG;TI04;Namangan;UZ.NG;UZ-NG;UZ06
+UZ;Jizzakh;UZ.JI;UZ-JI;UZ04;Jizzax;UZ.JI;UZ-JI;UZ15
+UZ;Sirdaryo;UZ.SI;UZ-SI;UZ11;Sirdaryo;UZ.SI;UZ-SI;UZ16
+UZ;Tashkent;UZ.TK;UZ-TK;UZ13;Tashkent;UZ.TA;UZ-TO;UZ14
+VE;Aragua;VE.AR;VE-;VE04;Aragua;VE.AR;VE-D;VE04
+VE;Vargas;VE.;VE-X;VE26;Vargas;VE.VA;VE-X;VE26
+VE;Distrito Capital;VE.DF;VE-;VE26;Distrito Capital;VE.DF;VE-A;VE25
+VE;Dependencias Federales;VE.DP;VE-W;VE00;Dependencias Federales;VE.DP;VE-W;VE24
+VE;Nueva Esparta;VE.NE;VE-O;VE00;Nueva Esparta;VE.NE;VE-O;VE17
+VG;British Virgin Islands;VG;VG-;     ;British Virgin Islands;VG.VI;VG-;     
+VI;Saint Thomas;VI.ST;                                                                                                                                                                                                                                                              ;010;Saint Thomas;VI.ST;                                                                                                                                                                                                                                                              ;030
+VI;Saint Croix;VI.SC;                                                                                                                                                                                                                                                              ;030;Saint Croix;VI.SC;                                                                                                                                                                                                                                                              ;010
+VN;Quảng Ninh;VN.QN;VN-13;VM13;Quang Ninh;VN.QN;VN-13;VM30
+VN;Điện Biên;VN.DB;VN-71;VM22;Dien Bien;VN.DB;VN-71;VM92
+VN;Son La;VN.;VN-05;VM32;Son La;VN.SL;VN-05;VM32
+VN;Hòa Bình;VN.HO;VN-14;VM56;Hoa Binh;VN.HO;VN-14;VM53
+VN;Ha Tinh;VN.;VN-23;VM52;Ha Tinh;VN.HT;VN-23;VM52
+VN;Dak Lak;VN.;VN-33;VM07;Dac Lac;VN.DC;VN-33;VM88
+VN;Gia Lai;VN.;VN-30;VM49;Gia Lai;VN.GL;VN-30;VM49
+VN;Lâm Đồng;VN.LD;VN-;VM23;Lam Dong;VN.LD;VN-35;VM23
+VN;Tiền Giang;VN.TG;VN-46;VM03;Tien Giang;VN.TG;VN-46;VM37
+VN;Kon Tum;VN.;VN-28;VM55;Kon Tum;VN.KT;VN-28;VM55
+VN;Can Tho;VN.;VN-CT;     ;Can Tho;VN.CN;VN-CT;VM87
+VN;Hau Giang;VN.;VN-73;     ;Hau Giang;VN.HU;VN-73;VM93
+VN;Trà Vinh;VN.TV;VN-51;VM51;Tra Vinh;VN.TV;VN-51;VM67
+VN;Vĩnh Long;VN.VL;VN-49;VM50;Vinh Long;VN.VL;VN-49;VM69
+VN;Lào Cai;VN.LO;VN-;VM56;Lao Cai;VN.LO;VN-02;VM90
+WF;Sigave;WF.SI;WF-;     ;Sigave;WF.SI;WF-SG;     
+WF;Alo;WF.AL;WF-;     ;Alo;WF.AL;WF-AL;     
+YE;Amran;YE.AM;YE-AM;YM00;Amran;YE.AM;YE-AM;YM19
+YE;Al Dali';YE.DL;YE-;YM00;Al Dali';YE.DL;YE-DA;YM18
+YE;Hadramawt;YE.HD;YE-HD;YM04;Hadramawt;YE.HA;YE-HD;YM04
+YE;Raymah;YE.;YE-RA;     ;Raymah;YE.RM;YE-RA;YM27
+YE;`Adan;YE.AD;YE-AD;YM01;`Adan;YE.AD;YE-AD;YM02
+YE;Abyan;YE.;YE-AB;     ;Abyan;YE.AB;YE-AB;YM01
+ZA;Northern Cape;ZA.NC;ZA-NC;SF06;Northern Cape;ZA.NC;ZA-NC;SF08
+ZA;Western Cape;ZA.WC;ZA-WC;SF09;Western Cape;ZA.WC;ZA-WC;SF11
+ZA;North West;ZA.NW;ZA-NW;SF06;North-West;ZA.NW;ZA-NW;SF10
+ZA;Orange Free State;ZA.FS;ZA-FS;SF07;Free State;ZA.FS;ZA-FS;SF03
+ZA;Gauteng;ZA.GT;ZA-GT;SF08;Gauteng;ZA.GT;ZA-GT;SF06
+ZA;Mpumalanga;ZA.MP;ZA-MP;SF02;Mpumalanga;ZA.MP;ZA-MP;SF07
+ZA;Limpopo;ZA.NP;ZA-LP;SF05;Limpopo;ZA.NP;ZA-LP;SF09
+ZA;KwaZulu-Natal;ZA.NL;ZA-NL;SF03;KwaZulu-Natal;ZA.NL;ZA-NL;SF02
+ZA;Eastern Cape;ZA.EC;ZA-EC;SF01;Eastern Cape;ZA.EC;ZA-EC;SF05
+ZM;Northern;ZM.NO;ZM-05;ZA05;Northern;ZM.NR;ZM-05;ZA05
+ZM;Eastern;ZM.EA;ZM-03;ZA03;Eastern;ZM.ES;ZM-03;ZA03
+ZM;Lusaka;ZM.LS;ZM-09;ZA02;Lusaka;ZM.LS;ZM-09;ZA09
+ZM;Muchinga;ZM.MU;ZM-;ZA10;Muchinga;ZM.MU;ZM-10;ZA10
