@@ -1,3 +1,5 @@
+# -*- coding: utf8 -*-
+
 """
 The main algorithm for processing an input table of changes,
 doing all the geometric changes and creating the final shapefile.
@@ -25,6 +27,7 @@ import warnings
 import dateutil, dateutil.parser
 import pygeoj
 import shapely, shapely.ops, shapely.geometry
+from unidecode import unidecode
 
 
 
@@ -114,7 +117,16 @@ def ids_equal(find, comparison):
     if find.country == comparison.country:
         #match = any((validid(otherid) and otherid in find.ids.values()
         #             for otherid in comparison.ids.values() ))
-        match = find.ids["Name"] == comparison.ids["Name"] or find.ids["Name"] in comparison.ids["Alterns"] or (find.ids["HASC"] and len(find.ids["HASC"]) > 3 and comparison.ids["HASC"] == find.ids["HASC"])
+        names = [find.ids["Name"]] + find.ids["Alterns"]
+        names += [unidecode(n) for n in names if n != unidecode(n)]
+        for name in names:
+            compnames = [comparison.ids["Name"]] + comparison.ids["Alterns"]
+            compnames += [unidecode(n) for n in compnames if n != unidecode(n)]
+            match = name in compnames
+            if match:
+                break
+        if not match:
+            match = find.ids["HASC"] and len(find.ids["HASC"]) > 3 and comparison.ids["HASC"] == find.ids["HASC"]
     else:
         # country not matched
         pass
@@ -162,13 +174,13 @@ class ResultsTable:
         prov = Province(country, start, end, ids, other, geometry)
         self.provs.append(prov)
    
-    def find_prov(self, findprov, matchfunc=ids_equal):
+    def find_prov(self, findprov, matchfunc=ids_equal, fuzzythresh=0.8):
         "Lookup id and return matching feature GeoJSON among existing registered provs"
         newprovs = sorted((prov for prov in self.provs if matchfunc(findprov, prov)), key=lambda f: f.end)
         if not newprovs:
             import difflib
             matches = sorted([(p,difflib.SequenceMatcher(None,findprov.ids["Name"],p.ids["Name"]).ratio()) for p in self.provs if p.country == findprov.country], key=lambda pair: pair[1])
-            matches = ((p,r) for p,r in matches if r >= 0.6)
+            matches = ((p,r) for p,r in matches if r >= fuzzythresh)
             matches = sorted(matches, key=lambda(p,r): (p.end,-r))
             newprovs = [p for p,r in matches]
             
@@ -385,13 +397,16 @@ class ResultsTable:
                     continue
 
                 # Add what remains of giving province (if anything left/didn't dissolve)
-                if "Breakaway" in (p.type for p in subparts) and "NewInfo" not in (p.type for p in subparts):
+                if "FullTransfer" not in (p.type for p in subparts) and "NewInfo" not in (p.type for p in subparts):
                     oldprov = self.find_prov(fromprov)
-                    if oldprov:
+                    if oldprov and oldprov.start is None:
+                        print "REMAAAAAAAAINS:",fromprov,oldprov
                         oldprov.start = event.date
                         oldprovgeom = shapely.geometry.shape(oldprov.geometry)
                         pregiving = Remainder(fromprov, oldprovgeom)
                         subparts.append(pregiving)
+                    elif oldprov and oldprov.start:
+                        print "NOT REMAINS:",oldprov
                 
                 # Union all parts belonging to same fromprov, ie breakaways and parttransfers
                 if len(subparts) > 1:
@@ -410,8 +425,14 @@ class ResultsTable:
                 #print fullgeom, subparts[0].type
                 
                 # Error checking
-                try: fullgeom = fullgeom.buffer(0)
+                try: fullgeom = fullgeom.buffer(0) 
                 except: pass
+
+                # Beautification! WARNING: SLOW! 
+                fixed = fullgeom.buffer(0.0000001).buffer(-0.0000001) # fill in hole slivers
+                fixed = fixed.buffer(-0.0000001).buffer(0.0000001) # strip away island slivers
+                if fixed.is_valid and not fixed.is_empty:
+                    fullgeom = fixed
                 
                 if fullgeom.is_empty:
                     raise Exception("Something went wrong, output province %s has empty geometry" % fromprov)
@@ -551,7 +572,7 @@ if __name__ == "__main__":
                                     start=None,
                                     end=None,
                                     ids={"Name":row["FromName".lower()],
-                                         "Alterns": [], #row["fromalterns"].split("|"),
+                                         "Alterns":row["fromalterns"].split("|") if row["fromalterns"] else [],
                                         "HASC":row["FromHASC".lower()],
                                         "ISO":row["FromISO".lower()],
                                         "FIPS":row["FromFIPS".lower()]},
@@ -562,7 +583,7 @@ if __name__ == "__main__":
                                     start=None,
                                     end=None,
                                     ids={"Name":row["ToName".lower()],
-                                         "Alterns": [], #row["toalterns"].split("|"),
+                                         "Alterns":row["toalterns"].split("|") if row["toalterns"] else [],
                                          "HASC":row["ToHASC".lower()],
                                          "ISO":row["ToISO".lower()],
                                          "FIPS":row["ToFIPS".lower()]},
@@ -602,7 +623,7 @@ if __name__ == "__main__":
             countries.add(f["fromcountry"])
             countries.add(f["tocountry"])
 
-        curtable = pg.VectorData(CURRENTFILE, encoding="latin1",
+        curtable = pg.VectorData(CURRENTFILE, encoding="utf8", encoding_errors="replace",
                                 select=lambda f: f["geonunit"] in countries)
 
         # modify guinea wrong level
@@ -613,6 +634,7 @@ if __name__ == "__main__":
                 f.row = [None for _ in range(len(curtable.fields))]
                 f["geonunit"] = "Guinea"
                 f["name"] = "Boke"
+                f["name_alt"] = "Boké".decode('utf8')
                 f["iso_3166_2"] = "B"
             elif f["code_hasc"] in "GN.CO GN.DU GN.FO GN.KD GN.TE":
                 f.row = [None for _ in range(len(curtable.fields))]
@@ -633,6 +655,7 @@ if __name__ == "__main__":
                 f.row = [None for _ in range(len(curtable.fields))]
                 f["geonunit"] = "Guinea"
                 f["name"] = "Labe"
+                f["name_alt"] = "Labé".decode('utf8')
                 f["iso_3166_2"] = "L"
             elif f["code_hasc"] in "GN.DL GN.MM GN.PI":
                 f.row = [None for _ in range(len(curtable.fields))]
@@ -643,6 +666,7 @@ if __name__ == "__main__":
                 f.row = [None for _ in range(len(curtable.fields))]
                 f["geonunit"] = "Guinea"
                 f["name"] = "Nzerekore"
+                f["name_alt"] = "Nzérékoré".decode('utf8')
                 f["iso_3166_2"] = "N"
             elif f["code_hasc"] == "GN.CK":
                 f.row = [None for _ in range(len(curtable.fields))]
@@ -732,8 +756,8 @@ if __name__ == "__main__":
     lyr = pg.renderer.VectorLayer( final,
                                     text=lambda f: f["Name"], #.encode("latin").decode("utf8"), #"{prov} ({start}-{end})".format(prov=f["Name"].encode("utf8"),start=f["start"][:4],end=f["end"][:4]),
                                     textoptions=dict(textsize=4), #, bbox=lambda f:f.bbox),
-                                    #fillcolor=pg.renderer.rgb("random", opacity=155),
-                                    fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
+                                    fillcolor=(155,155,155,155) #pg.renderer.rgb("random", opacity=155),
+                                    #fillcolor=dict(breaks="unique", key=lambda f:f["country"]),
                                     )
     
     #layout = pg.renderer.Layout(width=500, height=500, background=(111,111,111))
@@ -745,7 +769,7 @@ if __name__ == "__main__":
         mapp.zoom_bbox(*final.bbox) #zoom_bbox(-180,90,180,-90)
         #mapp.zoom_auto()
         #mapp.view()
-        mapp.save("C:/Users/kimo/Downloads/pshapes_visualized/%s.png"%str(start))
+        mapp.save("C:/Users/kimo/Downloads/pshapes_visualized_transp/%s.png"%str(start))
         #layout.add_map(mapp)
     #layout.view()
 
