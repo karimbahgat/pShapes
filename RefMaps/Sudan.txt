@@ -1,1 +1,0 @@
-http://tile.loc.gov/image-services/jp2.py?data=/service/gmd/gmd8/g8310/g8310/ct003693.jp2&res=2
