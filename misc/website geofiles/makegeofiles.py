@@ -67,6 +67,14 @@ contrs = contrs.select(lambda f: f['country']) # exclude special small island th
 
 contrs.save('countries.geojson')
 
+##for f in contrs:
+##    try: f.geometry = f.get_shapely().simplify(0.05, preserve_topology=True).__geo_interface__
+##    except: print 'FAILED CLEANING:',f.row
+##print contrs
+##contrs.save('countries_semisimple.geojson')
+##
+##fdsfsdf
+
 for f in contrs:
     try: f.geometry = f.get_shapely().simplify(0.2, preserve_topology=True).__geo_interface__
     except: print 'FAILED CLEANING:',f.row
